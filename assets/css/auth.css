@@ -1,0 +1,218 @@
+/* ============================================================
+   ILLUME — Auth Pages CSS
+   ============================================================ */
+
+.auth-page {
+  min-height: 100svh;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ─── LEFT PANEL (visual) ── */
+.auth-visual {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: none;
+}
+@media (min-width: 900px) {
+  .auth-visual { display: block; }
+}
+#auth-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+}
+.auth-visual__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(168,85,247,0.04) 100%),
+              linear-gradient(180deg, transparent 50%, rgba(1,1,3,0.9) 100%);
+}
+.auth-visual__content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: var(--s12);
+  z-index: 2;
+}
+.auth-visual__logo {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  margin-bottom: var(--s3);
+}
+.auth-visual__quote {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.7;
+  max-width: 380px;
+}
+
+/* ─── RIGHT PANEL (form) ── */
+.auth-form-panel {
+  width: 100%;
+  max-width: 480px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s12) var(--s8);
+  background: var(--space);
+  position: relative;
+}
+.auth-form-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--gold-faint) 0%, transparent 40%);
+  pointer-events: none;
+}
+.auth-form-wrap {
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  z-index: 1;
+}
+.auth-logo {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  margin-bottom: var(--s2);
+}
+.auth-tagline {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--s10);
+}
+.auth-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: var(--s2);
+}
+.auth-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: var(--s8);
+}
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  margin: var(--s5) 0;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--space-border);
+}
+.auth-divider span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.auth-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: var(--s8);
+  transition: color var(--t-fast);
+}
+.auth-back:hover { color: var(--gold); }
+.auth-back svg { width: 14px; height: 14px; }
+
+/* Password toggle */
+.input-wrap {
+  position: relative;
+}
+.input-wrap .form-input {
+  padding-right: var(--s10);
+}
+.pw-toggle {
+  position: absolute;
+  right: var(--s3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  padding: var(--s1);
+  transition: color var(--t-fast);
+}
+.pw-toggle:hover { color: var(--gold); }
+.pw-toggle svg { width: 16px; height: 16px; }
+
+/* ─── Role Selector ── */
+.role-selector {
+  display: flex;
+  gap: var(--s4);
+  margin-bottom: var(--s6);
+}
+.role-option {
+  flex: 1;
+  position: relative;
+}
+.role-option input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.role-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--s4);
+  border: 1px solid var(--space-border);
+  border-radius: var(--r);
+  background: #FFF;
+  cursor: pointer;
+  transition: all var(--t-fast);
+  text-align: center;
+}
+.role-option input:checked + .role-card {
+  border-color: var(--aura);
+  background: var(--aura-dim);
+  box-shadow: 0 0 20px var(--aura-glow);
+}
+.role-card i {
+  margin-bottom: var(--s2);
+  color: var(--text-muted);
+  transition: color var(--t-fast);
+}
+.role-option input:checked + .role-card i {
+  color: var(--aura);
+}
+.role-card span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.role-option input:checked + .role-card span {
+  color: var(--aura);
+}
+
+/* ─── Conditional Fields ── */
+.hidden { display: none !important; }
+.fade-in { animation: fadeIn 0.4s var(--ease-out); }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
