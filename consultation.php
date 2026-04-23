@@ -160,7 +160,6 @@ include __DIR__ . '/includes/header.php';
               </div>
               <div>
                 <div style="font-size:0.85rem;font-weight:600;line-height:1.2;"><?= e($svc['name']) ?></div>
-                <div style="font-size:0.72rem;color:var(--text-muted);margin-top:1px;">From <?= format_currency((float)$svc['starting_price'], $svc['currency']) ?></div>
               </div>
             </div>
           </label>

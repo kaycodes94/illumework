@@ -122,7 +122,7 @@ include __DIR__ . '/../includes/dash_header.php';
       <?php else: ?>
       <?php foreach ($my_uploads as $u): ?>
       <div class="activity-feed__item">
-        <div class="activity-feed__icon" style="background:var(--plasma-dim);border-color:var(--plasma-glass);color:var(--plasma);">
+        <div class="activity-feed__icon" style="background:var(--aura-dim);border-color:var(--aura-glass);color:var(--aura);">
           <i data-lucide="image"></i>
         </div>
         <div class="activity-feed__text">

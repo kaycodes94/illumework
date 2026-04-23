@@ -48,11 +48,14 @@
       <div>
         <h6 class="footer__heading">Services</h6>
         <nav class="footer__links">
-          <a href="<?= SITE_URL ?>/services.php#bespoke-couture"       class="footer__link">Bespoke Couture</a>
-          <a href="<?= SITE_URL ?>/services.php#bridal-special-occasion" class="footer__link">Bridal</a>
-          <a href="<?= SITE_URL ?>/services.php#ready-to-wear"         class="footer__link">Ready-to-Wear</a>
-          <a href="<?= SITE_URL ?>/services.php#fashion-consulting"    class="footer__link">Fashion Consulting</a>
-          <a href="<?= SITE_URL ?>/services.php#editorial-brand-styling" class="footer__link">Editorial Styling</a>
+          <a href="<?= SITE_URL ?>/services.php#bespoke"            class="footer__link">Bespoke</a>
+          <a href="<?= SITE_URL ?>/services.php#asoebi"             class="footer__link">Asoebi</a>
+          <a href="<?= SITE_URL ?>/services.php#african-wears"      class="footer__link">African Wears</a>
+          <a href="<?= SITE_URL ?>/services.php#beading"            class="footer__link">Beading</a>
+          <a href="<?= SITE_URL ?>/services.php#casuals"            class="footer__link">Casuals</a>
+          <a href="<?= SITE_URL ?>/services.php#dressmaking"        class="footer__link">Custom Dressmaking</a>
+          <a href="<?= SITE_URL ?>/services.php#consultancy"        class="footer__link">Fashion Consultancy</a>
+          <a href="<?= SITE_URL ?>/services.php#illustration"       class="footer__link">Fashion Illustration</a>
         </nav>
       </div>
 
@@ -79,7 +82,7 @@
     <!-- Bottom Bar -->
     <div class="footer__bottom">
       <span>&copy; <?= date('Y') ?> ILLUME. All rights reserved.</span>
-      <span>Crafted in Lagos &nbsp;·&nbsp; Worn Worldwide</span>
+      <span>Crafted in Abuja &nbsp;·&nbsp; Worn Worldwide</span>
       <span style="display:flex;gap:1rem;">
         <a href="#" class="footer__link" style="font-size:0.75rem;">Privacy Policy</a>
         <a href="#" class="footer__link" style="font-size:0.75rem;">Terms</a>

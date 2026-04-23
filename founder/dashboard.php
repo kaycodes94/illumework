@@ -48,7 +48,7 @@ include __DIR__ . '/../includes/dash_header.php';
       <i data-lucide="calendar"></i> Consultations
       <?php if ($new_consults > 0): ?>
       <span style="
-        background:var(--plasma);color:var(--void);
+        background:var(--aura);color:var(--void);
         font-size:0.65rem;font-weight:700;
         padding:1px 7px;border-radius:9999px;
       "><?= (int)$new_consults ?></span>
@@ -65,7 +65,7 @@ include __DIR__ . '/../includes/dash_header.php';
   <?php
   $kpis = [
     ['label'=>'Active Orders',      'value'=>$active_orders,                         'suffix'=>'',   'icon'=>'package',    'color'=>'var(--gold)',   'sub'=>'In production'],
-    ['label'=>'New Consultations',  'value'=>$new_consults,                          'suffix'=>'',   'icon'=>'calendar',   'color'=>'var(--plasma)', 'sub'=>'Awaiting contact'],
+    ['label'=>'New Consultations',  'value'=>$new_consults,                          'suffix'=>'',   'icon'=>'calendar',   'color'=>'var(--aura)',   'sub'=>'Awaiting contact'],
     ['label'=>'Pending Approvals',  'value'=>$pending_approvals,                     'suffix'=>'',   'icon'=>'eye',        'color'=>'var(--warning)','sub'=>'Design reviews'],
     ['label'=>'Active Clients',     'value'=>$total_clients,                         'suffix'=>'',   'icon'=>'users',      'color'=>'var(--gold)',   'sub'=>'On the platform'],
     ['label'=>'Revenue (Complete)', 'value'=>format_currency((float)$total_revenue), 'suffix'=>null, 'icon'=>'trending-up','color'=>'var(--success)','sub'=>'Completed orders'],
@@ -140,7 +140,7 @@ include __DIR__ . '/../includes/dash_header.php';
       <div class="activity-feed__header">
         <span>Incoming Requests</span>
         <?php if ($new_consults > 0): ?>
-        <span class="badge badge--plasma"><?= (int)$new_consults ?> new</span>
+        <span class="badge badge--aura"><?= (int)$new_consults ?> new</span>
         <?php endif; ?>
       </div>
       <?php if (empty($recent_consults)): ?>

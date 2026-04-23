@@ -6,7 +6,7 @@ require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/functions.php';
 
 $page_title = 'Fashion. Elevated.';
-$page_desc  = 'ILLUME is a luxury Nigerian fashion house offering bespoke couture, bridal design, editorial styling and fashion consulting.';
+$page_desc  = 'ILLUME is a luxury Nigerian fashion house offering Bespoke, Asoebi, African Wears, and high-end Custom Dressmaking.';
 
 $services = get_services();
 include __DIR__ . '/includes/header.php';
@@ -19,7 +19,7 @@ include __DIR__ . '/includes/header.php';
 
   <div class="hero__content">
     <div class="hero__label">
-      <span>Lagos · Nigeria · Est. 2018</span>
+      <span>Abuja · Nigeria · Est. 2018</span>
     </div>
 
     <h1 class="hero__title">
@@ -28,7 +28,7 @@ include __DIR__ . '/includes/header.php';
     </h1>
 
     <p class="hero__subtitle">
-      We don't just make clothes — we architect identities.
+      What makes ILLUME unique? We don’t just design fashion—we illuminate identity. 
       Every thread is intentional. Every silhouette, a statement.
       Welcome to the future of Nigerian luxury fashion.
     </p>
@@ -100,21 +100,16 @@ include __DIR__ . '/includes/header.php';
 
     <div class="grid-3" style="gap:1.5rem;">
       <?php foreach (array_slice($services, 0, 3) as $i => $svc): ?>
-      <div class="service-card reveal reveal-delay-<?= $i + 1 ?>" id="service-<?= e($svc['slug']) ?>">
+      <div class="service-card reveal reveal-delay-<?= $i + 1 ?>" id="service-<?= e($svc['slug']) ?>" 
+           onclick="window.location.href='services.php#<?= e($svc['slug']) ?>'" style="cursor:pointer;">
         <div class="service-icon">
           <i data-lucide="<?= e($svc['icon']) ?>"></i>
         </div>
         <div class="label-text" style="margin-bottom:0.5rem;"><?= e($svc['name']) ?></div>
         <h3 style="font-size:1.3rem; margin-bottom:0.75rem;"><?= e($svc['short_desc']) ?></h3>
         <p style="font-size:0.88rem; line-height:1.7; margin-bottom:1.25rem;"><?= e($svc['description']) ?></p>
-        <div style="display:flex; align-items:center; justify-content:space-between; margin-top:auto;">
-          <div>
-            <span class="service-price">
-              <?= format_currency((float)$svc['starting_price'], $svc['currency']) ?>
-            </span>
-            <span class="service-price-label">starting from</span>
-          </div>
-          <a href="consultation.php?service=<?= urlencode($svc['slug']) ?>" class="btn btn--ghost btn--sm">
+        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto;">
+          <a href="consultation.php?service=<?= urlencode($svc['slug']) ?>" class="btn btn--ghost btn--sm" onclick="event.stopPropagation();">
             Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
           </a>
         </div>
@@ -157,7 +152,7 @@ include __DIR__ . '/includes/header.php';
               line-height:1;
               margin-bottom:0.5rem;
             ">I.</div>
-            <div class="label-text" style="color:var(--gold-bright);">The ILLUME Standard</div>
+            <div class="label-text" style="color:var(--gold-bright);">Olewuezi Ikedichukwu Peace & Susan Mtsevah</div>
           </div>
           
           <!-- Corner accents -->
@@ -171,7 +166,7 @@ include __DIR__ . '/includes/header.php';
           padding:1.25rem 1.5rem;
           display:flex; align-items:center; gap:0.75rem;
         ">
-          <div style="width:10px;height:10px;border-radius:50%;background:var(--plasma);box-shadow:0 0 12px var(--plasma);flex-shrink:0;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--aura);box-shadow:0 0 12px var(--aura);flex-shrink:0;"></div>
           <div>
             <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);">Design Time</div>
             <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);">2 – 6 Weeks</div>
@@ -186,15 +181,16 @@ include __DIR__ . '/includes/header.php';
           Fashion That<br>
           <span class="shimmer-text">Commands Space</span>
         </h2>
-        <p style="margin-bottom:1.5rem; font-size:1.05rem; line-height:1.8;">
-          At ILLUME, we believe your wardrobe should be a manifesto. We design
-          for women and men who understand that what you wear is a declaration
-          — of power, of identity, of intention.
+        <p style="margin-bottom:1.5rem; font-size:1.05rem; line-height:1.8; font-style: italic; color: var(--gold-bright);">
+          Illume by Light Peace was born from a simple conviction—<br>
+          that fashion should not just be seen, but felt.
         </p>
-        <p style="margin-bottom:2rem; line-height:1.8;">
-          Every piece begins with a conversation. We listen to your vision,
-          study your silhouette, and translate your essence into garments
-          that feel like they were born from you.
+        <p style="margin-bottom:1.5rem; line-height:1.8;">
+          Here, African identity is not explained; it is elevated. 
+          Every piece is crafted with intention to reflect dignity, confidence, and quiet strength.
+        </p>
+        <p style="margin-bottom:2rem; line-height:1.8; font-weight: 500; letter-spacing: 0.02em;">
+          This is more than fashion. It is light expressed. It is legacy in motion.
         </p>
 
         <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;">
@@ -246,24 +242,24 @@ include __DIR__ . '/includes/header.php';
     <div style="display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:auto; gap:1.5rem; margin-bottom:4rem;">
       <?php
       $portfolioItems = [
-        ['label'=>'Bespoke Couture','sub'=>'Evening Gown Series','img'=>'couture.png','span'=>'row-span-2'],
-        ['label'=>'Bridal','sub'=>'Celestial Collection','img'=>'bridal.png','span'=>''],
-        ['label'=>'Editorial','sub'=>'Lagos Fashion Week','img'=>'editorial.png','span'=>''],
-        ['label'=>'Ready-to-Wear','sub'=>'Linen & Silk Series','img'=>'rtw.png','span'=>'col-span-2'],
+        ['label'=>'Bespoke',             'sub'=>'Artisanal Tailoring', 'img'=>'svc_bespoke_1776779653752.png', 'url'=>'services.php#bespoke-couture'],
+        ['label'=>'Asoebi',              'sub'=>'Heritage Matrimony',  'img'=>'bridal.png',                   'url'=>'services.php#asoebi'],
+        ['label'=>'African Wears',       'sub'=>'Modern Tradition',    'img'=>'couture.png',                  'url'=>'services.php#african-wears'],
+        ['label'=>'Custom Dressmaking',   'sub'=>'Technical Couture',   'img'=>'philosophy.png',               'url'=>'services.php#dressmaking'],
       ];
       foreach ($portfolioItems as $idx => $item):
         $gridArea = '';
         if ($idx === 0) $gridArea = 'grid-row: span 2;';
         if ($idx === 3) $gridArea = 'grid-column: span 2;';
       ?>
-      <div class="portfolio-item reveal reveal-delay-<?= ($idx % 3) + 1 ?>" style="<?= $gridArea ?>">
+      <a href="<?= e($item['url']) ?>" class="portfolio-item reveal reveal-delay-<?= ($idx % 3) + 1 ?>" style="<?= $gridArea ?> text-decoration:none;">
         <div style="
           background: var(--space-mid);
           border: 1px solid var(--space-border);
           border-radius: var(--r-xl);
           height: <?= $idx === 0 ? '580px' : '280px' ?>;
           display:flex; align-items:flex-end;
-          position:relative; overflow:hidden; cursor:none;
+          position:relative; overflow:hidden; cursor:pointer;
           transition: all 0.5s var(--ease-out);
         "
         onmouseenter="this.querySelector('img').style.transform='scale(1.08)'; this.style.borderColor='var(--aura-glass)';"
@@ -279,7 +275,7 @@ include __DIR__ . '/includes/header.php';
             <div style="font-size:0.9rem; color:#FFF; font-weight:500;"><?= $item['sub'] ?></div>
           </div>
         </div>
-      </div>
+      </a>
       <?php endforeach; ?>
     </div>
 
@@ -304,7 +300,7 @@ include __DIR__ . '/includes/header.php';
       $testimonials = [
         [
           'name'    => 'Adaora Nwachukwu',
-          'title'   => 'CEO, Adaora Skincare · Lagos',
+          'title'   => 'CEO, Adaora Skincare · Abuja',
           'quote'   => 'ILLUME transformed my entire relationship with fashion. My bespoke pieces don\'t just fit — they feel like armor. I walk into every boardroom differently.',
           'initial' => 'A',
         ],
@@ -316,7 +312,7 @@ include __DIR__ . '/includes/header.php';
         ],
         [
           'name'    => 'Emeka Obi',
-          'title'   => 'Creative Director · London/Lagos',
+          'title'   => 'Creative Director · London/Abuja',
           'quote'   => 'As someone who works in fashion, I\'m hard to impress. ILLUME managed to surprise me every single time. Extraordinary craft, extraordinary people.',
           'initial' => 'E',
         ],

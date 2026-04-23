@@ -144,7 +144,7 @@ if (heroCanvas && typeof THREE !== 'undefined') {
   const colors    = new Float32Array(COUNT * 3);
 
   const bronze     = new THREE.Color('#8B7355');
-  const indigo     = new THREE.Color('#4C1D95');
+  const indigo     = new THREE.Color('#52177c');
   const softGray   = new THREE.Color('#D1D5DB');
 
   for (let i = 0; i < COUNT; i++) {

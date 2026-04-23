@@ -5,17 +5,19 @@ $page_title = 'Portfolio';
 $page_desc  = 'Explore the ILLUME portfolio — a visual archive of bespoke couture, bridal masterpieces, and editorial fashion.';
 include __DIR__ . '/includes/header.php';
 
-$categories = ['All','Bespoke Couture','Bridal','Editorial','Ready-to-Wear','Consulting'];
+$categories = [
+  'Bespoke', 'Asoebi', 'African Wears', 'Casuals', 
+  'Custom Dressmaking', 'Beading', 'Fashion Consultancy', 'Fashion Illustration'
+];
 $items = [
-  ['cat'=>'Bespoke Couture', 'title'=>'Crimson Power Suit',    'sub'=>'Client: Adaora N.','c1'=>'#1a0402','c2'=>'rgba(201,60,60,0.15)','size'=>'tall'],
-  ['cat'=>'Bridal',          'title'=>'Celestial Bridal Gown', 'sub'=>'Collection 2024',  'c1'=>'#08080f','c2'=>'rgba(200,200,255,0.12)','size'=>'normal'],
-  ['cat'=>'Editorial',       'title'=>'LFW Runway Look',       'sub'=>'Lagos, 2023',       'c1'=>'#0c000e','c2'=>'rgba(180,0,255,0.1)','size'=>'normal'],
-  ['cat'=>'Bespoke Couture', 'title'=>'Gold Evening Gown',     'sub'=>'Private Collection','c1'=>'#0e0900','c2'=>'rgba(201,168,76,0.18)','size'=>'wide'],
-  ['cat'=>'Ready-to-Wear',   'title'=>'Harmattan Collection',  'sub'=>'Season 2024',       'c1'=>'#001008','c2'=>'rgba(0,200,150,0.12)','size'=>'normal'],
-  ['cat'=>'Bridal',          'title'=>'Lagos White Wedding',   'sub'=>'Client: Funmi A.', 'c1'=>'#0a0a14','c2'=>'rgba(100,100,255,0.1)','size'=>'tall'],
-  ['cat'=>'Editorial',       'title'=>'Vogue Africa Shoot',    'sub'=>'Campaign 2024',     'c1'=>'#140000','c2'=>'rgba(255,50,50,0.08)','size'=>'normal'],
-  ['cat'=>'Bespoke Couture', 'title'=>'Midnight Silk Corset',  'sub'=>'Private Client',    'c1'=>'#030310','c2'=>'rgba(0,100,255,0.1)','size'=>'normal'],
-  ['cat'=>'Consulting',      'title'=>'Brand Identity Revamp', 'sub'=>'Client: TechFashion','c1'=>'#0d0d0a','c2'=>'rgba(201,168,76,0.08)','size'=>'wide'],
+  ['cat'=>'Bespoke',             'title'=>'The Executive Silk',  'sub'=>'Artisanal Tailoring', 'size'=>'tall'],
+  ['cat'=>'Asoebi',              'title'=>'Heritage Bloom',      'sub'=>'Event Coordination',  'size'=>'wide'],
+  ['cat'=>'African Wears',       'title'=>'Modern Heritage',     'sub'=>'Avant-Garde Prints',  'size'=>'tall'],
+  ['cat'=>'Casuals',             'title'=>'Linen Resort',        'sub'=>'Premium Leisure',    'size'=>'normal'],
+  ['cat'=>'Custom Dressmaking',   'title'=>'The Master Fit',      'sub'=>'Bespoke Construction','size'=>'normal'],
+  ['cat'=>'Beading',             'title'=>'Pearl & Petal',       'sub'=>'Hand Embroidery',     'size'=>'tall'],
+  ['cat'=>'Fashion Consultancy', 'title'=>'Identity Audit',      'sub'=>'Style Strategy',      'size'=>'normal'],
+  ['cat'=>'Fashion Illustration','title'=>'Genesis Sketch',      'sub'=>'Visual Rendering',    'size'=>'normal'],
 ];
 ?>
 
@@ -63,19 +65,37 @@ $items = [
     <div style="columns:3;column-gap:1rem;" id="portfolio-grid">
       <?php
       $images = [
-        'Bespoke Couture' => 'couture.png',
-        'Bridal'          => 'bridal.png',
-        'Editorial'       => 'editorial.png',
-        'Ready-to-Wear'   => 'rtw.png',
-        'Consulting'      => 'philosophy.png'
+        'Bespoke'               => 'svc_bespoke_1776779653752.png',
+        'Bridals and Asoebi'    => 'bridal.png',
+        'Suits and Dinner Dress'=> 'editorial.png',
+        'African Wears'         => 'couture.png',
+        'Casuals'               => 'rtw.png',
+        'Custom Dressmaking'    => 'philosophy.png',
+        'Beading'               => 'editorial.png',
+        'Fashion Consultancy'   => 'philosophy.png',
+        'Fashion Illustration'  => 'philosophy.png'
+      ];
+      $serviceMap = [
+        'Bespoke'               => 'bespoke-couture',
+        'Bridals and Asoebi'    => 'asoebi',
+        'Asoebi'                => 'asoebi',
+        'Suits and Dinner Dress'=> 'bespoke-couture',
+        'African Wears'         => 'african-wears',
+        'Casuals'               => 'casuals',
+        'Custom Dressmaking'    => 'dressmaking',
+        'Beading'               => 'beading',
+        'Fashion Consultancy'   => 'consultancy',
+        'Fashion Illustration'  => 'illustration'
       ];
       foreach ($items as $i => $item):
         $img = $images[$item['cat']] ?? 'luxury.jpg';
+        $slug = $serviceMap[$item['cat']] ?? '';
       ?>
-      <div
+      <a
+        href="<?= $slug ? 'services.php#' . $slug : '#' ?>"
         class="portfolio-item reveal"
         data-category="<?= e($item['cat']) ?>"
-        style="margin-bottom:1.5rem;break-inside:avoid;"
+        style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;"
       >
         <div style="
           background:var(--space-mid);
@@ -86,6 +106,7 @@ $items = [
           transition:all 0.5s var(--ease-out);
           display:flex;flex-direction:column;justify-content:flex-end;
           box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          cursor:pointer;
         "
         onmouseenter="this.querySelector('img').style.transform='scale(1.05)'; this.style.borderColor='var(--aura-glass)';"
         onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
@@ -103,7 +124,7 @@ $items = [
             <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);"><?= e($item['sub']) ?></div>
           </div>
         </div>
-      </div>
+      </a>
       <?php endforeach; ?>
     </div>
   </div>

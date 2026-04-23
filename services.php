@@ -34,122 +34,39 @@ include __DIR__ . '/includes/header.php';
 
 <!-- ═══ ALL SERVICES ══════════════════════════════════════════ -->
 <section class="section--lg">
-  <div class="container">
+  <div class="container--sm">
 
-    <?php foreach ($services as $i => $svc): ?>
-    <div id="<?= e($svc['slug']) ?>" style="
-      display:grid;
-      grid-template-columns:<?= $i % 2 === 0 ? '1fr 1.2fr' : '1.2fr 1fr' ?>;
-      gap:5rem;align-items:center;
-      padding:4rem 0;
-      <?= $i > 0 ? 'border-top:1px solid var(--space-border);' : '' ?>
-    ">
-
-      <?php if ($i % 2 !== 0): ?>
-      <!-- Visual on right for odd items — shows left on even below -->
-      <div class="reveal-left">
-        <div class="label-text" style="margin-bottom:0.75rem;"><?= sprintf('%02d', $i+1) ?> / <?= sprintf('%02d', count($services)) ?></div>
-        <h2 style="margin-bottom:1rem;"><?= e($svc['name']) ?></h2>
-        <p style="font-size:1.05rem;line-height:1.85;margin-bottom:1.5rem;"><?= e($svc['description']) ?></p>
-
-        <div style="padding:1.25rem;background:var(--space);border:1px solid var(--space-border);border-radius:var(--r-lg);margin-bottom:2rem;">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <div>
-              <div class="label-text" style="color:var(--text-muted);margin-bottom:0.25rem;">Starting From</div>
-              <div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--gold);">
-                <?= format_currency((float)$svc['starting_price'], $svc['currency']) ?>
-              </div>
-            </div>
-            <div style="text-align:right;">
-              <div class="label-text" style="color:var(--text-muted);margin-bottom:0.25rem;">Currency</div>
-              <div style="font-weight:600;"><?= e($svc['currency']) ?></div>
-            </div>
+    <div style="display:grid; gap:4rem;">
+      <?php foreach ($services as $i => $svc): ?>
+      <div id="<?= e($svc['slug']) ?>" class="reveal" style="
+        padding-bottom:4rem;
+        <?= $i < (count($services)-1) ? 'border-bottom:1px solid var(--space-border);' : '' ?>
+      ">
+        <div style="display:flex; align-items:flex-start; gap:2rem;">
+          <div style="
+            width:50px; height:50px; border-radius:50%;
+            background:var(--gold-faint); border:1px solid var(--gold-glass);
+            display:flex; align-items:center; justify-content:center;
+            color:var(--gold); flex-shrink:0; margin-top:0.5rem;
+          ">
+            <i data-lucide="<?= e($svc['icon']) ?>" style="width:20px;height:20px;"></i>
+          </div>
+          
+          <div style="flex-grow:1;">
+            <div class="label-text" style="color:var(--text-muted); margin-bottom:1rem;"><?= sprintf('%02d', $i+1) ?> — <?= e($svc['slug']) ?></div>
+            <h2 style="margin-bottom:1.5rem;"><?= e($svc['name']) ?></h2>
+            <p style="font-size:1.15rem; line-height:2; color:var(--text-secondary); margin-bottom:2.5rem; max-width:700px;">
+              <?= e($svc['description']) ?>
+            </p>
+            
+            <a href="consultation.php?service=<?= urlencode($svc['slug']) ?>" class="btn btn--primary" style="padding:0.85rem 2rem;">
+              Request Consultation
+            </a>
           </div>
         </div>
-
-        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="consultation.php?service=<?= urlencode($svc['slug']) ?>" class="btn btn--primary">
-            <i data-lucide="calendar"></i> Request This Service
-          </a>
-          <a href="https://wa.me/<?= WHATSAPP_NUMBER ?>?text=Hello%20ILLUME!%20I%27m%20interested%20in%20your%20<?= urlencode($svc['name']) ?>%20service."
-             class="btn btn--ghost" target="_blank" rel="noopener">
-            <i data-lucide="message-circle"></i> WhatsApp
-          </a>
-        </div>
       </div>
-
-      <div class="reveal-right">
-        <div style="
-          aspect-ratio:4/3;border-radius:var(--r-2xl);
-          background:linear-gradient(135deg,var(--space-mid),rgba(201,168,76,0.06));
-          border:1px solid var(--gold-glass);
-          display:flex;align-items:center;justify-content:center;
-          position:relative;overflow:hidden;
-        ">
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(201,168,76,0.08),transparent 65%);"></div>
-          <i data-lucide="<?= e($svc['icon']) ?>" style="width:80px;height:80px;color:var(--gold);opacity:0.5;position:relative;z-index:1;"></i>
-          <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;">
-            <div class="label-text"><?= e($svc['name']) ?></div>
-          </div>
-          <div style="position:absolute;top:1rem;right:1rem;width:20px;height:20px;border-top:1px solid var(--gold-glass);border-right:1px solid var(--gold-glass);"></div>
-          <div style="position:absolute;bottom:1rem;left:1rem;width:20px;height:20px;border-bottom:1px solid var(--gold-glass);border-left:1px solid var(--gold-glass);"></div>
-        </div>
-      </div>
-
-      <?php else: ?>
-      <!-- Visual LEFT, text RIGHT for even items -->
-      <div class="reveal-left">
-        <div style="
-          aspect-ratio:4/3;border-radius:var(--r-2xl);
-          background:linear-gradient(160deg,var(--space-mid),rgba(0,255,209,0.04));
-          border:1px solid var(--space-border);
-          display:flex;align-items:center;justify-content:center;
-          position:relative;overflow:hidden;
-        ">
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at 40% 60%,rgba(0,255,209,0.06),transparent 60%);"></div>
-          <i data-lucide="<?= e($svc['icon']) ?>" style="width:80px;height:80px;color:var(--plasma);opacity:0.4;position:relative;z-index:1;"></i>
-          <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;">
-            <div class="label-text" style="color:var(--plasma);"><?= e($svc['name']) ?></div>
-          </div>
-          <div style="position:absolute;top:1rem;right:1rem;width:20px;height:20px;border-top:1px solid var(--plasma-glass);border-right:1px solid var(--plasma-glass);"></div>
-          <div style="position:absolute;bottom:1rem;left:1rem;width:20px;height:20px;border-bottom:1px solid var(--plasma-glass);border-left:1px solid var(--plasma-glass);"></div>
-        </div>
-      </div>
-
-      <div class="reveal-right">
-        <div class="label-text" style="margin-bottom:0.75rem;"><?= sprintf('%02d', $i+1) ?> / <?= sprintf('%02d', count($services)) ?></div>
-        <h2 style="margin-bottom:1rem;"><?= e($svc['name']) ?></h2>
-        <p style="font-size:1.05rem;line-height:1.85;margin-bottom:1.5rem;"><?= e($svc['description']) ?></p>
-
-        <div style="padding:1.25rem;background:var(--space);border:1px solid var(--space-border);border-radius:var(--r-lg);margin-bottom:2rem;">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <div>
-              <div class="label-text" style="color:var(--text-muted);margin-bottom:0.25rem;">Starting From</div>
-              <div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--gold);">
-                <?= format_currency((float)$svc['starting_price'], $svc['currency']) ?>
-              </div>
-            </div>
-            <div style="text-align:right;">
-              <div class="label-text" style="color:var(--text-muted);margin-bottom:0.25rem;">Currency</div>
-              <div style="font-weight:600;"><?= e($svc['currency']) ?></div>
-            </div>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="consultation.php?service=<?= urlencode($svc['slug']) ?>" class="btn btn--primary">
-            <i data-lucide="calendar"></i> Request This Service
-          </a>
-          <a href="https://wa.me/<?= WHATSAPP_NUMBER ?>?text=Hello%20ILLUME!%20I%27m%20interested%20in%20<?= urlencode($svc['name']) ?>."
-             class="btn btn--ghost" target="_blank" rel="noopener">
-            <i data-lucide="message-circle"></i> WhatsApp
-          </a>
-        </div>
-      </div>
-      <?php endif; ?>
-
+      <?php endforeach; ?>
     </div>
-    <?php endforeach; ?>
 
   </div>
 </section>

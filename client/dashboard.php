@@ -54,7 +54,7 @@ include __DIR__ . '/../includes/dash_header.php';
   <i data-lucide="eye"></i>
   <span>
     You have <strong><?= count($pending) ?> design<?= count($pending) > 1 ? 's' : '' ?></strong> awaiting your review and approval.
-    <a href="#approvals" style="color:var(--plasma);text-decoration:underline;margin-left:0.5rem;">Review now →</a>
+    <a href="#approvals" style="color:var(--aura);text-decoration:underline;margin-left:0.5rem;">Review now →</a>
   </span>
 </div>
 <?php endif; ?>
@@ -151,7 +151,7 @@ include __DIR__ . '/../includes/dash_header.php';
         <form method="POST" action="<?= SITE_URL ?>/api/design.php" style="display:contents;">
           <?= csrf_field() ?>
           <input type="hidden" name="submission_id" value="<?= (int)$d['id'] ?>">
-          <button type="submit" name="action" value="approve" class="btn btn--plasma btn--sm btn--w-full">
+          <button type="submit" name="action" value="approve" class="btn btn--aura btn--sm btn--w-full">
             <i data-lucide="check-circle"></i> Approve
           </button>
         </form>
@@ -175,8 +175,8 @@ include __DIR__ . '/../includes/dash_header.php';
     <i data-lucide="calendar" style="width:24px;height:24px;color:var(--gold);display:block;margin:0 auto 0.5rem;"></i>
     <div style="font-size:0.85rem;font-weight:600;">New Consultation</div>
   </a>
-  <a href="https://wa.me/<?= WHATSAPP_NUMBER ?>" class="glass" style="padding:1.25rem;text-align:center;border-radius:var(--r-xl);text-decoration:none;transition:all 0.3s;" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='var(--plasma-glass)'" onmouseleave="this.style.borderColor=''">
-    <i data-lucide="message-circle" style="width:24px;height:24px;color:var(--plasma);display:block;margin:0 auto 0.5rem;"></i>
+  <a href="https://wa.me/<?= WHATSAPP_NUMBER ?>" class="glass" style="padding:1.25rem;text-align:center;border-radius:var(--r-xl);text-decoration:none;transition:all 0.3s;" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='var(--aura-glass)'" onmouseleave="this.style.borderColor=''">
+    <i data-lucide="message-circle" style="width:24px;height:24px;color:var(--aura);display:block;margin:0 auto 0.5rem;"></i>
     <div style="font-size:0.85rem;font-weight:600;">WhatsApp ILLUME</div>
   </a>
   <a href="<?= SITE_URL ?>/client/profile.php" class="glass" style="padding:1.25rem;text-align:center;border-radius:var(--r-xl);text-decoration:none;transition:all 0.3s;" onmouseenter="this.style.borderColor='var(--gold-glass)'" onmouseleave="this.style.borderColor=''">

@@ -3,7 +3,7 @@ require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/functions.php';
 
 $page_title = 'Contact';
-$page_desc  = 'Get in touch with ILLUME. Visit our Lagos atelier or reach us by email, phone, or WhatsApp.';
+$page_desc  = 'Get in touch with ILLUME. Visit our Abuja atelier or reach us by email, phone, or WhatsApp.';
 
 $sent  = false;
 $error = '';
@@ -54,9 +54,9 @@ include __DIR__ . '/includes/header.php';
         <?php
         $contacts = [
           ['icon'=>'mail',           'label'=>'Email Us',        'value'=>SITE_EMAIL,           'link'=>'mailto:'.SITE_EMAIL,        'color'=>'var(--gold)'],
-          ['icon'=>'phone',          'label'=>'Call Us',         'value'=>SITE_PHONE,           'link'=>'tel:'.preg_replace('/\s+/','', SITE_PHONE), 'color'=>'var(--plasma)'],
+          ['icon'=>'phone',          'label'=>'Call Us',         'value'=>SITE_PHONE,           'link'=>'tel:'.preg_replace('/\s+/','', SITE_PHONE), 'color'=>'var(--aura)'],
           ['icon'=>'message-circle', 'label'=>'WhatsApp',        'value'=>'+' . WHATSAPP_NUMBER,'link'=>'https://wa.me/'.WHATSAPP_NUMBER.'?text=Hello%20ILLUME!', 'color'=>'#25D366'],
-          ['icon'=>'map-pin',        'label'=>'Visit Our Atelier','value'=>'Victoria Island, Lagos, Nigeria', 'link'=>'#map', 'color'=>'var(--gold)'],
+          ['icon'=>'map-pin',        'label'=>'Business Locations','value'=>'Kubwa Abuja & Abakaliki Ebonyi', 'link'=>'#map', 'color'=>'var(--gold)'],
         ];
         foreach ($contacts as $c): ?>
         <a href="<?= e($c['link']) ?>" class="card card--glass" style="
@@ -157,22 +157,25 @@ include __DIR__ . '/includes/header.php';
         </form>
         <?php endif; ?>
 
-        <!-- Map Placeholder -->
+        <!-- Map -->
         <div id="map" style="
           margin-top:2rem;
           background:var(--space);
           border:1px solid var(--space-border);
           border-radius:var(--r-xl);
-          height:220px;
-          display:flex;align-items:center;justify-content:center;
+          height:320px;
           position:relative;overflow:hidden;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         ">
-          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:30px 30px;"></div>
-          <div style="text-align:center;position:relative;z-index:1;">
-            <i data-lucide="map-pin" style="width:32px;height:32px;color:var(--gold);margin-bottom:0.75rem;"></i>
-            <div style="font-size:0.9rem;font-weight:600;">Victoria Island, Lagos</div>
-            <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem;">Nigeria</div>
-          </div>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126071.16694602816!2d7.262512613149887!3d9.130147660232435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e766f7d08899b%3A0xe963d5961d668388!2sKubwa%2C%20Abuja!5e0!3m2!1sen!2sng!4v1713870000000!5m2!1sen!2sng" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </div>
 

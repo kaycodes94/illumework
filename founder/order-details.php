@@ -58,7 +58,7 @@ include __DIR__ . '/../includes/dash_header.php';
     <div class="flex-col gap-8">
         
         <!-- Progress Track -->
-        <div class="order-hero">
+        <div class="order-hero" style="background:var(--void);box-shadow:inset 0 0 40px rgba(0,0,0,0.01);">
             <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1.5rem;">Visual Identity Journey</div>
             <?php
             $statuses = ['intake','design','approval','production','delivery','complete'];

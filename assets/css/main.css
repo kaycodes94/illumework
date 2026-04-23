@@ -1,6 +1,6 @@
 /* ============================================================
-   ILLUME Luxury Platform — Futuristic Design System
-   Stack: Void Black · Gold · Plasma Teal · Glassmorphism
+   ILLUME Luxury Platform — Couture & Clinical Design System
+   Identity: Imperial Purple · Gold · Linen-White · Glassmorphism
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap');
@@ -171,12 +171,13 @@ body.is-hovering .cursor-ring {
    ============================================================ */
 .scroll-progress {
   position: fixed;
-  top: 0; left: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--plasma));
-  z-index: 10001;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--aura);
   transform-origin: left;
   transform: scaleX(0);
+  z-index: 9999;
+  border-radius: 0 4px 4px 0;
 }
 
 /* ============================================================

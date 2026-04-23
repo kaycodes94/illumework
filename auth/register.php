@@ -94,12 +94,12 @@ $page_title = 'Create Account';
   <div class="auth-visual">
     <img src="<?= SITE_URL ?>/assets/img/philosophy.png" alt="ILLUME Couture" 
          style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-    <div class="auth-visual__overlay"></div>
+    <div class="auth-visual__overlay" style="background:linear-gradient(135deg, rgba(82,23,124,0.4) 0%, rgba(1,1,3,0.9) 100%);"></div>
     <div class="auth-visual__content">
-      <span class="auth-visual__logo">ILLUME</span>
+      <span class="auth-visual__logo" style="background:linear-gradient(135deg, var(--gold), var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">ILLUME</span>
       <p class="auth-visual__quote">
-        "Fashion is the armor to survive the reality of everyday life."
-        <br><span style="font-size:0.85rem; color:rgba(255,255,255,0.7); font-style:normal; margin-top:0.5rem; display:block; font-family:var(--font-body);">— Bill Cunningham</span>
+        "crafted in light, radiance you can wear"
+        <br><span style="font-size:0.85rem; color:rgba(255,255,255,0.7); font-style:normal; margin-top:0.5rem; display:block; font-family:var(--font-body);">— Olewuezi Ikedichukwu Peace</span>
       </p>
     </div>
   </div>
@@ -182,13 +182,6 @@ $page_title = 'Create Account';
         Already have an account? Sign In
       </a>
 
-      <!-- Demo hint (dev only) -->
-      <?php if (defined('APP_ENV') && APP_ENV === 'development'): ?>
-      <div style="margin-top:2rem; padding:1rem; background:var(--space-mid); border:1px solid var(--space-border); border-radius:var(--r); font-size:0.75rem; color:var(--text-muted);">
-        <div style="margin-bottom:0.5rem; color:var(--aura); font-weight:600;">Dev Environment</div>
-        <div>Staff Invite Code: <code><?= STAFF_INVITE_CODE ?></code></div>
-      </div>
-      <?php endif; ?>
     </div>
   </div>
 

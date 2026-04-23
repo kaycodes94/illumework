@@ -12,9 +12,9 @@ define('DB_CHARSET', 'utf8mb4');
 define('SITE_NAME', 'ILLUME');
 define('SITE_TAGLINE', 'Fashion. Elevated.');
 define('SITE_URL', 'http://localhost/illumetest');
-define('SITE_EMAIL', 'hello@illume.ng');
-define('SITE_PHONE', '+234 800 000 0000');
-define('WHATSAPP_NUMBER', '2348000000000'); // without +
+define('SITE_EMAIL', 'lightpeacelimited@gmail.com');
+define('SITE_PHONE', '+234 813 002 4904');
+define('WHATSAPP_NUMBER', '2348130024904'); // without +
 
 define('UPLOAD_DIR', __DIR__ . '/../assets/uploads/');
 define('UPLOAD_URL', SITE_URL . '/assets/uploads/');

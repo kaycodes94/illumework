@@ -41,7 +41,7 @@ include __DIR__ . '/includes/header.php';
   <div class="container" style="position:relative;z-index:1;">
     <div class="label-text" style="margin-bottom:1rem;">Our Story</div>
     <h1 style="font-size:clamp(3rem,8vw,6.5rem);font-weight:800;line-height:0.95;letter-spacing:-0.04em;margin-bottom:1.5rem;max-width:700px;">
-      Born From<br><span class="shimmer-text">Lagos.</span><br>Worn By the<br>World.
+      Born From<br><span class="shimmer-text">Abuja.</span><br>Worn By the<br>World.
     </h1>
     <p style="font-size:1.1rem;max-width:520px;line-height:1.8;color:var(--text-secondary);">
       ILLUME was founded on a single belief: that Nigerian fashion deserves to occupy
@@ -53,53 +53,34 @@ include __DIR__ . '/includes/header.php';
 <!-- ═══ BRAND STORY ═══════════════════════════════════════════ -->
 <section class="section--lg">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;">
-      <div>
-        <div class="label-text" style="margin-bottom:1rem;">The Beginning</div>
-        <h2 style="margin-bottom:1.5rem;" class="reveal">
-          A Stitch in<br>the Right Direction
+      <div style="grid-column: span 2; max-width: 900px; margin: 0 auto;">
+        <div class="label-text" style="margin-bottom:1.5rem;">Vision & Heritage</div>
+        <h2 style="margin-bottom:2.5rem;" class="reveal">
+          What makes ILLUME unique?<br>
+          <span class="shimmer-text">We illuminate identity.</span>
         </h2>
-        <p style="margin-bottom:1.25rem;line-height:1.9;" class="reveal reveal-delay-1">
-          ILLUME began in a small Lagos atelier in 2018, with nothing but a sewing machine,
-          a burning conviction, and a handful of clients who trusted the vision. Our founder
-          had spent years studying design in both Lagos and London, learning that luxury
-          wasn't a Western monopoly — it was a language anyone could master.
-        </p>
-        <p style="margin-bottom:1.25rem;line-height:1.9;" class="reveal reveal-delay-2">
-          The name ILLUME comes from the French word for "illuminate." Because that's what
-          we believe great fashion does — it illuminates who you are, amplifies your presence,
-          and makes a room feel your arrival before you say a word.
-        </p>
-        <p style="line-height:1.9;" class="reveal reveal-delay-3">
-          Seven years later, ILLUME has dressed CEOs, brides, musicians, diplomats, and
-          creatives across 12 countries. The atelier has grown. The philosophy hasn't moved an inch.
-        </p>
-      </div>
-
-      <div class="reveal-right" style="position:relative;padding-top:2rem;">
-        <!-- Timeline -->
-        <div class="timeline">
-          <?php
-          $milestones = [
-            ['year'=>'2018','title'=>'The Atelier Opens','desc'=>'ILLUME is founded in Victoria Island, Lagos with a team of 3.'],
-            ['year'=>'2019','title'=>'First Major Bridal Collection','desc'=>'Our debut bridal line receives national press coverage.'],
-            ['year'=>'2021','title'=>'International Clients','desc'=>'First clients from the UK and US. The waitlist begins.'],
-            ['year'=>'2022','title'=>'Lagos Fashion Week','desc'=>'ILLUME debuts at Lagos Fashion Week to standing ovations.'],
-            ['year'=>'2024','title'=>'Consulting Division Launches','desc'=>'We open our fashion consulting arm for brands and individuals.'],
-            ['year'=>'2025','title'=>'The ILLUME Platform','desc'=>'We launch our digital platform for a seamless client experience.'],
-          ];
-          foreach ($milestones as $m): ?>
-          <div class="timeline-item">
-            <div style="display:flex;align-items:baseline;gap:0.75rem;margin-bottom:0.35rem;">
-              <span style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--gold);"><?= $m['year'] ?></span>
-              <span style="font-weight:600;color:var(--text-primary);font-size:0.95rem;"><?= e($m['title']) ?></span>
-            </div>
-            <p style="font-size:0.85rem;line-height:1.65;"><?= e($m['desc']) ?></p>
+        
+        <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:4rem;">
+          <div>
+            <p style="margin-bottom:1.5rem; line-height:2; font-size:1.15rem; color:var(--text-primary);" class="reveal">
+              <strong>Illume by Light Peace and Zan</strong> is an African luxury fashion brand dedicated to illuminating identity through refined craftsmanship and cultural elegance.
+            </p>
+            <p style="margin-bottom:1.5rem; line-height:1.9;" class="reveal reveal-delay-1">
+              Born from Light Peace Limited, Illume exists at the intersection of heritage and modernity, translating African narratives into timeless, wearable art. Each garment is intentionally designed, honoring tradition while embracing contemporary global standards.
+            </p>
           </div>
-          <?php endforeach; ?>
+          <div>
+            <p style="margin-bottom:1.5rem; line-height:1.9;" class="reveal reveal-delay-2">
+              We believe fashion should not only adorn the body, but reflect dignity, confidence, and peace. To wear Illume is to carry light quietly, confidently, and proudly.
+            </p>
+            <div class="card card--glass" style="padding:1.5rem; border-left:3px solid var(--gold);">
+              <p style="font-style:italic; line-height:1.8; font-size:0.95rem;" class="reveal reveal-delay-3">
+                "It is a Light Peace / Zan partnership that brings different strengths and creativity into one piece, creating a synergy that transcends standard luxury."
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -131,29 +112,38 @@ include __DIR__ . '/includes/header.php';
       </div>
 
       <div class="reveal-right">
-        <div class="label-text" style="margin-bottom:1rem;">Meet the Founder</div>
-        <h2 style="margin-bottom:0.5rem;">The Mind<br><span class="shimmer-text">Behind ILLUME</span></h2>
-        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:2rem;">
-          <div style="width:32px;height:1px;background:var(--gold);"></div>
-          <span style="font-size:0.88rem;color:var(--text-muted);">Creative Director & Head Designer</span>
+        <div class="label-text" style="margin-bottom:1rem;">Origin & Evolution</div>
+        <h2 style="margin-bottom:1.5rem;">The Journey to<br><span class="shimmer-text">Illumination</span></h2>
+        
+        <p style="line-height:1.9;margin-bottom:1.5rem;font-size:0.95rem;">
+          Illume by Light Peace and Zan traces its roots back to early 2018, when what is now 
+          a growing fashion house began as a simple but deeply intentional vision. At the time, 
+          the journey did not start with abundance or structure — it began with conviction. 
+        </p>
+        
+        <p style="line-height:1.9;margin-bottom:1.5rem;font-size:0.95rem;">
+          In those early days, the foundation of what would become <strong>Light Peace Limited</strong> 
+          was laid not as a grand institution, but as a purpose-driven craft. Each piece created 
+          during that period carried more than design; it carried learning, discipline, and a 
+          growing understanding that excellence is not an event, but a process.
+        </p>
+        
+        <p style="line-height:1.9;margin-bottom:1.5rem;font-size:0.95rem;">
+          Out of this evolution, <strong>Illume by Light Peace</strong> emerged as a defining expression of 
+          that vision — a dedicated arm focused on African luxury, cultural identity, and 
+          refined craftsmanship. Illume represents a transition:
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:2rem; padding-left:1rem; border-left:2px solid var(--gold);">
+          <div style="font-weight:600; font-size:1.1rem; color:var(--text-primary);">From Creation to Curation</div>
+          <div style="font-weight:600; font-size:1.1rem; color:var(--gold-bright);">From Expression to Illumination</div>
         </div>
-        <p style="line-height:1.9;margin-bottom:1.25rem;">
-          Trained at the Art School of London and Central Saint Martins,
-          our founder returned to Nigeria with one mission: to prove that our continent's
-          fashion story deserves to be told in the language of luxury.
+
+        <p style="line-height:1.9; font-size:0.95rem;">
+          Today, Illume by Light Peace stands as a brand built on years of intentional growth — 
+          committed to elevating African heritage into global luxury, while remaining grounded 
+          in its core philosophy:
         </p>
-        <p style="line-height:1.9;margin-bottom:1.25rem;">
-          With over 15 years in the fashion industry — spanning design, production, styling,
-          and brand consulting — she brings a rare combination of technical mastery
-          and creative fearlessness to every ILLUME piece.
-        </p>
-        <p style="line-height:1.9;margin-bottom:2rem;">
-          "I want every woman who wears ILLUME to feel like the room was designed around her."
-          <span style="display:block;font-size:0.8rem;color:var(--gold);margin-top:0.5rem;font-style:normal;">— Founder, ILLUME</span>
-        </p>
-        <a href="consultation.php"  class="btn btn--primary">
-          <i data-lucide="calendar"></i> Work With Us
-        </a>
       </div>
     </div>
   </div>
@@ -163,27 +153,48 @@ include __DIR__ . '/includes/header.php';
 <section class="section--lg">
   <div class="container">
     <div class="section-header">
-      <div class="section-divider"><span class="label-text">What Drives Us</span></div>
-      <h2 class="reveal">The ILLUME<br><span class="shimmer-text">Standard</span></h2>
+      <div class="section-divider"><span class="label-text">The ILLUME Foundation</span></div>
+      <h2 class="reveal">Olewuezi Ikedichukwu Peace<br><span class="shimmer-text">& Susan Mtsevah</span></h2>
+    </div>
+
+    <!-- Vision & Mission -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; margin-bottom:5rem;">
+      <div class="card card--glass reveal" style="padding:2.5rem; border-top:2px solid var(--gold);">
+        <div class="label-text" style="margin-bottom:1rem; color:var(--gold);">Vision</div>
+        <p style="font-size:1.15rem; line-height:1.75; font-weight:500;">
+          To become a globally recognized African luxury fashion brand that illuminates identity, elevates culture, and expresses excellence through timeless, purposeful design.
+        </p>
+      </div>
+      <div class="card card--glass reveal reveal-delay-1" style="padding:2.5rem; border-top:2px solid var(--aura);">
+        <div class="label-text" style="margin-bottom:1rem; color:var(--aura);">Mission</div>
+        <p style="font-size:1.15rem; line-height:1.75; font-weight:500;">
+          To create luxury fashion pieces that blend African heritage, refined craftsmanship, and modern elegance, empowering individuals to express confidence, dignity, and inner radiance—while building a legacy rooted in light, peace, and excellence.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-divider"><span class="label-text">Core Values</span></div>
     </div>
 
     <div class="grid-3" style="gap:1.5rem;">
       <?php
       $values = [
-        ['icon'=>'gem',        'color'=>'var(--gold)',   'title'=>'Uncompromising Quality',  'desc'=>'We source only the finest fabrics from Lagos, London, Milan, and beyond. Quality isn\'t a feature — it\'s the foundation.'],
-        ['icon'=>'fingerprint','color'=>'var(--plasma)', 'title'=>'Radical Individuality',   'desc'=>'We don\'t do cookie-cutter. Every ILLUME piece is born from the unique DNA of the person wearing it.'],
-        ['icon'=>'heart',      'color'=>'#FF6B9D',       'title'=>'Client Devotion',         'desc'=>'Our clients aren\'t customers. They\'re collaborators. Partners in the creative process from the first sketch to the final fitting.'],
-        ['icon'=>'zap',        'color'=>'var(--gold)',   'title'=>'Craft as Culture',        'desc'=>'We believe Nigerian craftsmanship stands shoulder-to-shoulder with anything the world has to offer. We\'re proving it, stitch by stitch.'],
-        ['icon'=>'globe',      'color'=>'var(--plasma)', 'title'=>'Global Vision',           'desc'=>'Rooted in Lagos. Worn in London, New York, and Accra. ILLUME represents the world-class potential of African fashion.'],
-        ['icon'=>'clock',      'color'=>'#FF6B9D',       'title'=>'Timeless Over Trendy',    'desc'=>'Trends fade. Identity endures. We design pieces that will feel just as powerful in 2035 as the day they were made.'],
+        ['icon'=>'sparkles',    'title'=>'Intentional Excellence',        'desc'=>'We do not create by chance—every detail is deliberate, every finish refined.'],
+        ['icon'=>'crown',       'title'=>'Honored Heritage',              'desc'=>'Our culture is not a trend; it is a treasure we preserve and elevate.'],
+        ['icon'=>'zap',         'title'=>'Quiet Power',                   'desc'=>'True luxury does not shout—it radiates with confidence and grace.'],
+        ['icon'=>'fingerprint', 'title'=>'Authentic Identity',            'desc'=>'We design to express, not impress—remaining true to our roots and vision.'],
+        ['icon'=>'award',       'title'=>'Craftsmanship Without Compromise','desc'=>'Quality is not an option; it is our standard.'],
+        ['icon'=>'heart',       'title'=>'Purpose Beyond Fashion',        'desc'=>'Every creation carries meaning—beyond fabric, beyond form.'],
+        ['icon'=>'hourglass',   'title'=>'Legacy Mindset',                'desc'=>'We build for impact that outlives seasons and speaks across generations.'],
       ];
       foreach ($values as $i => $v): ?>
-      <div class="card card--glass reveal reveal-delay-<?= ($i%3)+1 ?>">
+      <div class="card card--glass reveal reveal-delay-<?= ($i%3)+1 ?>" style="padding:2rem;">
         <div style="
           width:52px;height:52px;border-radius:var(--r-lg);
           background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
           display:flex;align-items:center;justify-content:center;
-          color:<?= $v['color'] ?>;margin-bottom:1.25rem;
+          color:var(--gold);margin-bottom:1.25rem;
         ">
           <i data-lucide="<?= $v['icon'] ?>" style="width:22px;height:22px;"></i>
         </div>

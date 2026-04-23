@@ -174,8 +174,11 @@ include __DIR__ . '/../includes/dash_header.php';
                 <div class="form-group">
                     <label class="form-label">Service Type</label>
                     <select name="service_type" class="form-select" required>
-                        <?php foreach (['Bespoke Couture','Bridal','Editorial','Ready-to-Wear','Consulting'] as $s): ?>
-                        <option value="<?= $s ?>" <?= $prefill['service_type'] == $s ? 'selected' : '' ?>><?= $s ?></option>
+                        <?php 
+                        $all_svc = get_services(); 
+                        foreach ($all_svc as $s): 
+                        ?>
+                        <option value="<?= e($s['name']) ?>" <?= $prefill['service_type'] == $s['name'] ? 'selected' : '' ?>><?= e($s['name']) ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>

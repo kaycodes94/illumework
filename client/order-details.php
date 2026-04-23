@@ -54,7 +54,7 @@ include __DIR__ . '/../includes/dash_header.php';
     <div class="flex-col gap-8">
         
         <!-- Status Track -->
-        <div class="order-hero" style="background:var(--space-mid);">
+        <div class="order-hero" style="background:var(--void);box-shadow:inset 0 0 40px rgba(0,0,0,0.01);">
             <div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.5rem;">Production Status</div>
             <?php
             $statuses = ['intake','design','approval','production','delivery','complete'];
@@ -77,7 +77,7 @@ include __DIR__ . '/../includes/dash_header.php';
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
                 <h3 style="font-size:1.2rem;font-family:var(--font-display);">Design Solutions</h3>
                 <?php if ($order['status'] === 'approval'): ?>
-                <span class="badge badge--plasma animate-pulse">Decision Required</span>
+                <span class="badge badge--aura animate-pulse">Decision Required</span>
                 <?php endif; ?>
             </div>
 
@@ -109,7 +109,7 @@ include __DIR__ . '/../includes/dash_header.php';
 
                         <?php if ($ds['status'] === 'pending' && $order['status'] === 'approval'): ?>
                         <div style="display:flex;gap:0.75rem;margin-top:1.5rem;">
-                            <button class="btn btn--plasma btn--sm flex-1" onclick="handleDesign(<?= $ds['id'] ?>, 'approve')">
+                            <button class="btn btn--aura btn--sm flex-1" onclick="handleDesign(<?= $ds['id'] ?>, 'approve')">
                                 <i data-lucide="check"></i> Approve Design
                             </button>
                             <button class="btn btn--ghost btn--sm" style="color:var(--danger);" onclick="openRevisionModal(<?= $ds['id'] ?>)">

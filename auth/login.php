@@ -51,7 +51,7 @@ $page_title = 'Sign In';
   <title>Sign In — ILLUME</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/main.css">
   <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/auth.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
@@ -68,12 +68,12 @@ $page_title = 'Sign In';
   <div class="auth-visual">
     <img src="<?= SITE_URL ?>/assets/img/editorial.png" alt="ILLUME Fashion" 
          style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-    <div class="auth-visual__overlay"></div>
+    <div class="auth-visual__overlay" style="background:linear-gradient(135deg, rgba(82,23,124,0.4) 0%, rgba(1,1,3,0.9) 100%);"></div>
     <div class="auth-visual__content">
-      <span class="auth-visual__logo">ILLUME</span>
+      <span class="auth-visual__logo" style="background:linear-gradient(135deg, var(--gold), var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">ILLUME</span>
       <p class="auth-visual__quote">
-        "Luxury is the ease of a t-shirt in a very expensive dress."
-        <br><span style="font-size:0.85rem; color:rgba(255,255,255,0.7); font-style:normal; margin-top:0.5rem; display:block; font-family:var(--font-body);">— Karl Lagerfeld</span>
+        "crafted in light, radiance you can wear"
+        <br><span style="font-size:0.85rem; color:rgba(255,255,255,0.7); font-style:normal; margin-top:0.5rem; display:block; font-family:var(--font-body);">— Olewuezi Ikedichukwu Peace</span>
       </p>
     </div>
   </div>
@@ -147,15 +147,6 @@ $page_title = 'Sign In';
         Back to ILLUME
       </a>
 
-      <!-- Demo credentials hint (dev only) -->
-      <?php if (defined('APP_ENV') && APP_ENV === 'development'): ?>
-      <div style="margin-top:2rem; padding:1rem; background:var(--space-mid); border:1px solid var(--space-border); border-radius:var(--r); font-size:0.75rem; color:var(--text-muted);">
-        <div style="margin-bottom:0.5rem; color:var(--gold); font-weight:600;">Dev Credentials</div>
-        <div>Founder: <code>founder@illume.ng</code> / <code>password</code></div>
-        <div>Staff: <code>adaeze@illume.ng</code> / <code>password</code></div>
-        <div>Client: <code>chioma@example.com</code> / <code>password</code></div>
-      </div>
-      <?php endif; ?>
     </div>
   </div>
 

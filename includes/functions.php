@@ -78,7 +78,7 @@ function time_ago(string $datetime): string {
 function order_status_badge(string $status): string {
     $map = [
         'intake'      => ['label' => 'Intake',      'class' => 'badge--gold'],
-        'design'      => ['label' => 'Design',      'class' => 'badge--plasma'],
+        'design'      => ['label' => 'Design',      'class' => 'badge--aura'],
         'approval'    => ['label' => 'Awaiting Approval', 'class' => 'badge--warning'],
         'production'  => ['label' => 'Production',  'class' => 'badge--info'],
         'delivery'    => ['label' => 'Delivery',    'class' => 'badge--info'],
@@ -91,7 +91,7 @@ function order_status_badge(string $status): string {
 
 function consultation_status_badge(string $status): string {
     $map = [
-        'new'       => ['label' => 'New',       'class' => 'badge--plasma'],
+        'new'       => ['label' => 'New',       'class' => 'badge--aura'],
         'contacted' => ['label' => 'Contacted', 'class' => 'badge--gold'],
         'converted' => ['label' => 'Converted', 'class' => 'badge--success'],
         'declined'  => ['label' => 'Declined',  'class' => 'badge--error'],
