@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ILLUME is a luxury Nigerian fashion house offering Bespoke, Asoebi, African Wears, and high-end Custom Dressmaking.">
-  <meta name="theme-color" content="#020207">
-  <meta property="og:title"       content="Fashion. Elevated. — ILLUME">
-  <meta property="og:description" content="ILLUME is a luxury Nigerian fashion house offering Bespoke, Asoebi, African Wears, and high-end Custom Dressmaking.">
-  <meta property="og:type"        content="website">
-  <title>Fashion. Elevated. — ILLUME</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ILLUME is a luxury Nigerian fashion house offering Bespoke, Asoebi, African Wears, and high-end Custom Dressmaking.">
+    <meta name="theme-color" content="#FAFAFA">
+    <meta property="og:title" content="Fashion. Elevated. — ILLUME">
+    <meta property="og:description" content="Official preview of ILLUME. Luxury Nigerian Fashion.">
+    <meta property="og:type" content="website">
+    <title>Fashion. Elevated. — ILLUME</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/main.css?v=1.3">
+    <!-- Styles (Relative) -->
+    <link rel="stylesheet" href="assets/css/main.css?v=1.4">
+    
+    <!-- External Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="assets/js/main.js?v=1.4" defer></script>
 
-  <!-- Three.js (hero particles) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
-  <!-- Lenis smooth scroll -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
-  <!-- Main JS -->
-  <script src="assets/js/main.js?v=1.3" defer></script>
-  
-  <style>
-    /* Prevent native scroll conflict */
-    html, body { scroll-behavior: auto !important; }
-  </style>
+    <style>
+        /* Precision tweaks for the Preview link aesthetic */
+        .shimmer-text {
+            background: linear-gradient(135deg, var(--gold), var(--gold-bright), var(--aura), var(--gold));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 5s ease infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero { min-height: 100svh; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .hero__content { max-width: 800px; }
+        .btn--disabled { opacity: 0.5; cursor: not-allowed !important; pointer-events: none; }
+        
+        /* Force disable native smooth scroll to prevent Lenis conflict */
+        html, body { scroll-behavior: auto !important; }
+
+        /* Sync with PHP layout styles */
+        .service-icon {
+            width: 50px; height: 50px; border-radius: 50%;
+            background: var(--gold-faint); border: 1px solid var(--gold-glass);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold); margin-bottom: 1.25rem;
+        }
+        .portfolio-item img { transition: transform 0.8s var(--ease-out); }
+        .portfolio-item:hover img { transform: scale(1.08); }
+    </style>
 </head>
 <body>
 
@@ -48,7 +74,7 @@
 <!-- ═══ NAVIGATION ═══════════════════════════════════════════ -->
 <nav class="nav" id="main-nav">
   <div class="nav__inner">
-    <a href="#hero" class="nav__logo">ILLUME</a>
+    <a href="#" class="nav__logo">ILLUME</a>
     <div class="nav__links">
       <a href="#hero" class="nav__link">Home</a>
       <a href="#about" class="nav__link">About</a>
@@ -91,21 +117,26 @@
     <div class="hero__label">
       <span>Abuja · Nigeria · Est. 2018</span>
     </div>
+
     <h1 class="hero__title">
       <span class="word">Fashion</span><br>
       <span class="word gold-word">ELEVATED.</span>
     </h1>
+
     <p class="hero__subtitle">
       What makes ILLUME unique? We don’t just design fashion—we illuminate identity. 
       Every thread is intentional. Every silhouette, a statement.
       Welcome to the future of Nigerian luxury fashion.
     </p>
+
     <div class="hero__cta">
       <a href="consultation.php" class="btn btn--primary btn--lg">
-        <i data-lucide="calendar"></i> Book a Consultation
+        <i data-lucide="calendar"></i>
+        Book a Consultation
       </a>
       <a href="#portfolio" class="btn btn--ghost btn--lg">
-        <i data-lucide="eye"></i> View Portfolio
+        <i data-lucide="eye"></i>
+        View Portfolio
       </a>
     </div>
   </div>
@@ -140,7 +171,7 @@
   </div>
 </section>
 
-<!-- ═══ SERVICES PREVIEW ══════════════════════════════════════ -->
+<!-- ═══ SERVICES ══════════════════════════════════════════════ -->
 <section class="section--lg" id="services">
   <div class="container">
     <div class="section-header">
@@ -149,42 +180,46 @@
       <p class="reveal reveal-delay-1">From bespoke couture to full brand styling, every service is engineered to make you unforgettable.</p>
     </div>
 
-    <div class="grid-3" style="gap:1.5rem;">
-      <!-- Service 1 -->
-      <div class="service-card reveal reveal-delay-1">
+    <div class="grid-3" style="gap:1.5rem; margin-bottom: 3rem;">
+      <!-- Bespoke -->
+      <div class="service-card reveal">
         <div class="service-icon"><i data-lucide="scissors"></i></div>
-        <div class="label-text" style="margin-bottom:0.5rem;">Bespoke Couture</div>
-        <h3 style="font-size:1.3rem; margin-bottom:0.75rem;">The Pinnacle of Tailoring</h3>
-        <p style="font-size:0.88rem; line-height:1.7; margin-bottom:1.25rem;">One-of-a-kind garments crafted precisely to your measurements and vision. Master-level technical construction.</p>
-        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto;">
+        <div class="label-text">Bespoke Couture</div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Fully custom garments crafted to your exact vision and measurements</h3>
+        <p style="font-size: 0.88rem; line-height: 1.7;">From initial concept to final fitting, every stitch is a conversation between your vision and our craft. We create one-of-a-kind pieces that tell your story.</p>
+        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto; padding-top: 1.5rem;">
           <a href="consultation.php" class="btn btn--ghost btn--sm">Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
         </div>
       </div>
-      <!-- Service 2 -->
-      <div class="service-card reveal reveal-delay-2">
+      <!-- Bridals -->
+      <div class="service-card reveal reveal-delay-1">
         <div class="service-icon"><i data-lucide="heart"></i></div>
-        <div class="label-text" style="margin-bottom:0.5rem;">Bridal & Asoebi</div>
-        <h3 style="font-size:1.3rem; margin-bottom:0.75rem;">Heritage Matrimony</h3>
-        <p style="font-size:0.88rem; line-height:1.7; margin-bottom:1.25rem;">Exquisite bridal wear and coordinated group ensembles that honor tradition with a modern, luxury edge.</p>
-        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto;">
+        <div class="label-text">Bridals & Asoebi</div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Ethereal designs for the moments that matter most</h3>
+        <p style="font-size: 0.88rem; line-height: 1.7;">Your most significant moments deserve extraordinary garments. We create bridal wear and occasion pieces imbued with meaning, structure, and beauty.</p>
+        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto; padding-top: 1.5rem;">
           <a href="consultation.php" class="btn btn--ghost btn--sm">Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
         </div>
       </div>
-      <!-- Service 3 -->
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-icon"><i data-lucide="zap"></i></div>
-        <div class="label-text" style="margin-bottom:0.5rem;">African Wears</div>
-        <h3 style="font-size:1.3rem; margin-bottom:0.75rem;">Modern Tradition</h3>
-        <p style="font-size:0.88rem; line-height:1.7; margin-bottom:1.25rem;">Elevated traditional silhouettes reimagined for the contemporary global scene. Bold, dignified, and refined.</p>
-        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto;">
+      <!-- African Wears -->
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><i data-lucide="sparkles"></i></div>
+        <div class="label-text">African Wears</div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Modern luxury rooted in traditional textiles.</h3>
+        <p style="font-size: 0.88rem; line-height: 1.7;">Modern luxury rooted in traditional textiles. We translate heritage fabrics like Ankara, Adire, and Aso-Oke into contemporay avant-garde silhouettes.</p>
+        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto; padding-top: 1.5rem;">
           <a href="consultation.php" class="btn btn--ghost btn--sm">Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
         </div>
       </div>
     </div>
+
+    <div style="text-align: center;">
+      <a href="services.php" class="btn btn--secondary">View All Services <i data-lucide="arrow-right"></i></a>
+    </div>
   </div>
 </section>
 
-<!-- ═══ PHILOSOPHY SECTION ════════════════════════════════════ -->
+<!-- ═══ ABOUT (PHILOSOPHY) ════════════════════════════════════ -->
 <section class="section" id="about" style="background:var(--space); border-top:1px solid var(--space-border); border-bottom:1px solid var(--space-border);">
   <div class="container">
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;">
@@ -197,51 +232,102 @@
             <div class="label-text" style="color:var(--gold-bright);">Olewuezi Ikedichukwu Peace & Susan Mtsevah</div>
           </div>
         </div>
+
+        <!-- Floating Design Time Card -->
+        <div class="glass" style="position:absolute; bottom: -24px; right: -24px; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 0.75rem; border: 1px solid var(--gold-glass);">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--aura); box-shadow: 0 0 10px var(--aura);"></div>
+          <div>
+            <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); padding-bottom: 2px;">Design Time</div>
+            <div style="font-weight: 600; font-size: 0.95rem;">2 – 6 Weeks</div>
+          </div>
+        </div>
       </div>
       <div class="reveal-right">
         <div class="label-text" style="margin-bottom:1rem;">Our Philosophy</div>
         <h2 style="margin-bottom:1.5rem;">Fashion That<br><span class="shimmer-text">Commands Space</span></h2>
-        <p style="margin-bottom:1.5rem; font-size:1.05rem; line-height:1.8; font-style: italic; color: var(--gold-bright);">"Illume by Light Peace was born from a simple conviction—that fashion should not just be seen, but felt."</p>
-        <p style="margin-bottom:1.5rem; line-height:1.8;">Here, African identity is not explained; it is elevated. Every piece is crafted with intention to reflect dignity, confidence, and quiet strength. This is more than fashion. It is light expressed. It is legacy in motion.</p>
-        <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;">
+        <p style="margin-bottom:1.5rem; font-size:1.05rem; line-height:1.8; font-style: italic; color: var(--gold-bright);">
+          Illume by Light Peace was born from a simple conviction—<br>
+          that fashion should not just be seen, but felt.
+        </p>
+        <p style="margin-bottom:1.5rem; line-height:1.8;">
+          Here, African identity is not explained; it is elevated. Every piece is crafted with intention to reflect dignity, confidence, and quiet strength.
+        </p>
+        <p style="margin-bottom:2rem; line-height:1.8; font-weight: 500;">This is more than fashion. It is light expressed. It is legacy in motion.</p>
+        
+        <div style="display:flex; flex-direction:column; gap:1.25rem; margin-bottom:2.5rem;">
           <div style="display:flex; align-items:flex-start; gap:1rem;">
-            <div class="service-icon" style="width:40px;height:40px;"><i data-lucide="zap" style="width:16px;height:16px;"></i></div>
-            <div><div style="font-weight:600; margin-bottom:0.2rem;">Precision Craft</div><div style="font-size:0.85rem; color:var(--text-muted);">Master tailors with 10–20 years of experience.</div></div>
+            <div class="service-icon" style="width:40px;height:40px;margin:0;"><i data-lucide="zap" style="width:16px;height:16px;"></i></div>
+            <div><div style="font-weight:600; margin-bottom:0.1rem;">Precision Craft</div><div style="font-size:0.85rem; color:var(--text-muted);">Master tailors with 10–20 years of experience.</div></div>
           </div>
           <div style="display:flex; align-items:flex-start; gap:1rem;">
-            <div class="service-icon" style="width:40px;height:40px;"><i data-lucide="shield-check" style="width:16px;height:16px;"></i></div>
-            <div><div style="font-weight:600; margin-bottom:0.2rem;">Quality Materials</div><div style="font-size:0.85rem; color:var(--text-muted);">Only the finest fabrics sourced locally and globally.</div></div>
+            <div class="service-icon" style="width:40px;height:40px;margin:0;"><i data-lucide="shield-check" style="width:16px;height:16px;"></i></div>
+            <div><div style="font-weight:600; margin-bottom:0.1rem;">Quality Materials</div><div style="font-size:0.85rem; color:var(--text-muted);">Only the finest fabrics sourced locally and globally.</div></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div class="service-icon" style="width:40px;height:40px;margin:0;"><i data-lucide="users" style="width:16px;height:16px;"></i></div>
+            <div><div style="font-weight:600; margin-bottom:0.1rem;">Client-Centered</div><div style="font-size:0.85rem; color:var(--text-muted);">Your satisfaction isn't a goal — it's our baseline.</div></div>
           </div>
         </div>
+
         <a href="about.php" class="btn btn--primary">Our Story <i data-lucide="arrow-right"></i></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ PORTFOLIO PREVIEW ══════════════════════════════════════ -->
+<!-- ═══ PORTFOLIO ════════════════════════════════════════════ -->
 <section class="section--lg" id="portfolio">
   <div class="container">
     <div class="section-header">
       <div class="section-divider"><span class="label-text">Portfolio</span></div>
       <h2 class="reveal">Work That<br><span class="shimmer-text">Speaks First</span></h2>
-      <p class="reveal reveal-delay-1">A glimpse into the ILLUME universe. Each piece tells a story only you can finish.</p>
+      <p class="reveal reveal-delay-1" style="max-width: 500px; margin: 1rem auto 0;">A glimpse into the ILLUME universe. Each piece tells a story only you can finish.</p>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; margin-bottom:4rem;">
-      <a href="services.php" class="portfolio-item reveal" style="height:500px; border-radius:24px; overflow:hidden; position:relative;">
+
+    <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; margin-bottom: 3rem;">
+      <!-- Bespoke -->
+      <a href="services.php" class="portfolio-item reveal" style="height:450px; border-radius:24px; overflow:hidden; position:relative; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-decoration: none;">
+        <img src="assets/img/svc_bespoke_1776779653752.png" alt="Bespoke" style="width:100%; height:100%; object-fit:cover;">
+        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.8), transparent); display:flex; align-items:flex-end; padding:2rem;">
+            <div>
+                <div class="label-text" style="color:var(--gold-bright);">Bespoke</div>
+                <h4 style="color:#FFF;">Artisanal Tailoring</h4>
+            </div>
+        </div>
+      </a>
+      <!-- Asoebi -->
+      <a href="services.php" class="portfolio-item reveal reveal-delay-1" style="height:450px; border-radius:24px; overflow:hidden; position:relative; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-decoration: none;">
         <img src="assets/img/bridal.png" alt="Asoebi" style="width:100%; height:100%; object-fit:cover;">
-        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.7), transparent); display:flex; align-items:flex-end; padding:2rem;">
-          <div><div class="label-text" style="color:var(--gold-bright);">Asoebi</div><div style="font-size:0.9rem; color:#FFF; font-weight:500;">Heritage Matrimony</div></div>
+        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.8), transparent); display:flex; align-items:flex-end; padding:2rem;">
+            <div>
+                <div class="label-text" style="color:var(--gold-bright);">Asoebi</div>
+                <h4 style="color:#FFF;">Heritage Matrimony</h4>
+            </div>
         </div>
       </a>
-      <a href="services.php" class="portfolio-item reveal reveal-delay-1" style="height:500px; border-radius:24px; overflow:hidden; position:relative;">
+      <!-- African Wears -->
+      <a href="services.php" class="portfolio-item reveal" style="height:350px; border-radius:24px; overflow:hidden; position:relative; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-decoration: none;">
         <img src="assets/img/couture.png" alt="African Wears" style="width:100%; height:100%; object-fit:cover;">
-        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.7), transparent); display:flex; align-items:flex-end; padding:2rem;">
-          <div><div class="label-text" style="color:var(--gold-bright);">African Wears</div><div style="font-size:0.9rem; color:#FFF; font-weight:500;">Modern Tradition</div></div>
+        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.8), transparent); display:flex; align-items:flex-end; padding:2rem;">
+            <div>
+                <div class="label-text" style="color:var(--gold-bright);">African Wears</div>
+                <h4 style="color:#FFF;">Modern Tradition</h4>
+            </div>
+        </div>
+      </a>
+      <!-- Custom Dressmaking -->
+      <a href="services.php" class="portfolio-item reveal reveal-delay-1" style="height:350px; border-radius:24px; overflow:hidden; position:relative; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-decoration: none;">
+        <img src="assets/img/philosophy.png" alt="Custom Dressmaking" style="width:100%; height:100%; object-fit:cover;">
+        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.8), transparent); display:flex; align-items:flex-end; padding:2rem;">
+            <div>
+                <div class="label-text" style="color:var(--gold-bright);">Custom Dressmaking</div>
+                <h4 style="color:#FFF;">Technical Couture</h4>
+            </div>
         </div>
       </a>
     </div>
-    <div class="text-center">
+
+    <div style="text-align: center;">
       <a href="portfolio.php" class="btn btn--secondary btn--lg">Full Portfolio <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
@@ -254,36 +340,84 @@
       <div class="section-divider"><span class="label-text">Testimonials</span></div>
       <h2 class="reveal">Worn. Adored.<br><span class="shimmer-text">Remembered.</span></h2>
     </div>
+
     <div class="grid-3" style="gap:1.5rem;">
-      <!-- Testimonial 1 -->
-      <div class="card card--glass reveal" style="padding:2.5rem;">
-        <div style="display:flex;gap:3px;margin-bottom:1.25rem;">
+      <!-- Adaora -->
+      <div class="card card--glass reveal" style="padding:2rem;">
+        <div style="display:flex;gap:3px;margin-bottom:1rem;">
           <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
           <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
           <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
           <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
           <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
         </div>
-        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem;">"ILLUME transformed my relationship with fashion. My bespoke pieces don't just fit — they feel like armor."</p>
+        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem;">"ILLUME transformed my entire relationship with fashion. My bespoke pieces don't just fit — they feel like armor. I walk into every boardroom differently."</p>
         <div style="display:flex;align-items:center;gap:0.75rem;">
           <div style="width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#FFF;font-weight:700;">A</div>
-          <div><div style="font-weight:600;font-size:0.9rem;">Adaora Nwachukwu</div><div style="font-size:0.7rem;color:var(--text-muted);">CEO · Abuja</div></div>
+          <div><div style="font-weight:600;font-size:0.9rem;">Adaora Nwachukwu</div><div style="font-size:0.7rem;color:var(--text-muted);">CEO, Adaora Skincare · Abuja</div></div>
         </div>
       </div>
-      <!-- Testimonial 2 -->
-      <div class="card card--glass reveal reveal-delay-1" style="padding:2.5rem;">
-        <div style="display:flex;gap:3px;margin-bottom:1.25rem;">
+      <!-- Funmi -->
+      <div class="card card--glass reveal reveal-delay-1" style="padding:2rem;">
+        <div style="display:flex;gap:3px;margin-bottom:1rem;">
           <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
           <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
           <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
           <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
           <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
         </div>
-        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem;">"My wedding dress was everything I dreamed of. They created something better than I could have imagined."</p>
+        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem;">"My wedding dress was everything I dreamed and more. They listened to every detail and somehow created something better than I could have imagined. Magic."</p>
         <div style="display:flex;align-items:center;gap:0.75rem;">
           <div style="width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#FFF;font-weight:700;">F</div>
-          <div><div style="font-weight:600;font-size:0.9rem;">Funmi Adeyemi</div><div style="font-size:0.7rem;color:var(--text-muted);">Bride · Abuja</div></div>
+          <div><div style="font-weight:600;font-size:0.9rem;">Funmi Adeyemi</div><div style="font-size:0.7rem;color:var(--text-muted);">Bride, 2024 · Abuja</div></div>
         </div>
+      </div>
+      <!-- Emeka -->
+      <div class="card card--glass reveal reveal-delay-2" style="padding:2rem;">
+        <div style="display:flex;gap:3px;margin-bottom:1rem;">
+          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+        </div>
+        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem;">"As someone who works in fashion, I'm hard to impress. ILLUME managed to surprise me every single time. Extraordinary craft, extraordinary people."</p>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#FFF;font-weight:700;">E</div>
+          <div><div style="font-weight:600;font-size:0.9rem;">Emeka Obi</div><div style="font-size:0.7rem;color:var(--text-muted);">Creative Director · London/Abuja</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ READY TO BEGIN? CTA ════════════════════════════════════ -->
+<section class="section--lg" style="text-align:center;">
+  <div class="container">
+    <div class="section-divider" style="justify-content:center;margin-bottom:1.5rem;">
+      <span class="label-text">Ready to Begin?</span>
+    </div>
+    <h2 class="reveal" style="font-size:clamp(2.5rem,6vw,4rem); margin-bottom:1.5rem;">Your Signature<br><span class="shimmer-text">Piece Awaits.</span></h2>
+    <p class="reveal reveal-delay-1" style="max-width:520px;margin:0 auto 2.5rem;font-size:1.1rem;line-height:1.8;">Every extraordinary garment starts with a single conversation. Book your free consultation and let's begin building yours.</p>
+    
+    <div class="reveal reveal-delay-2" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap; margin-bottom: 3.5rem;">
+      <a href="consultation.php" class="btn btn--primary btn--lg"><i data-lucide="calendar"></i> Book Free Consultation</a>
+      <a href="https://wa.me/2348130024904" class="btn btn--ghost btn--lg" target="_blank"><i data-lucide="message-circle"></i> WhatsApp Us Directly</a>
+    </div>
+
+    <!-- Trust Badges -->
+    <div style="display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;" class="reveal reveal-delay-3">
+      <div style="display:flex;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.82rem;">
+        <i data-lucide="shield-check" style="width:15px;height:15px;color:var(--gold);"></i><span>Free Consultation</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.82rem;">
+        <i data-lucide="clock" style="width:15px;height:15px;color:var(--gold);"></i><span>Response in 24hrs</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.82rem;">
+        <i data-lucide="lock" style="width:15px;height:15px;color:var(--gold);"></i><span>Private & Confidential</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.82rem;">
+        <i data-lucide="award" style="width:15px;height:15px;color:var(--gold);"></i><span>Satisfaction Guaranteed</span>
       </div>
     </div>
   </div>
@@ -293,40 +427,64 @@
 <footer class="footer" id="contact">
   <div class="container">
     <div class="footer__grid">
+      <!-- Brand -->
       <div>
         <span class="footer__logo">ILLUME</span>
-        <p class="footer__tagline">We architect identities. Fashion is language. We make yours unforgettable.</p>
+        <p class="footer__tagline">We don't just dress bodies — we architect identities.<br>Fashion is language. We make yours unforgettable.</p>
         <div class="footer__social" style="display:flex; gap:1.25rem;">
           <a href="#" class="footer__social-link"><i data-lucide="instagram"></i></a>
+          <a href="#" class="footer__social-link"><i data-lucide="facebook"></i></a>
           <a href="https://wa.me/2348130024904" class="footer__social-link" target="_blank"><i data-lucide="message-circle"></i></a>
         </div>
       </div>
+      <!-- Explore -->
       <div>
         <h6 class="footer__heading">Explore</h6>
         <nav class="footer__links">
           <a href="#hero" class="footer__link">Home</a>
-          <a href="#about" class="footer__link">About</a>
+          <a href="#about" class="footer__link">Our Story</a>
           <a href="#services" class="footer__link">Services</a>
           <a href="#portfolio" class="footer__link">Portfolio</a>
+          <a href="#contact" class="footer__link">Contact</a>
         </nav>
       </div>
+      <!-- Services -->
+      <div>
+        <h6 class="footer__heading">Services</h6>
+        <nav class="footer__links">
+          <a href="services.php#bespoke" class="footer__link">Bespoke</a>
+          <a href="services.php#asoebi" class="footer__link">Asoebi</a>
+          <a href="services.php#african-wears" class="footer__link">African Wears</a>
+          <a href="services.php#beading" class="footer__link">Beading</a>
+          <a href="services.php#casuals" class="footer__link">Casuals</a>
+          <a href="services.php#dressmaking" class="footer__link">Custom Dressmaking</a>
+          <a href="services.php#consultancy" class="footer__link">Fashion Consultancy</a>
+          <a href="services.php#illustration" class="footer__link">Fashion Illustration</a>
+        </nav>
+      </div>
+      <!-- Connect -->
       <div>
         <h6 class="footer__heading">Connect</h6>
         <nav class="footer__links">
           <a href="mailto:lightpeacelimited@gmail.com" class="footer__link">lightpeacelimited@gmail.com</a>
           <a href="tel:+2348130024904" class="footer__link">+234 813 002 4904</a>
+          <a href="https://wa.me/2348130024904" class="footer__link" target="_blank">WhatsApp Us</a>
+          <a href="consultation.php" class="footer__link">Book a Consultation</a>
         </nav>
       </div>
     </div>
     <div class="footer__bottom">
       <span>&copy; 2026 ILLUME. All rights reserved.</span>
       <span>Crafted in Abuja &nbsp;·&nbsp; Worn Worldwide</span>
+      <span style="display:flex;gap:1.5rem;">
+        <a href="#" class="footer__link" style="font-size:0.75rem;">Privacy Policy</a>
+        <a href="#" class="footer__link" style="font-size:0.75rem;">Terms</a>
+      </span>
     </div>
   </div>
 </footer>
 
-<!-- Lucide Scripts -->
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<!-- Lucide Init Fallback -->
 <script>
   window.addEventListener('load', () => {
     if (window.lucide) {
