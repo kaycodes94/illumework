@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with ILLUME. Visit our Abuja atelier or reach us by email, phone, or WhatsApp.">
+  <meta name="theme-color" content="#020207">
+  <title>Contact — ILLUME</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css?v=1.6">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="assets/js/main.js?v=1.6" defer></script>
+  <style>
+    .shimmer-text {
+        background: linear-gradient(135deg, var(--gold), var(--gold-bright), var(--aura), var(--gold));
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 5s ease infinite;
+    }
+    @keyframes shimmer {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    html, body { scroll-behavior: auto !important; }
+  </style>
+</head>
+<body>
+
+<div id="page-loader" class="page-loader">
+  <div class="loader-logo">ILLUME</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<div class="scroll-progress"></div>
+
+<!-- ═══ NAVIGATION ═══════════════════════════════════════════ -->
+<nav class="nav" id="main-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">ILLUME</a>
+    <div class="nav__links">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="services.html" class="nav__link">Services</a>
+      <a href="portfolio.html" class="nav__link">Portfolio</a>
+      <a href="contact.html" class="nav__link active">Contact</a>
+    </div>
+    <div class="nav__actions">
+      <a href="login.html" class="btn btn--secondary btn--sm">Sign In</a>
+      <a href="consultation.php" class="btn btn--primary btn--sm">Book Consultation</a>
+      <button class="nav__hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═════════════════════════════════════════════════ -->
+<section style="padding:calc(var(--nav-h)+3rem) 0 3rem;background:var(--space);border-bottom:1px solid var(--space-border);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="label-text" style="margin-bottom:1rem;">Get In Touch</div>
+    <h1 style="font-size:clamp(3rem,7vw,5.5rem);line-height:0.95;margin-bottom:1.5rem;">
+      Let's Start a<br><span class="shimmer-text">Conversation.</span>
+    </h1>
+    <p style="font-size:1.05rem;max-width:460px;line-height:1.8;color:var(--text-secondary);">
+      Whether you have a question, a vision, or just want to say hello — we're always on the other side of the line.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ CONTACT CONTENT ═══════════════════════════════════════ -->
+<section class="section--lg">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start;">
+      <div>
+        <div class="label-text" style="margin-bottom:1.5rem;">Contact Information</div>
+        <!-- Email -->
+        <a href="mailto:lightpeacelimited@gmail.com" class="card card--glass" style="display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;margin-bottom:1rem;text-decoration:none;">
+          <div class="service-icon" style="width:46px;height:46px;margin:0;"><i data-lucide="mail"></i></div>
+          <div><div style="font-size:0.72rem;text-transform:uppercase;color:var(--text-muted);">Email Us</div><div style="font-size:0.9rem;font-weight:500;">lightpeacelimited@gmail.com</div></div>
+        </a>
+        <!-- Phone -->
+        <a href="tel:+2348130024904" class="card card--glass" style="display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;margin-bottom:1rem;text-decoration:none;">
+          <div class="service-icon" style="width:46px;height:46px;margin:0;color:var(--aura);"><i data-lucide="phone"></i></div>
+          <div><div style="font-size:0.72rem;text-transform:uppercase;color:var(--text-muted);">Call Us</div><div style="font-size:0.9rem;font-weight:500;">+234 813 002 4904</div></div>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/2348130024904" class="card card--glass" style="display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;margin-bottom:1rem;text-decoration:none;" target="_blank">
+          <div class="service-icon" style="width:46px;height:46px;margin:0;color:#25D366;"><i data-lucide="message-circle"></i></div>
+          <div><div style="font-size:0.72rem;text-transform:uppercase;color:var(--text-muted);">WhatsApp</div><div style="font-size:0.9rem;font-weight:500;">+234 813 002 4904</div></div>
+        </a>
+      </div>
+
+      <!-- Form Simulation -->
+      <div class="glass" style="padding:2.5rem;border-radius:var(--r-2xl);">
+        <div class="label-text" style="margin-bottom:1.5rem;">Send a Message</div>
+        <div class="grid-2" style="gap:1rem;">
+          <div class="form-group"><label class="form-label">Full Name *</label><input type="text" class="form-input" placeholder="Your name"></div>
+          <div class="form-group"><label class="form-label">Email *</label><input type="email" class="form-input" placeholder="your@email.com"></div>
+        </div>
+        <div class="form-group"><label class="form-label">Subject</label><input type="text" class="form-input" placeholder="What's this about?"></div>
+        <div class="form-group"><label class="form-label">Message *</label><textarea class="form-textarea" rows="6" placeholder="Tell us what's on your mind…"></textarea></div>
+        <button class="btn btn--primary btn--w-full">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <span class="footer__logo">ILLUME</span>
+        <p class="footer__tagline">We architect identities. Fashion is language. We make yours unforgettable.</p>
+        <div class="footer__social" style="display:flex; gap:1.25rem;">
+          <a href="#" class="footer__social-link"><i data-lucide="instagram"></i></a>
+          <a href="https://wa.me/2348130024904" class="footer__social-link" target="_blank"><i data-lucide="message-circle"></i></a>
+        </div>
+      </div>
+      <div>
+        <h6 class="footer__heading">Explore</h6>
+        <nav class="footer__links">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">Our Story</a>
+          <a href="services.html" class="footer__link">Services</a>
+          <a href="portfolio.html" class="footer__link">Portfolio</a>
+        </nav>
+      </div>
+      <div>
+        <h6 class="footer__heading">Connect</h6>
+        <nav class="footer__links">
+          <a href="mailto:lightpeacelimited@gmail.com" class="footer__link">lightpeacelimited@gmail.com</a>
+          <a href="tel:+2348130024904" class="footer__link">+234 813 002 4904</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 ILLUME. All rights reserved.</span>
+      <span>Crafted in Abuja &nbsp;·&nbsp; Worn Worldwide</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('load', () => { if (window.lucide) lucide.createIcons(); });
+</script>
+</body>
+</html>
