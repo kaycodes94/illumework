@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore ILLUME's luxury fashion services — from bespoke couture to editorial styling and fashion consulting.">
+  <meta name="theme-color" content="#020207">
+  <title>Services — ILLUME</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css?v=1.5">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="assets/js/main.js?v=1.5" defer></script>
+  <style>
+    .shimmer-text {
+        background: linear-gradient(135deg, var(--gold), var(--gold-bright), var(--aura), var(--gold));
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 5s ease infinite;
+    }
+    @keyframes shimmer {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    html, body { scroll-behavior: auto !important; }
+  </style>
+</head>
+<body>
+
+<div id="page-loader" class="page-loader">
+  <div class="loader-logo">ILLUME</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<div class="scroll-progress"></div>
+
+<!-- ═══ NAVIGATION ═══════════════════════════════════════════ -->
+<nav class="nav" id="main-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">ILLUME</a>
+    <div class="nav__links">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="services.html" class="nav__link active">Services</a>
+      <a href="portfolio.html" class="nav__link">Portfolio</a>
+      <a href="https://wa.me/2348130024904" class="nav__link">Contact</a>
+    </div>
+    <div class="nav__actions">
+      <a href="auth/login.php" class="btn btn--secondary btn--sm">Sign In</a>
+      <a href="consultation.php" class="btn btn--primary btn--sm">Book Consultation</a>
+      <button class="nav__hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ SERVICES HERO ══════════════════════════════════════════ -->
+<section style="min-height:55svh;display:flex;align-items:center; padding-top:var(--nav-h);position:relative;overflow:hidden; background:linear-gradient(135deg,var(--void) 0%,var(--space) 100%);">
+  <div style="position:absolute;inset:0; background-image:linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px); background-size:60px 60px;pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="label-text" style="margin-bottom:1rem;">What We Offer</div>
+    <h1 style="font-size:clamp(3rem,8vw,6rem);font-weight:800;line-height:0.95;letter-spacing:-0.04em;margin-bottom:1.5rem;max-width:650px;">
+      Services Built<br>for Those Who<br><span class="shimmer-text">Demand More.</span>
+    </h1>
+    <p style="font-size:1.05rem;max-width:500px;line-height:1.8;color:var(--text-secondary);">Every service we offer is designed around one goal: to make you look and feel extraordinary.</p>
+  </div>
+</section>
+
+<!-- ═══ ALL SERVICES ══════════════════════════════════════════ -->
+<section class="section--lg">
+  <div class="container--sm">
+    <div style="display:grid; gap:4rem;">
+      <!-- Bespoke -->
+      <div id="bespoke-couture" class="reveal" style="padding-bottom:4rem; border-bottom:1px solid var(--space-border);">
+        <div style="display:flex; align-items:flex-start; gap:2rem;">
+          <div class="service-icon" style="flex-shrink:0; margin-top:0.5rem;"><i data-lucide="scissors"></i></div>
+          <div style="flex-grow:1;">
+            <div class="label-text" style="color:var(--text-muted); margin-bottom:1rem;">01 — Bespoke Couture</div>
+            <h2 style="margin-bottom:1.5rem;">The Pinnacle of Tailoring</h2>
+            <p style="font-size:1.15rem; line-height:2; color:var(--text-secondary); margin-bottom:2.5rem; max-width:700px;">
+              Fully custom garments crafted to your exact vision and measurements. From initial concept to final fitting, every stitch is a conversation between your vision and our craft.
+            </p>
+            <a href="consultation.php?service=bespoke-couture" class="btn btn--primary" style="padding:0.85rem 2rem;">Request Consultation</a>
+          </div>
+        </div>
+      </div>
+      <!-- Asoebi -->
+      <div id="asoebi" class="reveal" style="padding-bottom:4rem;">
+        <div style="display:flex; align-items:flex-start; gap:2rem;">
+          <div class="service-icon" style="flex-shrink:0; margin-top:0.5rem;"><i data-lucide="heart"></i></div>
+          <div style="flex-grow:1;">
+            <div class="label-text" style="color:var(--text-muted); margin-bottom:1rem;">02 — Bridals & Asoebi</div>
+            <h2 style="margin-bottom:1.5rem;">Heritage Matrimony</h2>
+            <p style="font-size:1.15rem; line-height:2; color:var(--text-secondary); margin-bottom:2.5rem; max-width:700px;">
+              Ethereal designs for the moments that matter most. We create bridal wear and occasion pieces imbued with meaning, structure, and beauty.
+            </p>
+            <a href="consultation.php?service=asoebi" class="btn btn--primary" style="padding:0.85rem 2rem;">Request Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <span class="footer__logo">ILLUME</span>
+        <p class="footer__tagline">We architect identities. Fashion is language. We make yours unforgettable.</p>
+        <div class="footer__social" style="display:flex; gap:1.25rem;">
+          <a href="#" class="footer__social-link"><i data-lucide="instagram"></i></a>
+          <a href="https://wa.me/2348130024904" class="footer__social-link" target="_blank"><i data-lucide="message-circle"></i></a>
+        </div>
+      </div>
+      <div>
+        <h6 class="footer__heading">Explore</h6>
+        <nav class="footer__links">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">Our Story</a>
+          <a href="services.html" class="footer__link">Services</a>
+          <a href="portfolio.html" class="footer__link">Portfolio</a>
+        </nav>
+      </div>
+      <div>
+        <h6 class="footer__heading">Connect</h6>
+        <nav class="footer__links">
+          <a href="mailto:lightpeacelimited@gmail.com" class="footer__link">lightpeacelimited@gmail.com</a>
+          <a href="tel:+2348130024904" class="footer__link">+234 813 002 4904</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 ILLUME. All rights reserved.</span>
+      <span>Crafted in Abuja &nbsp;·&nbsp; Worn Worldwide</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('load', () => { if (window.lucide) lucide.createIcons(); });
+</script>
+</body>
+</html>
