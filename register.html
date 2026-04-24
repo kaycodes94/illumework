@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — ILLUME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body style="cursor:auto;">
+
+<!-- Custom Cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<div class="auth-page">
+
+  <!-- Visual Panel -->
+  <div class="auth-visual">
+    <img src="assets/img/philosophy.png" alt="ILLUME Couture" 
+         style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+    <div class="auth-visual__overlay" style="background:linear-gradient(135deg, rgba(82,23,124,0.4) 0%, rgba(1,1,3,0.9) 100%);"></div>
+    <div class="auth-visual__content">
+      <span class="auth-visual__logo" style="background:linear-gradient(135deg, var(--gold), var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">ILLUME</span>
+      <p class="auth-visual__quote">
+        "crafted in light, radiance you can wear"
+        <br><span style="font-size:0.85rem; color:rgba(255,255,255,0.7); font-style:normal; margin-top:0.5rem; display:block; font-family:var(--font-body);">— Olewuezi Ikedichukwu Peace</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Form Panel -->
+  <div class="auth-form-panel">
+    <div class="auth-form-wrap" style="max-width: 440px;">
+      <a href="index.html" class="auth-logo">ILLUME</a>
+      <p class="auth-tagline">Join the Elite.</p>
+
+      <h1 class="auth-title">Create Account</h1>
+      <p class="auth-subtitle">Join the ILLUME universe and elevate your style.</p>
+
+      <form action="login.html" id="register-form" novalidate>
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" name="name" class="form-input" value="" placeholder="e.g. Chioma Eze" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" name="email" class="form-input" value="" placeholder="chioma@example.com" required>
+        </div>
+
+        <div class="role-selector">
+          <label class="role-option">
+            <input type="radio" name="role" value="client" checked>
+            <div class="role-card">
+              <i data-lucide="user"></i>
+              <span>Client</span>
+            </div>
+          </label>
+          <label class="role-option">
+            <input type="radio" name="role" value="staff">
+            <div class="role-card">
+              <i data-lucide="briefcase"></i>
+              <span>Staff</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Conditional Staff Invite Code -->
+        <div id="staff-code-group" class="form-group hidden">
+          <label class="form-label">Staff Invite Code</label>
+          <input type="text" name="invite_code" class="form-input" placeholder="Enter Invite Code" style="border-color: var(--aura-glass);">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div class="input-wrap">
+            <input type="password" name="password" id="password" class="form-input" placeholder="••••••••" required>
+            <button type="button" class="pw-toggle" id="pw-toggle" aria-label="Toggle password">
+              <i data-lucide="eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Confirm Password</label>
+          <input type="password" name="confirm_password" class="form-input" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--w-full" style="margin-top:1rem; padding:0.85rem;">
+          <i data-lucide="user-plus"></i>
+          Register Account
+        </button>
+      </form>
+
+      <a href="login.html" class="auth-back">
+        <i data-lucide="arrow-left"></i>
+        Already have an account? Sign In
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .hidden { display: none; }
+  .fade-in { animation: fadeIn 0.3s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  // Toggle Staff Invite Code field
+  const roleRadios = document.querySelectorAll('input[name="role"]');
+  const staffGroup = document.getElementById('staff-code-group');
+  
+  roleRadios.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.value === 'staff') {
+        staffGroup.classList.remove('hidden');
+        staffGroup.classList.add('fade-in');
+      } else {
+        staffGroup.classList.add('hidden');
+        staffGroup.classList.remove('fade-in');
+      }
+    });
+  });
+
+  // Password toggle
+  const toggle = document.getElementById('pw-toggle');
+  const pwField = document.getElementById('password');
+  toggle?.addEventListener('click', () => {
+    const isText = pwField.type === 'text';
+    pwField.type = isText ? 'password' : 'text';
+    toggle.innerHTML = isText ? '<i data-lucide="eye"></i>' : '<i data-lucide="eye-off"></i>';
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  });
+</script>
+</body>
+</html>
