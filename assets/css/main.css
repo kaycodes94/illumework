@@ -89,7 +89,7 @@
    RESET
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { font-size: 16px; }
 body {
   background: var(--void);
   color: var(--text-primary);
@@ -107,23 +107,7 @@ button { cursor: none; border: none; background: none; font-family: inherit; }
 input, textarea, select { font-family: inherit; }
 ul, ol { list-style: none; }
 
-/* ============================================================
-   SCANLINE OVERLAY (Lightened for Light Mode)
-   ============================================================ */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(184, 134, 11, 0.015) 2px,
-    rgba(184, 134, 11, 0.015) 4px
-  );
-  pointer-events: none;
-  z-index: 9998;
-}
+/* Scanline overlay removed for better clarity */
 
 /* ─── CUSTOM CURSOR ── */
 .cursor-dot {
@@ -135,7 +119,7 @@ body::before {
   border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
-  transform: translate(-50%, -50%);
+  will-change: transform;
   transition: width 0.3s, height 0.3s, background 0.3s;
 }
 .cursor-ring {
@@ -147,7 +131,7 @@ body::before {
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%);
+  will-change: transform;
   transition: width 0.4s var(--ease-out), height 0.4s var(--ease-out), border-color 0.4s, background 0.4s;
 }
 body.is-hovering .cursor-dot {
@@ -1192,8 +1176,8 @@ tbody tr:hover td { background: var(--space); color: var(--text-primary); }
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity var(--t-slow) var(--ease-out),
-              transform var(--t-slow) var(--ease-out);
+  will-change: opacity, transform;
+  transition: opacity var(--t-slow) var(--ease-out), transform var(--t-slow) var(--ease-out);
 }
 .reveal.visible {
   opacity: 1;

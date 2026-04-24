@@ -21,15 +21,13 @@ if (cursorDot && cursorRing) {
   document.addEventListener('mousemove', e => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    cursorDot.style.left = mouseX + 'px';
-    cursorDot.style.top  = mouseY + 'px';
+    cursorDot.style.transform = `translate3d(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%), 0)`;
   });
 
   (function animateCursor() {
     ringX += (mouseX - ringX) * 0.11;
     ringY += (mouseY - ringY) * 0.11;
-    cursorRing.style.left = ringX + 'px';
-    cursorRing.style.top  = ringY + 'px';
+    cursorRing.style.transform = `translate3d(calc(${ringX}px - 50%), calc(${ringY}px - 50%), 0)`;
     requestAnimationFrame(animateCursor);
   })();
 
@@ -50,6 +48,7 @@ if (scrollBar) {
   window.addEventListener('scroll', () => {
     const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
     scrollBar.style.transform = `scaleX(${pct})`;
+    scrollBar.style.willChange = 'transform';
   }, { passive: true });
 }
 
@@ -81,7 +80,7 @@ if (hamburger && mobileNav) {
 
 // ─── LENIS SMOOTH SCROLL ─────────────────────────────────────
 if (typeof Lenis !== 'undefined') {
-  const lenis = new Lenis({ lerp: 0.075, smoothWheel: true });
+  const lenis = new Lenis({ lerp: 0.14, smoothWheel: true });
   (function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
@@ -139,7 +138,7 @@ if (heroCanvas && typeof THREE !== 'undefined') {
   const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 100);
   camera.position.z = 6;
 
-  const COUNT = window.innerWidth < 768 ? 900 : 1800;
+  const COUNT = window.innerWidth < 768 ? 400 : 1000;
   const positions = new Float32Array(COUNT * 3);
   const colors    = new Float32Array(COUNT * 3);
 
@@ -158,16 +157,27 @@ if (heroCanvas && typeof THREE !== 'undefined') {
     colors[i3] = c.r; colors[i3+1] = c.g; colors[i3+2] = c.b;
   }
 
+  function createCircleTexture() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 64; canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    ctx.beginPath(); ctx.arc(32, 32, 30, 0, Math.PI * 2);
+    ctx.fillStyle = '#ffffff'; ctx.fill();
+    return new THREE.CanvasTexture(canvas);
+  }
+
   const geo = new THREE.BufferGeometry();
   geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
   geo.setAttribute('color',    new THREE.BufferAttribute(colors, 3));
 
   const mat = new THREE.PointsMaterial({
-    size: 0.045,
+    size: 0.035,
     vertexColors: true,
     transparent: true,
-    opacity: 0.75,
+    opacity: 0.35,
     sizeAttenuation: true,
+    map: createCircleTexture(),
+    alphaTest: 0.05
   });
 
   const particles = new THREE.Points(geo, mat);
