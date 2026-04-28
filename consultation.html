@@ -1,156 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Start your ILLUME journey. Book a free consultation and let us craft something extraordinary together.">
+  <meta name="theme-color" content="#020207">
+  <meta property="og:title"       content="Book a Consultation — ILLUME">
+  <meta property="og:description" content="Start your ILLUME journey. Book a free consultation and let us craft something extraordinary together.">
+  <meta property="og:url"         content="./consultation.html">
+  <meta property="og:type"        content="website">
   <title>Book a Consultation — ILLUME</title>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-  <style>
-    .shimmer-text {
-        background: linear-gradient(135deg, var(--gold), var(--gold-bright), var(--aura), var(--gold));
-        background-size: 300% 300%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: shimmer 5s ease infinite;
-    }
-    @keyframes shimmer {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-    html, body { scroll-behavior: auto !important; }
-  </style>
-</head>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+  
+  <!-- Three.js (hero particles) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+</head>
 <body>
 
-  <!-- ═══ NAVIGATION ═══════════════════════════════════════════ -->
-  <nav class="nav" id="main-nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo">ILLUME</a>
-      <div class="nav__links">
-        <a href="index.html" class="nav__link">Home</a>
-        <a href="about.html" class="nav__link">About</a>
-        <a href="services.html" class="nav__link">Services</a>
-        <a href="portfolio.html" class="nav__link">Portfolio</a>
-        <a href="contact.html" class="nav__link">Contact</a>
+<!-- Page Loader -->
+<div id="page-loader" class="page-loader">
+  <div class="loader-logo">ILLUME</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress"></div>
+
+<!-- ═══ NAVIGATION ═══════════════════════════════════════════ -->
+<nav class="nav" id="main-nav">
+  <div class="nav__inner">
+
+    <!-- Logo -->
+    <a href="./" class="nav__logo">ILLUME</a>
+
+    <!-- Desktop Links -->
+    <div class="nav__links">
+      <a href="./"               class="nav__link ">Home</a>
+      <a href="./about.html"      class="nav__link ">About</a>
+      <a href="./services.html"   class="nav__link ">Services</a>
+      <a href="./portfolio.html"  class="nav__link ">Portfolio</a>
+      <a href="./contact.html"    class="nav__link ">Contact</a>
+    </div>
+
+    <!-- Actions -->
+    <div class="nav__actions">
+              <a href="./auth/login.php" class="btn btn--secondary btn--sm">Sign In</a>
+            <a href="./consultation.html" class="btn btn--primary btn--sm">Book Consultation</a>
+      <!-- Hamburger -->
+      <button class="nav__hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav__mobile">
+  <button class="mobile-close btn btn--icon btn--ghost" aria-label="Close menu">
+    <i data-lucide="x"></i>
+  </button>
+  <a href="./"               class="nav__link">Home</a>
+  <a href="./about.html"      class="nav__link">About</a>
+  <a href="./services.html"   class="nav__link">Services</a>
+  <a href="./portfolio.html"  class="nav__link">Portfolio</a>
+  <a href="./contact.html"    class="nav__link">Contact</a>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1rem;">
+          <a href="./auth/login.php" class="btn btn--secondary">Sign In</a>
+        <a href="./consultation.html" class="btn btn--primary">Book Consultation</a>
+  </div>
+</div>
+<!-- end header php -->
+
+<!-- ═══ HERO ═════════════════════════════════════════════════ -->
+<section style="padding:calc(var(--nav-h) + 3rem) 0 3rem;background:var(--space);border-bottom:1px solid var(--space-border);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;"></div>
+  <div style="position:absolute;top:0;right:15%;width:400px;height:400px;background:radial-gradient(circle,rgba(201,168,76,0.06),transparent);filter:blur(80px);pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:1;text-align:center;">
+    <div class="label-text" style="margin-bottom:1rem;">Free Consultation</div>
+    <h1 style="font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:1rem;">
+      Let's Build Something<br><span class="shimmer-text">Extraordinary.</span>
+    </h1>
+    <p style="max-width:520px;margin:0 auto;font-size:1.05rem;line-height:1.8;color:var(--text-secondary);">
+      Tell us about your vision. We'll respond within 24 hours to schedule your discovery call.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ FORM ══════════════════════════════════════════════════ -->
+<section class="section--lg">
+  <div class="container--sm">
+
+        <!-- MULTI-STEP FORM -->
+    
+    <!-- Step Indicators -->
+    <div style="margin-bottom:1rem;">
+      <div class="form-step-indicator">
+        <span class="form-step-label active" id="step-label-0">Service</span>
+        <span class="form-step-label"         id="step-label-1">Details</span>
+        <span class="form-step-label"         id="step-label-2">Budget</span>
+        <span class="form-step-label"         id="step-label-3">Your Info</span>
       </div>
-      <div class="nav__actions">
-        <a href="login.html" class="btn btn--secondary btn--sm">Sign In</a>
-        <a href="consultation.html" class="btn btn--primary btn--sm active">Book Consultation</a>
+      <div class="form-steps">
+        <div class="form-step active" id="step-bar-0"></div>
+        <div class="form-step"       id="step-bar-1"></div>
+        <div class="form-step"       id="step-bar-2"></div>
+        <div class="form-step"       id="step-bar-3"></div>
       </div>
     </div>
-  </nav>
 
-  <!-- ═══ HERO ═════════════════════════════════════════════════ -->
-  <section
-    style="padding:calc(var(--nav-h) + 3rem) 0 3rem;background:var(--space);border-bottom:1px solid var(--space-border);position:relative;overflow:hidden;">
-    <div
-      style="position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;">
-    </div>
-    <div class="container" style="position:relative;z-index:1;text-align:center;">
-      <div class="label-text" style="margin-bottom:1rem;">Free Consultation</div>
-      <h1 style="font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:1rem;">
-        Let's Build Something<br><span class="shimmer-text">Extraordinary.</span>
-      </h1>
-      <p style="max-width:520px;margin:0 auto;font-size:1.05rem;line-height:1.8;color:var(--text-secondary);">
-        Tell us about your vision. We'll respond within 24 hours to schedule your discovery call.
-      </p>
-    </div>
-  </section>
-
-  <!-- ═══ FORM ══════════════════════════════════════════════════ -->
-  <section class="section--lg">
-    <div class="container--sm">
-
-      <!-- Step Indicators -->
-      <div style="margin-bottom:1rem;">
-        <div class="form-step-indicator">
-          <span class="form-step-label active">Service</span>
-          <span class="form-step-label">Details</span>
-          <span class="form-step-label">Budget</span>
-          <span class="form-step-label">Your Info</span>
-        </div>
-        <div class="form-steps">
-          <div class="form-step active"></div>
-          <div class="form-step"></div>
-          <div class="form-step"></div>
-          <div class="form-step"></div>
-        </div>
-      </div>
-
-      <!-- Step 1 (Visible for Demo) -->
+    <form method="POST" action="consultation.html" id="consult-form" novalidate>
+      <input type="hidden" name="csrf_token" value="f1230f8e24beb17dbe1093b428a62c55968b84052cc3e53cd9583472b6b8e486">
+      <!-- ── STEP 1: Service ── -->
       <div class="form-panel glass" style="padding:2.5rem;border-radius:var(--r-2xl);">
         <h3 style="margin-bottom:0.5rem;">Which service interests you?</h3>
-        <p style="font-size:0.9rem;margin-bottom:2rem;">Select the primary service. You can discuss scope during the
-          consultation.</p>
+        <p style="font-size:0.9rem;margin-bottom:2rem;">Select the primary service. You can discuss scope during the consultation.</p>
 
         <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-bottom:2rem;">
-          <!-- Bespoke -->
-          <label style="cursor:pointer;">
-            <input type="radio" name="service_type" value="Bespoke Couture" checked style="display:none;"
-              class="service-radio">
-            <div class="service-radio-card selected"
-              style="padding:1.25rem;border:1px solid var(--gold);background:var(--gold-faint);border-radius:var(--r-lg);display:flex;align-items:center;gap:0.75rem;">
-              <div
-                style="width:36px;height:36px;border-radius:var(--r);background:var(--gold-faint);border:1px solid var(--gold-glass);display:flex;align-items:center;justify-content:center;color:var(--gold);">
-                <i data-lucide="scissors" style="width:16px;height:16px;"></i></div>
-              <div style="font-size:0.85rem;font-weight:600;">Bespoke Couture</div>
+                    <label style="cursor:none;">
+            <input type="radio" name="service_type" value="Bespoke Couture"
+                                      style="display:none;" class="service-radio">
+            <div class="service-radio-card" style="
+              padding:1.25rem;border:1px solid var(--space-border);border-radius:var(--r-lg);
+              transition:all 0.3s var(--ease-out);cursor:none;
+              display:flex;align-items:center;gap:0.75rem;
+            ">
+              <div style="
+                width:36px;height:36px;border-radius:var(--r);flex-shrink:0;
+                background:var(--gold-faint);border:1px solid var(--gold-glass);
+                display:flex;align-items:center;justify-content:center;color:var(--gold);
+              ">
+                <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
+              </div>
+              <div>
+                <div style="font-size:0.85rem;font-weight:600;line-height:1.2;">Bespoke Couture</div>
+              </div>
             </div>
           </label>
-          <!-- Bridals -->
-          <label style="cursor:pointer;">
-            <input type="radio" name="service_type" value="Bridals & Asoebi" style="display:none;"
-              class="service-radio">
-            <div class="service-radio-card"
-              style="padding:1.25rem;border:1px solid var(--space-border);border-radius:var(--r-lg);display:flex;align-items:center;gap:0.75rem;">
-              <div
-                style="width:36px;height:36px;border-radius:var(--r);background:var(--gold-faint);border:1px solid var(--gold-glass);display:flex;align-items:center;justify-content:center;color:var(--gold);">
-                <i data-lucide="heart" style="width:16px;height:16px;"></i></div>
-              <div style="font-size:0.85rem;font-weight:600;">Bridals & Asoebi</div>
+                    <label style="cursor:none;">
+            <input type="radio" name="service_type" value="Bridals &amp; Asoebi"
+                                      style="display:none;" class="service-radio">
+            <div class="service-radio-card" style="
+              padding:1.25rem;border:1px solid var(--space-border);border-radius:var(--r-lg);
+              transition:all 0.3s var(--ease-out);cursor:none;
+              display:flex;align-items:center;gap:0.75rem;
+            ">
+              <div style="
+                width:36px;height:36px;border-radius:var(--r);flex-shrink:0;
+                background:var(--gold-faint);border:1px solid var(--gold-glass);
+                display:flex;align-items:center;justify-content:center;color:var(--gold);
+              ">
+                <i data-lucide="heart" style="width:16px;height:16px;"></i>
+              </div>
+              <div>
+                <div style="font-size:0.85rem;font-weight:600;line-height:1.2;">Bridals &amp; Asoebi</div>
+              </div>
             </div>
           </label>
-        </div>
+                    <label style="cursor:none;">
+            <input type="radio" name="service_type" value="African Wears"
+                                      style="display:none;" class="service-radio">
+            <div class="service-radio-card" style="
+              padding:1.25rem;border:1px solid var(--space-border);border-radius:var(--r-lg);
+              transition:all 0.3s var(--ease-out);cursor:none;
+              display:flex;align-items:center;gap:0.75rem;
+            ">
+              <div style="
+                width:36px;height:36px;border-radius:var(--r);flex-shrink:0;
+                background:var(--gold-faint);border:1px solid var(--gold-glass);
+                display:flex;align-items:center;justify-content:center;color:var(--gold);
+              ">
+                <i data-lucide="palette" style="width:16px;height:16px;"></i>
+              </div>
+              <div>
+                <div style="font-size:0.85rem;font-weight:600;line-height:1.2;">African Wears</div>
+              </div>
+            </div>
+          </label>
+                    <label style="cursor:none;">
+            <input type="radio" name="service_type" value="Casuals"
+                                      style="display:none;" class="service-radio">
+            <div class="service-radio-card" style="
+              padding:1.25rem;border:1px solid var(--space-border);border-radius:var(--r-lg);
+              transition:all 0.3s var(--ease-out);cursor:none;
+              display:flex;align-items:center;gap:0.75rem;
+            ">
+              <div style="
+                width:36px;height:36px;border-radius:var(--r);flex-shrink:0;
+                background:var(--gold-faint);border:1px solid var(--gold-glass);
+                display:flex;align-items:center;justify-content:center;color:var(--gold);
+              ">
+                <i data-lucide="shirt" style="width:16px;height:16px;"></i>
+              </div>
+              <div>
+                <div style="font-size:0.85rem;font-weight:600;line-height:1.2;">Casuals</div>
+              </div>
+            </div>
+          </label>
+                    <label style="cursor:none;">
+            <input type="radio" name="service_type" value="Custom Dressmaking"
+                                      style="display:none;" class="service-radio">
+            <div class="service-radio-card" style="
+              padding:1.25rem;border:1px solid var(--space-border);border-radius:var(--r-lg);
+              transition:all 0.3s var(--ease-out);cursor:none;
+              display:flex;align-items:center;gap:0.75rem;
+            ">
+              <div style="
+                width:36px;height:36px;border-radius:var(--r);flex-shrink:0;
+                background:var(--gold-faint);border:1px solid var(--gold-glass);
+                display:flex;align-items:center;justify-content:center;color:var(--gold);
+              ">
+                <i data-lucide="scissors" style="width:16px;height:16px;"></i>
+              </div>
+              <div>
+                <div style="font-size:0.85rem;font-weight:600;line-height:1.2;">Custom Dressmaking</div>
+              </div>
+            </div>
+          </label>
+                    <label style="cursor:none;">
+            <input type="radio" name="service_type" value="Beading"
+                                      style="display:none;" class="service-radio">
+            <div class="service-radio-card" style="
+              padding:1.25rem;border:1px solid var(--space-border);border-radius:var(--r-lg);
+              transition:all 0.3s var(--ease-out);cursor:none;
+              display:flex;align-items:center;gap:0.75rem;
+            ">
+              <div style="
+                width:36px;height:36px;border-radius:var(--r);flex-shrink:0;
+                background:var(--gold-faint);border:1px solid var(--gold-glass);
+                display:flex;align-items:center;justify-content:center;color:var(--gold);
+              ">
+                <i data-lucide="gem" style="width:16px;height:16px;"></i>
+              </div>
+              <div>
+                <div style="font-size:0.85rem;font-weight:600;line-height:1.2;">Beading</div>
+              </div>
+            </div>
+          </label>
+                    <label style="cursor:none;">
+            <input type="radio" name="service_type" value="Fashion Consultancy"
+                                      style="display:none;" class="service-radio">
+            <div class="service-radio-card" style="
+              padding:1.25rem;border:1px solid var(--space-border);border-radius:var(--r-lg);
+              transition:all 0.3s var(--ease-out);cursor:none;
+              display:flex;align-items:center;gap:0.75rem;
+            ">
+              <div style="
+                width:36px;height:36px;border-radius:var(--r);flex-shrink:0;
+                background:var(--gold-faint);border:1px solid var(--gold-glass);
+                display:flex;align-items:center;justify-content:center;color:var(--gold);
+              ">
+                <i data-lucide="compass" style="width:16px;height:16px;"></i>
+              </div>
+              <div>
+                <div style="font-size:0.85rem;font-weight:600;line-height:1.2;">Fashion Consultancy</div>
+              </div>
+            </div>
+          </label>
+                    <label style="cursor:none;">
+            <input type="radio" name="service_type" value="Fashion Illustration"
+                                      style="display:none;" class="service-radio">
+            <div class="service-radio-card" style="
+              padding:1.25rem;border:1px solid var(--space-border);border-radius:var(--r-lg);
+              transition:all 0.3s var(--ease-out);cursor:none;
+              display:flex;align-items:center;gap:0.75rem;
+            ">
+              <div style="
+                width:36px;height:36px;border-radius:var(--r);flex-shrink:0;
+                background:var(--gold-faint);border:1px solid var(--gold-glass);
+                display:flex;align-items:center;justify-content:center;color:var(--gold);
+              ">
+                <i data-lucide="pen-tool" style="width:16px;height:16px;"></i>
+              </div>
+              <div>
+                <div style="font-size:0.85rem;font-weight:600;line-height:1.2;">Fashion Illustration</div>
+              </div>
+            </div>
+          </label>
+                  </div>
 
         <div class="form-group">
           <label class="form-label">Not sure? Tell us briefly what you need</label>
-          <input type="text" class="form-input" placeholder="e.g. Wedding dress, wardrobe revamp…">
+          <input type="text" name="occasion" class="form-input" placeholder="e.g. Wedding dress, wardrobe revamp, photoshoot styling…">
         </div>
 
         <div style="display:flex;justify-content:flex-end;">
-          <button type="button" class="btn btn--primary">Next Step <i data-lucide="arrow-right"></i></button>
+          <button type="button" data-next class="btn btn--primary">
+            Next Step <i data-lucide="arrow-right"></i>
+          </button>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div><span class="footer__logo">ILLUME</span>
-          <p class="footer__tagline">Fashion is language. We make yours unforgettable.</p>
+      <!-- ── STEP 2: Details ── -->
+      <div class="form-panel glass hidden" style="padding:2.5rem;border-radius:var(--r-2xl);">
+        <h3 style="margin-bottom:0.5rem;">Tell us about your project</h3>
+        <p style="font-size:0.9rem;margin-bottom:2rem;">The more detail you share, the better we can prepare for your consultation.</p>
+
+        <div class="form-group">
+          <label class="form-label" for="timeline">Desired Timeline</label>
+          <select name="timeline" id="timeline" class="form-select">
+            <option value="">Select timeline…</option>
+            <option value="ASAP (within 2 weeks)">ASAP (within 2 weeks)</option>
+            <option value="1 month">1 month</option>
+            <option value="2-3 months">2–3 months</option>
+            <option value="4-6 months">4–6 months</option>
+            <option value="6+ months">6+ months</option>
+            <option value="Flexible">Flexible</option>
+          </select>
         </div>
-        <div>
-          <h6 class="footer__heading">Explore</h6>
-          <nav class="footer__links"><a href="index.html" class="footer__link">Home</a><a href="about.html"
-              class="footer__link">Our Story</a><a href="services.html" class="footer__link">Services</a></nav>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Describe your vision <span style="color:var(--gold);">*</span></label>
+          <textarea name="message" id="message" class="form-textarea" rows="6"
+            placeholder="Tell us about the occasion, your style, any inspirations, special requirements, or anything that will help us understand your vision…"></textarea>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;gap:1rem;">
+          <button type="button" data-prev class="btn btn--ghost">
+            <i data-lucide="arrow-left"></i> Back
+          </button>
+          <button type="button" data-next class="btn btn--primary">
+            Next Step <i data-lucide="arrow-right"></i>
+          </button>
         </div>
       </div>
-      <div class="footer__bottom"><span>&copy; 2026 ILLUME. All rights reserved.</span></div>
-    </div>
-  </footer>
 
-  <script>
-    window.addEventListener('load', () => { if (window.lucide) lucide.createIcons(); });
-  </script>
+      <!-- ── STEP 3: Budget ── -->
+      <div class="form-panel glass hidden" style="padding:2.5rem;border-radius:var(--r-2xl);">
+        <h3 style="margin-bottom:0.5rem;">Budget & Preferences</h3>
+        <p style="font-size:0.9rem;margin-bottom:2rem;">This helps us tailor the right recommendation for you. All budgets are respected.</p>
+
+        <div class="form-group">
+          <label class="form-label">Budget Range (NGN)</label>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-bottom:1rem;">
+                        <label style="cursor:none;">
+              <input type="radio" name="budget_range" value="Under ₦100,000" style="display:none;" class="budget-radio">
+              <div style="
+                padding:1rem;border:1px solid var(--space-border);border-radius:var(--r);
+                font-size:0.88rem;font-weight:500;text-align:center;
+                transition:all 0.25s;cursor:none;
+              " class="budget-card">Under ₦100,000</div>
+            </label>
+                        <label style="cursor:none;">
+              <input type="radio" name="budget_range" value="₦100k – ₦250k" style="display:none;" class="budget-radio">
+              <div style="
+                padding:1rem;border:1px solid var(--space-border);border-radius:var(--r);
+                font-size:0.88rem;font-weight:500;text-align:center;
+                transition:all 0.25s;cursor:none;
+              " class="budget-card">₦100k – ₦250k</div>
+            </label>
+                        <label style="cursor:none;">
+              <input type="radio" name="budget_range" value="₦250k – ₦500k" style="display:none;" class="budget-radio">
+              <div style="
+                padding:1rem;border:1px solid var(--space-border);border-radius:var(--r);
+                font-size:0.88rem;font-weight:500;text-align:center;
+                transition:all 0.25s;cursor:none;
+              " class="budget-card">₦250k – ₦500k</div>
+            </label>
+                        <label style="cursor:none;">
+              <input type="radio" name="budget_range" value="₦500k – ₦1M" style="display:none;" class="budget-radio">
+              <div style="
+                padding:1rem;border:1px solid var(--space-border);border-radius:var(--r);
+                font-size:0.88rem;font-weight:500;text-align:center;
+                transition:all 0.25s;cursor:none;
+              " class="budget-card">₦500k – ₦1M</div>
+            </label>
+                        <label style="cursor:none;">
+              <input type="radio" name="budget_range" value="₦1M – ₦3M" style="display:none;" class="budget-radio">
+              <div style="
+                padding:1rem;border:1px solid var(--space-border);border-radius:var(--r);
+                font-size:0.88rem;font-weight:500;text-align:center;
+                transition:all 0.25s;cursor:none;
+              " class="budget-card">₦1M – ₦3M</div>
+            </label>
+                        <label style="cursor:none;">
+              <input type="radio" name="budget_range" value="₦3M+" style="display:none;" class="budget-radio">
+              <div style="
+                padding:1rem;border:1px solid var(--space-border);border-radius:var(--r);
+                font-size:0.88rem;font-weight:500;text-align:center;
+                transition:all 0.25s;cursor:none;
+              " class="budget-card">₦3M+</div>
+            </label>
+                      </div>
+          <input type="hidden" name="budget_range" id="budget_hidden">
+        </div>
+
+        <div style="display:flex;justify-content:space-between;gap:1rem;">
+          <button type="button" data-prev class="btn btn--ghost">
+            <i data-lucide="arrow-left"></i> Back
+          </button>
+          <button type="button" data-next class="btn btn--primary">
+            Final Step <i data-lucide="arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- ── STEP 4: Contact Info ── -->
+      <div class="form-panel glass hidden" style="padding:2.5rem;border-radius:var(--r-2xl);">
+        <h3 style="margin-bottom:0.5rem;">Your Details</h3>
+        <p style="font-size:0.9rem;margin-bottom:2rem;">How should we reach you? All information is kept strictly private.</p>
+
+        <div class="grid-2" style="gap:1rem;">
+          <div class="form-group">
+            <label class="form-label" for="name">Full Name <span style="color:var(--gold);">*</span></label>
+            <input type="text" name="name" id="name" class="form-input" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address <span style="color:var(--gold);">*</span></label>
+            <input type="email" name="email" id="email" class="form-input" placeholder="your@email.com" required>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap:1rem;">
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone Number</label>
+            <input type="tel" name="phone" id="phone" class="form-input" placeholder="+234 800 000 0000">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="whatsapp">WhatsApp Number</label>
+            <input type="tel" name="whatsapp" id="whatsapp" class="form-input" placeholder="Same as phone? Leave blank">
+          </div>
+        </div>
+
+        <div style="
+          padding:1.25rem;background:var(--gold-faint);
+          border:1px solid var(--gold-glass);border-radius:var(--r);
+          display:flex;align-items:flex-start;gap:0.75rem;
+          margin-bottom:1.5rem;font-size:0.85rem;line-height:1.6;
+        ">
+          <i data-lucide="shield-check" style="width:16px;height:16px;color:var(--gold);flex-shrink:0;margin-top:2px;"></i>
+          <span style="color:var(--text-secondary);">Your information is kept strictly confidential. We only use it to follow up on your consultation request.</span>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+          <button type="button" data-prev class="btn btn--ghost">
+            <i data-lucide="arrow-left"></i> Back
+          </button>
+          <button type="submit" class="btn btn--primary btn--lg" style="animation:pulse-glow 3s ease infinite;">
+            <i data-lucide="send"></i> Submit Request
+          </button>
+        </div>
+      </div>
+
+    </form>
+    
+  </div>
+</section>
+
+<style>
+.service-radio:checked + .service-radio-card,
+.service-radio-card.selected {
+  border-color: var(--gold);
+  background: var(--gold-faint);
+  box-shadow: 0 0 20px var(--gold-faint);
+}
+.budget-radio:checked + .budget-card,
+.budget-card.selected {
+  border-color: var(--gold);
+  background: var(--gold-faint);
+  color: var(--gold);
+}
+</style>
+
+<script>
+// Service radio styling
+document.querySelectorAll('.service-radio').forEach(radio => {
+  radio.addEventListener('change', () => {
+    document.querySelectorAll('.service-radio-card').forEach(c => c.classList.remove('selected'));
+    radio.nextElementSibling.classList.add('selected');
+  });
+  if (radio.checked) radio.nextElementSibling.classList.add('selected');
+});
+
+// Budget radio styling
+document.querySelectorAll('.budget-radio').forEach(radio => {
+  radio.addEventListener('change', () => {
+    document.querySelectorAll('.budget-card').forEach(c => c.classList.remove('selected'));
+    radio.nextElementSibling.classList.add('selected');
+  });
+});
+</script>
+
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer__grid">
+      <!-- Brand -->
+      <div>
+        <span class="footer__logo">ILLUME</span>
+        <p class="footer__tagline">
+          We don't just dress bodies — we architect identities.<br>
+          Fashion is language. We make yours unforgettable.
+        </p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="https://wa.me/2348130024904" class="footer__social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <i data-lucide="message-circle"></i>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Pinterest">
+            <i data-lucide="image"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h6 class="footer__heading">Explore</h6>
+        <nav class="footer__links">
+          <a href="./"              class="footer__link">Home</a>
+          <a href="./about.html"     class="footer__link">Our Story</a>
+          <a href="./services.html"  class="footer__link">Services</a>
+          <a href="./portfolio.html" class="footer__link">Portfolio</a>
+          <a href="./contact.html"   class="footer__link">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h6 class="footer__heading">Services</h6>
+        <nav class="footer__links">
+          <a href="./services.html#bespoke"            class="footer__link">Bespoke</a>
+          <a href="./services.html#asoebi"             class="footer__link">Asoebi</a>
+          <a href="./services.html#african-wears"      class="footer__link">African Wears</a>
+          <a href="./services.html#beading"            class="footer__link">Beading</a>
+          <a href="./services.html#casuals"            class="footer__link">Casuals</a>
+          <a href="./services.html#dressmaking"        class="footer__link">Custom Dressmaking</a>
+          <a href="./services.html#consultancy"        class="footer__link">Fashion Consultancy</a>
+          <a href="./services.html#illustration"       class="footer__link">Fashion Illustration</a>
+        </nav>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h6 class="footer__heading">Connect</h6>
+        <nav class="footer__links">
+          <a href="mailto:lightpeacelimited@gmail.com" class="footer__link" style="display:flex;align-items:center;gap:0.4rem;">
+            <i data-lucide="mail" style="width:13px;height:13px;"></i> lightpeacelimited@gmail.com          </a>
+          <a href="tel:+2348130024904" class="footer__link" style="display:flex;align-items:center;gap:0.4rem;">
+            <i data-lucide="phone" style="width:13px;height:13px;"></i> +234 813 002 4904          </a>
+          <a href="https://wa.me/2348130024904?text=Hello%20ILLUME!" class="footer__link" style="display:flex;align-items:center;gap:0.4rem;" target="_blank" rel="noopener">
+            <i data-lucide="message-circle" style="width:13px;height:13px;"></i> WhatsApp Us
+          </a>
+          <a href="./consultation.html" class="footer__link" style="display:flex;align-items:center;gap:0.4rem;">
+            <i data-lucide="calendar" style="width:13px;height:13px;"></i> Book a Consultation
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer__bottom">
+      <span>&copy; 2026 ILLUME. All rights reserved.</span>
+      <span>Crafted in Abuja &nbsp;·&nbsp; Worn Worldwide</span>
+      <span style="display:flex;gap:1rem;">
+        <a href="#" class="footer__link" style="font-size:0.75rem;">Privacy Policy</a>
+        <a href="#" class="footer__link" style="font-size:0.75rem;">Terms</a>
+      </span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<!-- Main JS -->
+<script src="./assets/js/main.js"></script>
+
 </body>
-
 </html>

@@ -1,60 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ILLUME is a luxury Nigerian fashion house offering Bespoke, Asoebi, African Wears, and high-end Custom Dressmaking.">
-    <meta name="theme-color" content="#FAFAFA">
-    <meta property="og:title" content="Fashion. Elevated. — ILLUME">
-    <meta property="og:description" content="Official preview of ILLUME. Luxury Nigerian Fashion.">
-    <meta property="og:type" content="website">
-    <title>Fashion. Elevated. — ILLUME</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ILLUME is a luxury Nigerian fashion house offering Bespoke, Asoebi, African Wears, and high-end Custom Dressmaking.">
+  <meta name="theme-color" content="#020207">
+  <meta property="og:title"       content="Fashion. Elevated. — ILLUME">
+  <meta property="og:description" content="ILLUME is a luxury Nigerian fashion house offering Bespoke, Asoebi, African Wears, and high-end Custom Dressmaking.">
+  <meta property="og:url"         content="./index.html">
+  <meta property="og:type"        content="website">
+  <title>Fashion. Elevated. — ILLUME</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
-    <!-- Styles (Relative) -->
-    <link rel="stylesheet" href="assets/css/main.css?v=1.4">
-    
-    <!-- External Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-    <script src="assets/js/main.js?v=1.4" defer></script>
-
-    <style>
-        /* Precision tweaks for the Preview link aesthetic */
-        .shimmer-text {
-            background: linear-gradient(135deg, var(--gold), var(--gold-bright), var(--aura), var(--gold));
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shimmer 5s ease infinite;
-        }
-        @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .hero { min-height: 100svh; display: flex; align-items: center; justify-content: center; text-align: center; }
-        .hero__content { max-width: 800px; }
-        .btn--disabled { opacity: 0.5; cursor: not-allowed !important; pointer-events: none; }
-        
-        /* Force disable native smooth scroll to prevent Lenis conflict */
-        html, body { scroll-behavior: auto !important; }
-
-        /* Sync with PHP layout styles */
-        .service-icon {
-            width: 50px; height: 50px; border-radius: 50%;
-            background: var(--gold-faint); border: 1px solid var(--gold-glass);
-            display: flex; align-items: center; justify-content: center;
-            color: var(--gold); margin-bottom: 1.25rem;
-        }
-        .portfolio-item img { transition: transform 0.8s var(--ease-out); }
-        .portfolio-item:hover img { transform: scale(1.08); }
-    </style>
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+  
+  <!-- Three.js (hero particles) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
 </head>
 <body>
 
@@ -74,21 +42,29 @@
 <!-- ═══ NAVIGATION ═══════════════════════════════════════════ -->
 <nav class="nav" id="main-nav">
   <div class="nav__inner">
-    <a href="index.html" class="nav__logo">ILLUME</a>
+
+    <!-- Logo -->
+    <a href="./" class="nav__logo">ILLUME</a>
+
+    <!-- Desktop Links -->
     <div class="nav__links">
-      <a href="index.html" class="nav__link">Home</a>
-      <a href="about.html" class="nav__link">About</a>
-      <a href="services.html" class="nav__link">Services</a>
-      <a href="portfolio.html" class="nav__link">Portfolio</a>
-      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="./"               class="nav__link active">Home</a>
+      <a href="./about.html"      class="nav__link ">About</a>
+      <a href="./services.html"   class="nav__link ">Services</a>
+      <a href="./portfolio.html"  class="nav__link ">Portfolio</a>
+      <a href="./contact.html"    class="nav__link ">Contact</a>
     </div>
+
+    <!-- Actions -->
     <div class="nav__actions">
-      <a href="login.html" class="btn btn--secondary btn--sm">Sign In</a>
-      <a href="consultation.html" class="btn btn--primary btn--sm">Book Consultation</a>
+              <a href="./auth/login.php" class="btn btn--secondary btn--sm">Sign In</a>
+            <a href="./consultation.html" class="btn btn--primary btn--sm">Book Consultation</a>
+      <!-- Hamburger -->
       <button class="nav__hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
+
   </div>
 </nav>
 
@@ -97,16 +73,17 @@
   <button class="mobile-close btn btn--icon btn--ghost" aria-label="Close menu">
     <i data-lucide="x"></i>
   </button>
-  <a href="index.html" class="nav__link">Home</a>
-  <a href="about.html" class="nav__link">About</a>
-  <a href="services.html" class="nav__link">Services</a>
-  <a href="portfolio.html" class="nav__link">Portfolio</a>
-  <a href="contact.html" class="nav__link">Contact</a>
+  <a href="./"               class="nav__link">Home</a>
+  <a href="./about.html"      class="nav__link">About</a>
+  <a href="./services.html"   class="nav__link">Services</a>
+  <a href="./portfolio.html"  class="nav__link">Portfolio</a>
+  <a href="./contact.html"    class="nav__link">Contact</a>
   <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1rem;">
-    <a href="login.html" class="btn btn--secondary">Sign In</a>
-    <a href="consultation.html" class="btn btn--primary">Book Consultation</a>
+          <a href="./auth/login.php" class="btn btn--secondary">Sign In</a>
+        <a href="./consultation.html" class="btn btn--primary">Book Consultation</a>
   </div>
 </div>
+<!-- end header php -->
 
 <!-- ═══ HERO ═════════════════════════════════════════════════ -->
 <section class="hero" id="hero">
@@ -130,7 +107,7 @@
     </p>
 
     <div class="hero__cta">
-      <a href="contact.html" class="btn btn--primary btn--lg">
+      <a href="consultation.html" class="btn btn--primary btn--lg">
         <i data-lucide="calendar"></i>
         Book a Consultation
       </a>
@@ -151,184 +128,339 @@
 <section style="padding: 4rem 0; border-top: 1px solid var(--space-border); border-bottom: 1px solid var(--space-border); background: var(--space);">
   <div class="container">
     <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:2rem; text-align:center;">
+
       <div class="reveal">
-        <div style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--gold),var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;" data-counter data-target="7" data-suffix="+">0+</div>
+        <div style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--gold),var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;"
+             data-counter data-target="7" data-suffix="+">0+</div>
         <div class="label-text" style="margin-top:0.5rem;">Years of Craft</div>
       </div>
+
       <div class="reveal reveal-delay-1">
-        <div style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--gold),var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;" data-counter data-target="340" data-suffix="+">0+</div>
+        <div style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--gold),var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;"
+             data-counter data-target="340" data-suffix="+">0+</div>
         <div class="label-text" style="margin-top:0.5rem;">Clients Served</div>
       </div>
+
       <div class="reveal reveal-delay-2">
-        <div style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--gold),var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;" data-counter data-target="1200" data-suffix="+">0+</div>
+        <div style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--gold),var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;"
+             data-counter data-target="1200" data-suffix="+">0+</div>
         <div class="label-text" style="margin-top:0.5rem;">Pieces Created</div>
       </div>
+
       <div class="reveal reveal-delay-3">
-        <div style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--gold),var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;" data-counter data-target="12" data-suffix="">0</div>
+        <div style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--gold),var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;"
+             data-counter data-target="12" data-suffix="">0</div>
         <div class="label-text" style="margin-top:0.5rem;">Countries Worn</div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══ SERVICES ══════════════════════════════════════════════ -->
-<section class="section--lg" id="services">
+<!-- ═══ SERVICES PREVIEW ══════════════════════════════════════ -->
+<section class="section--lg">
   <div class="container">
     <div class="section-header">
-      <div class="section-divider"><span class="label-text">What We Do</span></div>
+      <div class="section-divider">
+        <span class="label-text">What We Do</span>
+      </div>
       <h2 class="reveal">Services Built<br>for the <span class="shimmer-text">Extraordinary</span></h2>
-      <p class="reveal reveal-delay-1">From bespoke couture to full brand styling, every service is engineered to make you unforgettable.</p>
+      <p class="reveal reveal-delay-1">
+        From bespoke couture to full brand styling, every service
+        is engineered to make you unforgettable.
+      </p>
     </div>
 
-    <div class="grid-3" style="gap:1.5rem; margin-bottom: 3rem;">
-      <!-- Bespoke -->
-      <div class="service-card reveal">
-        <div class="service-icon"><i data-lucide="scissors"></i></div>
-        <div class="label-text">Bespoke Couture</div>
-        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Fully custom garments crafted to your exact vision and measurements</h3>
-        <p style="font-size: 0.88rem; line-height: 1.7;">From initial concept to final fitting, every stitch is a conversation between your vision and our craft. We create one-of-a-kind pieces that tell your story.</p>
-        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto; padding-top: 1.5rem;">
-          <a href="consultation.html" class="btn btn--ghost btn--sm">Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
+    <div class="grid-3" style="gap:1.5rem;">
+            <div class="service-card reveal reveal-delay-1" id="service-bespoke-couture" 
+           onclick="window.location.href='services.html#bespoke-couture'" style="cursor:pointer;">
+        <div class="service-icon">
+          <i data-lucide="sparkles"></i>
+        </div>
+        <div class="label-text" style="margin-bottom:0.5rem;">Bespoke Couture</div>
+        <h3 style="font-size:1.3rem; margin-bottom:0.75rem;">Fully custom garments crafted to your exact vision and measurements</h3>
+        <p style="font-size:0.88rem; line-height:1.7; margin-bottom:1.25rem;">From initial concept to final fitting, every stitch is a conversation between your vision and our craft. We create one-of-a-kind pieces that tell your story.</p>
+        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto;">
+          <a href="consultation.html?service=bespoke-couture" class="btn btn--ghost btn--sm" onclick="event.stopPropagation();">
+            Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+          </a>
         </div>
       </div>
-      <!-- Bridals -->
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-icon"><i data-lucide="heart"></i></div>
-        <div class="label-text">Bridals & Asoebi</div>
-        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Ethereal designs for the moments that matter most</h3>
-        <p style="font-size: 0.88rem; line-height: 1.7;">Your most significant moments deserve extraordinary garments. We create bridal wear and occasion pieces imbued with meaning, structure, and beauty.</p>
-        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto; padding-top: 1.5rem;">
-          <a href="consultation.html" class="btn btn--ghost btn--sm">Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
+            <div class="service-card reveal reveal-delay-2" id="service-asoebi" 
+           onclick="window.location.href='services.html#asoebi'" style="cursor:pointer;">
+        <div class="service-icon">
+          <i data-lucide="heart"></i>
+        </div>
+        <div class="label-text" style="margin-bottom:0.5rem;">Bridals &amp; Asoebi</div>
+        <h3 style="font-size:1.3rem; margin-bottom:0.75rem;">Ethereal designs for the moments that matter most</h3>
+        <p style="font-size:0.88rem; line-height:1.7; margin-bottom:1.25rem;">Your most significant moments deserve extraordinary garments. We create bridal wear and occasion pieces imbued with meaning, structure, and beauty.</p>
+        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto;">
+          <a href="consultation.html?service=asoebi" class="btn btn--ghost btn--sm" onclick="event.stopPropagation();">
+            Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+          </a>
         </div>
       </div>
-      <!-- African Wears -->
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-icon"><i data-lucide="sparkles"></i></div>
-        <div class="label-text">African Wears</div>
-        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Modern luxury rooted in traditional textiles.</h3>
-        <p style="font-size: 0.88rem; line-height: 1.7;">Modern luxury rooted in traditional textiles. We translate heritage fabrics like Ankara, Adire, and Aso-Oke into contemporay avant-garde silhouettes.</p>
-        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto; padding-top: 1.5rem;">
-          <a href="consultation.html" class="btn btn--ghost btn--sm">Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
+            <div class="service-card reveal reveal-delay-3" id="service-african-wears" 
+           onclick="window.location.href='services.html#african-wears'" style="cursor:pointer;">
+        <div class="service-icon">
+          <i data-lucide="palette"></i>
+        </div>
+        <div class="label-text" style="margin-bottom:0.5rem;">African Wears</div>
+        <h3 style="font-size:1.3rem; margin-bottom:0.75rem;">Modern luxury rooted in traditional textiles.</h3>
+        <p style="font-size:0.88rem; line-height:1.7; margin-bottom:1.25rem;">Modern luxury rooted in traditional textiles. We translate heritage fabrics like Ankara, Adire, and Aso-Oke into contemporay avant-garde silhouettes.</p>
+        <div style="display:flex; align-items:center; justify-content:flex-end; margin-top:auto;">
+          <a href="consultation.html?service=african-wears" class="btn btn--ghost btn--sm" onclick="event.stopPropagation();">
+            Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+          </a>
         </div>
       </div>
-    </div>
+          </div>
 
-    <div style="text-align: center;">
-      <a href="services.html" class="btn btn--secondary">View All Services <i data-lucide="arrow-right"></i></a>
+    <div class="text-center" style="margin-top:3rem;">
+      <a href="services.html" class="btn btn--secondary btn--lg">
+        View All Services <i data-lucide="arrow-right"></i>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ═══ ABOUT (PHILOSOPHY) ════════════════════════════════════ -->
-<section class="section" id="about" style="background:var(--space); border-top:1px solid var(--space-border); border-bottom:1px solid var(--space-border);">
+<!-- ═══ PHILOSOPHY SECTION ════════════════════════════════════ -->
+<section class="section" style="background:var(--space); border-top:1px solid var(--space-border); border-bottom:1px solid var(--space-border);">
   <div class="container">
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;">
+
+      <!-- Left: Visual -->
       <div class="reveal-left" style="position:relative;">
-        <div style="aspect-ratio:3/4; border-radius:var(--r-2xl); overflow:hidden; position:relative; box-shadow: 0 30px 60px rgba(0,0,0,0.1);">
-          <img src="assets/img/philosophy.png" alt="ILLUME Bespoke Couture" style="width:100%; height:100%; object-fit:cover;">
+        <div style="
+          aspect-ratio:3/4;
+          border-radius:var(--r-2xl);
+          overflow:hidden; position:relative;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        ">
+          <img src="./assets/img/philosophy.png" alt="ILLUME Bespoke Couture" style="width:100%; height:100%; object-fit:cover;">
+          
+          <!-- Decorative overlay -->
           <div style="position:absolute; inset:0; background:linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.4) 100%);"></div>
+          
           <div style="position:absolute; bottom:2rem; left:2rem; z-index:1;">
-            <div style="font-family:var(--font-display); font-size:4rem; font-weight:800; color: #FFF; line-height:1; margin-bottom:0.5rem;">I.</div>
+            <div style="
+              font-family:var(--font-display);
+              font-size:4rem;
+              font-weight:800;
+              color: #FFF;
+              line-height:1;
+              margin-bottom:0.5rem;
+            ">I.</div>
             <div class="label-text" style="color:var(--gold-bright);">Olewuezi Ikedichukwu Peace & Susan Mtsevah</div>
           </div>
+          
+          <!-- Corner accents -->
+          <div style="position:absolute;top:1.5rem;right:1.5rem;width:24px;height:24px;border-top:2px solid #FFF;border-right:2px solid #FFF;border-radius:0 var(--r-sm) 0 0;"></div>
+          <div style="position:absolute;bottom:1.5rem;right:1.5rem;width:24px;height:24px;border-bottom:2px solid #FFF;border-left:2px solid #FFF;border-radius:0 0 0 var(--r-sm); transform: rotate(180deg);"></div>
         </div>
 
-        <!-- Floating Design Time Card -->
-        <div class="glass" style="position:absolute; bottom: -24px; right: -24px; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 0.75rem; border: 1px solid var(--gold-glass);">
-          <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--aura); box-shadow: 0 0 10px var(--aura);"></div>
+        <!-- Floating accent card -->
+        <div class="glass" style="
+          position:absolute; bottom:-2rem; right:-2rem;
+          padding:1.25rem 1.5rem;
+          display:flex; align-items:center; gap:0.75rem;
+        ">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--aura);box-shadow:0 0 12px var(--aura);flex-shrink:0;"></div>
           <div>
-            <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); padding-bottom: 2px;">Design Time</div>
-            <div style="font-weight: 600; font-size: 0.95rem;">2 – 6 Weeks</div>
+            <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);">Design Time</div>
+            <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);">2 – 6 Weeks</div>
           </div>
         </div>
       </div>
+
+      <!-- Right: Text -->
       <div class="reveal-right">
         <div class="label-text" style="margin-bottom:1rem;">Our Philosophy</div>
-        <h2 style="margin-bottom:1.5rem;">Fashion That<br><span class="shimmer-text">Commands Space</span></h2>
+        <h2 style="margin-bottom:1.5rem;">
+          Fashion That<br>
+          <span class="shimmer-text">Commands Space</span>
+        </h2>
         <p style="margin-bottom:1.5rem; font-size:1.05rem; line-height:1.8; font-style: italic; color: var(--gold-bright);">
           Illume by Light Peace was born from a simple conviction—<br>
           that fashion should not just be seen, but felt.
         </p>
         <p style="margin-bottom:1.5rem; line-height:1.8;">
-          Here, African identity is not explained; it is elevated. Every piece is crafted with intention to reflect dignity, confidence, and quiet strength.
+          Here, African identity is not explained; it is elevated. 
+          Every piece is crafted with intention to reflect dignity, confidence, and quiet strength.
         </p>
-        <p style="margin-bottom:2rem; line-height:1.8; font-weight: 500;">This is more than fashion. It is light expressed. It is legacy in motion.</p>
-        
-        <div style="display:flex; flex-direction:column; gap:1.25rem; margin-bottom:2.5rem;">
-          <div style="display:flex; align-items:flex-start; gap:1rem;">
-            <div class="service-icon" style="width:40px;height:40px;margin:0;"><i data-lucide="zap" style="width:16px;height:16px;"></i></div>
-            <div><div style="font-weight:600; margin-bottom:0.1rem;">Precision Craft</div><div style="font-size:0.85rem; color:var(--text-muted);">Master tailors with 10–20 years of experience.</div></div>
-          </div>
-          <div style="display:flex; align-items:flex-start; gap:1rem;">
-            <div class="service-icon" style="width:40px;height:40px;margin:0;"><i data-lucide="shield-check" style="width:16px;height:16px;"></i></div>
-            <div><div style="font-weight:600; margin-bottom:0.1rem;">Quality Materials</div><div style="font-size:0.85rem; color:var(--text-muted);">Only the finest fabrics sourced locally and globally.</div></div>
-          </div>
-          <div style="display:flex; align-items:flex-start; gap:1rem;">
-            <div class="service-icon" style="width:40px;height:40px;margin:0;"><i data-lucide="users" style="width:16px;height:16px;"></i></div>
-            <div><div style="font-weight:600; margin-bottom:0.1rem;">Client-Centered</div><div style="font-size:0.85rem; color:var(--text-muted);">Your satisfaction isn't a goal — it's our baseline.</div></div>
-          </div>
-        </div>
+        <p style="margin-bottom:2rem; line-height:1.8; font-weight: 500; letter-spacing: 0.02em;">
+          This is more than fashion. It is light expressed. It is legacy in motion.
+        </p>
 
-        <a href="about.html" class="btn btn--primary">Our Story <i data-lucide="arrow-right"></i></a>
+        <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;">
+                    <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="
+              width:40px; height:40px; border-radius:var(--r);
+              background:var(--gold-faint); border:1px solid var(--gold-glass);
+              display:flex; align-items:center; justify-content:center;
+              color:var(--gold); flex-shrink:0;
+            ">
+              <i data-lucide="zap" style="width:16px;height:16px;"></i>
+            </div>
+            <div>
+              <div style="font-weight:600; margin-bottom:0.2rem;">Precision Craft</div>
+              <div style="font-size:0.85rem; color:var(--text-muted);">Master tailors with 10–20 years of experience.</div>
+            </div>
+          </div>
+                    <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="
+              width:40px; height:40px; border-radius:var(--r);
+              background:var(--gold-faint); border:1px solid var(--gold-glass);
+              display:flex; align-items:center; justify-content:center;
+              color:var(--gold); flex-shrink:0;
+            ">
+              <i data-lucide="shield-check" style="width:16px;height:16px;"></i>
+            </div>
+            <div>
+              <div style="font-weight:600; margin-bottom:0.2rem;">Quality Materials</div>
+              <div style="font-size:0.85rem; color:var(--text-muted);">Only the finest fabrics sourced locally and globally.</div>
+            </div>
+          </div>
+                    <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="
+              width:40px; height:40px; border-radius:var(--r);
+              background:var(--gold-faint); border:1px solid var(--gold-glass);
+              display:flex; align-items:center; justify-content:center;
+              color:var(--gold); flex-shrink:0;
+            ">
+              <i data-lucide="users" style="width:16px;height:16px;"></i>
+            </div>
+            <div>
+              <div style="font-weight:600; margin-bottom:0.2rem;">Client-Centered</div>
+              <div style="font-size:0.85rem; color:var(--text-muted);">Your satisfaction isn't a goal — it's our baseline.</div>
+            </div>
+          </div>
+                  </div>
+
+        <a href="about.html" class="btn btn--primary">
+          Our Story <i data-lucide="arrow-right"></i>
+        </a>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══ PORTFOLIO ════════════════════════════════════════════ -->
-<section class="section--lg" id="portfolio">
+<!-- ═══ PORTFOLIO PREVIEW ══════════════════════════════════════ -->
+<section class="section--lg">
   <div class="container">
     <div class="section-header">
-      <div class="section-divider"><span class="label-text">Portfolio</span></div>
+      <div class="section-divider">
+        <span class="label-text">Portfolio</span>
+      </div>
       <h2 class="reveal">Work That<br><span class="shimmer-text">Speaks First</span></h2>
-      <p class="reveal reveal-delay-1" style="max-width: 500px; margin: 1rem auto 0;">A glimpse into the ILLUME universe. Each piece tells a story only you can finish.</p>
+      <p class="reveal reveal-delay-1">A glimpse into the ILLUME universe. Each piece tells a story only you can finish.</p>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; margin-bottom: 3rem;">
-      <!-- Bespoke -->
-      <a href="services.html" class="portfolio-item reveal" style="height:450px; border-radius:24px; overflow:hidden; position:relative; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-decoration: none;">
-        <img src="assets/img/svc_bespoke_1776779653752.png" alt="Bespoke" style="width:100%; height:100%; object-fit:cover;">
-        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.8), transparent); display:flex; align-items:flex-end; padding:2rem;">
-            <div>
-                <div class="label-text" style="color:var(--gold-bright);">Bespoke</div>
-                <h4 style="color:#FFF;">Artisanal Tailoring</h4>
-            </div>
-        </div>
-      </a>
-      <!-- Asoebi -->
-      <a href="services.html" class="portfolio-item reveal reveal-delay-1" style="height:450px; border-radius:24px; overflow:hidden; position:relative; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-decoration: none;">
-        <img src="assets/img/bridal.png" alt="Asoebi" style="width:100%; height:100%; object-fit:cover;">
-        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.8), transparent); display:flex; align-items:flex-end; padding:2rem;">
-            <div>
-                <div class="label-text" style="color:var(--gold-bright);">Asoebi</div>
-                <h4 style="color:#FFF;">Heritage Matrimony</h4>
-            </div>
-        </div>
-      </a>
-      <!-- African Wears -->
-      <a href="services.html" class="portfolio-item reveal" style="height:350px; border-radius:24px; overflow:hidden; position:relative; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-decoration: none;">
-        <img src="assets/img/couture.png" alt="African Wears" style="width:100%; height:100%; object-fit:cover;">
-        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.8), transparent); display:flex; align-items:flex-end; padding:2rem;">
-            <div>
-                <div class="label-text" style="color:var(--gold-bright);">African Wears</div>
-                <h4 style="color:#FFF;">Modern Tradition</h4>
-            </div>
-        </div>
-      </a>
-      <!-- Custom Dressmaking -->
-      <a href="services.html" class="portfolio-item reveal reveal-delay-1" style="height:350px; border-radius:24px; overflow:hidden; position:relative; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-decoration: none;">
-        <img src="assets/img/philosophy.png" alt="Custom Dressmaking" style="width:100%; height:100%; object-fit:cover;">
-        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.8), transparent); display:flex; align-items:flex-end; padding:2rem;">
-            <div>
-                <div class="label-text" style="color:var(--gold-bright);">Custom Dressmaking</div>
-                <h4 style="color:#FFF;">Technical Couture</h4>
-            </div>
-        </div>
-      </a>
-    </div>
+    <!-- Portfolio Grid (CSS-based placeholder visual showcase) -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:auto; gap:1.5rem; margin-bottom:4rem;">
+            <a href="services.html#bespoke-couture" class="portfolio-item reveal reveal-delay-1" style="grid-row: span 2; text-decoration:none;">
+        <div style="
+          background: var(--space-mid);
+          border: 1px solid var(--space-border);
+          border-radius: var(--r-xl);
+          height: 580px;
+          display:flex; align-items:flex-end;
+          position:relative; overflow:hidden; cursor:pointer;
+          transition: all 0.5s var(--ease-out);
+        "
+        onmouseenter="this.querySelector('img').style.transform='scale(1.08)'; this.style.borderColor='var(--aura-glass)';"
+        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
+        >
+          <img src="./assets/img/svc_bespoke_1776779653752.png" alt="Bespoke" 
+               style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition: transform 0.8s var(--ease-out);">
+          
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);"></div>
 
-    <div style="text-align: center;">
-      <a href="portfolio.html" class="btn btn--secondary btn--lg">Full Portfolio <i data-lucide="arrow-right"></i></a>
+          <div style="position:relative; z-index:1; padding:2rem; width:100%;">
+            <div class="label-text" style="color:var(--gold-bright); margin-bottom:0.3rem;">Bespoke</div>
+            <div style="font-size:0.9rem; color:#FFF; font-weight:500;">Artisanal Tailoring</div>
+          </div>
+        </div>
+      </a>
+            <a href="services.html#asoebi" class="portfolio-item reveal reveal-delay-2" style=" text-decoration:none;">
+        <div style="
+          background: var(--space-mid);
+          border: 1px solid var(--space-border);
+          border-radius: var(--r-xl);
+          height: 280px;
+          display:flex; align-items:flex-end;
+          position:relative; overflow:hidden; cursor:pointer;
+          transition: all 0.5s var(--ease-out);
+        "
+        onmouseenter="this.querySelector('img').style.transform='scale(1.08)'; this.style.borderColor='var(--aura-glass)';"
+        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
+        >
+          <img src="./assets/img/bridal.png" alt="Asoebi" 
+               style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition: transform 0.8s var(--ease-out);">
+          
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);"></div>
+
+          <div style="position:relative; z-index:1; padding:2rem; width:100%;">
+            <div class="label-text" style="color:var(--gold-bright); margin-bottom:0.3rem;">Asoebi</div>
+            <div style="font-size:0.9rem; color:#FFF; font-weight:500;">Heritage Matrimony</div>
+          </div>
+        </div>
+      </a>
+            <a href="services.html#african-wears" class="portfolio-item reveal reveal-delay-3" style=" text-decoration:none;">
+        <div style="
+          background: var(--space-mid);
+          border: 1px solid var(--space-border);
+          border-radius: var(--r-xl);
+          height: 280px;
+          display:flex; align-items:flex-end;
+          position:relative; overflow:hidden; cursor:pointer;
+          transition: all 0.5s var(--ease-out);
+        "
+        onmouseenter="this.querySelector('img').style.transform='scale(1.08)'; this.style.borderColor='var(--aura-glass)';"
+        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
+        >
+          <img src="./assets/img/couture.png" alt="African Wears" 
+               style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition: transform 0.8s var(--ease-out);">
+          
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);"></div>
+
+          <div style="position:relative; z-index:1; padding:2rem; width:100%;">
+            <div class="label-text" style="color:var(--gold-bright); margin-bottom:0.3rem;">African Wears</div>
+            <div style="font-size:0.9rem; color:#FFF; font-weight:500;">Modern Tradition</div>
+          </div>
+        </div>
+      </a>
+            <a href="services.html#dressmaking" class="portfolio-item reveal reveal-delay-1" style="grid-column: span 2; text-decoration:none;">
+        <div style="
+          background: var(--space-mid);
+          border: 1px solid var(--space-border);
+          border-radius: var(--r-xl);
+          height: 280px;
+          display:flex; align-items:flex-end;
+          position:relative; overflow:hidden; cursor:pointer;
+          transition: all 0.5s var(--ease-out);
+        "
+        onmouseenter="this.querySelector('img').style.transform='scale(1.08)'; this.style.borderColor='var(--aura-glass)';"
+        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
+        >
+          <img src="./assets/img/philosophy.png" alt="Custom Dressmaking" 
+               style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition: transform 0.8s var(--ease-out);">
+          
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);"></div>
+
+          <div style="position:relative; z-index:1; padding:2rem; width:100%;">
+            <div class="label-text" style="color:var(--gold-bright); margin-bottom:0.3rem;">Custom Dressmaking</div>
+            <div style="font-size:0.9rem; color:#FFF; font-weight:500;">Technical Couture</div>
+          </div>
+        </div>
+      </a>
+          </div>
+
+    <div class="text-center">
+      <a href="portfolio.html" class="btn btn--secondary btn--lg">
+        Full Portfolio <i data-lucide="arrow-right"></i>
+      </a>
     </div>
   </div>
 </section>
@@ -342,156 +474,239 @@
     </div>
 
     <div class="grid-3" style="gap:1.5rem;">
-      <!-- Adaora -->
-      <div class="card card--glass reveal" style="padding:2rem;">
-        <div style="display:flex;gap:3px;margin-bottom:1rem;">
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-        </div>
-        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem;">"ILLUME transformed my entire relationship with fashion. My bespoke pieces don't just fit — they feel like armor. I walk into every boardroom differently."</p>
-        <div style="display:flex;align-items:center;gap:0.75rem;">
-          <div style="width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#FFF;font-weight:700;">A</div>
-          <div><div style="font-weight:600;font-size:0.9rem;">Adaora Nwachukwu</div><div style="font-size:0.7rem;color:var(--text-muted);">CEO, Adaora Skincare · Abuja</div></div>
-        </div>
-      </div>
-      <!-- Funmi -->
-      <div class="card card--glass reveal reveal-delay-1" style="padding:2rem;">
-        <div style="display:flex;gap:3px;margin-bottom:1rem;">
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-        </div>
-        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem;">"My wedding dress was everything I dreamed and more. They listened to every detail and somehow created something better than I could have imagined. Magic."</p>
-        <div style="display:flex;align-items:center;gap:0.75rem;">
-          <div style="width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#FFF;font-weight:700;">F</div>
-          <div><div style="font-weight:600;font-size:0.9rem;">Funmi Adeyemi</div><div style="font-size:0.7rem;color:var(--text-muted);">Bride, 2024 · Abuja</div></div>
+            <div class="card card--glass reveal reveal-delay-1" style="padding:2rem;">
+        <!-- Stars -->
+        <div style="display:flex;gap:3px;margin-bottom:1.25rem;">
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                  </div>
+        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem; color:var(--text-secondary);">
+          "ILLUME transformed my entire relationship with fashion. My bespoke pieces don&#039;t just fit — they feel like armor. I walk into every boardroom differently."
+        </p>
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-top:auto; border-top:1px solid var(--space-border); padding-top:1.25rem;">
+          <div style="
+            width:42px; height:42px; border-radius:50%;
+            background:linear-gradient(135deg,var(--gold),var(--gold-bright));
+            display:flex; align-items:center; justify-content:center;
+            font-family:var(--font-display); font-weight:700; color:var(--void);
+            flex-shrink:0;
+          ">A</div>
+          <div>
+            <div style="font-weight:600; font-size:0.9rem;">Adaora Nwachukwu</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">CEO, Adaora Skincare · Abuja</div>
+          </div>
         </div>
       </div>
-      <!-- Emeka -->
-      <div class="card card--glass reveal reveal-delay-2" style="padding:2rem;">
-        <div style="display:flex;gap:3px;margin-bottom:1rem;">
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-          <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
-        </div>
-        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem;">"As someone who works in fashion, I'm hard to impress. ILLUME managed to surprise me every single time. Extraordinary craft, extraordinary people."</p>
-        <div style="display:flex;align-items:center;gap:0.75rem;">
-          <div style="width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#FFF;font-weight:700;">E</div>
-          <div><div style="font-weight:600;font-size:0.9rem;">Emeka Obi</div><div style="font-size:0.7rem;color:var(--text-muted);">Creative Director · London/Abuja</div></div>
+            <div class="card card--glass reveal reveal-delay-2" style="padding:2rem;">
+        <!-- Stars -->
+        <div style="display:flex;gap:3px;margin-bottom:1.25rem;">
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                  </div>
+        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem; color:var(--text-secondary);">
+          "My wedding dress was everything I dreamed and more. They listened to every detail and somehow created something better than I could have imagined. Magic."
+        </p>
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-top:auto; border-top:1px solid var(--space-border); padding-top:1.25rem;">
+          <div style="
+            width:42px; height:42px; border-radius:50%;
+            background:linear-gradient(135deg,var(--gold),var(--gold-bright));
+            display:flex; align-items:center; justify-content:center;
+            font-family:var(--font-display); font-weight:700; color:var(--void);
+            flex-shrink:0;
+          ">F</div>
+          <div>
+            <div style="font-weight:600; font-size:0.9rem;">Funmi Adeyemi</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Bride, 2024 · Abuja</div>
+          </div>
         </div>
       </div>
-    </div>
+            <div class="card card--glass reveal reveal-delay-3" style="padding:2rem;">
+        <!-- Stars -->
+        <div style="display:flex;gap:3px;margin-bottom:1.25rem;">
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                    <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
+                  </div>
+        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem; color:var(--text-secondary);">
+          "As someone who works in fashion, I&#039;m hard to impress. ILLUME managed to surprise me every single time. Extraordinary craft, extraordinary people."
+        </p>
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-top:auto; border-top:1px solid var(--space-border); padding-top:1.25rem;">
+          <div style="
+            width:42px; height:42px; border-radius:50%;
+            background:linear-gradient(135deg,var(--gold),var(--gold-bright));
+            display:flex; align-items:center; justify-content:center;
+            font-family:var(--font-display); font-weight:700; color:var(--void);
+            flex-shrink:0;
+          ">E</div>
+          <div>
+            <div style="font-weight:600; font-size:0.9rem;">Emeka Obi</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Creative Director · London/Abuja</div>
+          </div>
+        </div>
+      </div>
+          </div>
   </div>
 </section>
 
-<!-- ═══ READY TO BEGIN? CTA ════════════════════════════════════ -->
-<section class="section--lg" style="text-align:center;">
-  <div class="container">
+<!-- ═══ CONSULTATION CTA ═══════════════════════════════════════ -->
+<section class="section--lg" style="position:relative; overflow:hidden;">
+  <!-- Background glow -->
+  <div style="
+    position:absolute; top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    width:600px; height:300px;
+    background:radial-gradient(ellipse, rgba(201,168,76,0.08), transparent);
+    filter:blur(60px);
+    pointer-events:none;
+  "></div>
+
+  <div class="container" style="position:relative;z-index:1;text-align:center;">
     <div class="section-divider" style="justify-content:center;margin-bottom:1.5rem;">
       <span class="label-text">Ready to Begin?</span>
     </div>
-    <h2 class="reveal" style="font-size:clamp(2.5rem,6vw,4rem); margin-bottom:1.5rem;">Your Signature<br><span class="shimmer-text">Piece Awaits.</span></h2>
-    <p class="reveal reveal-delay-1" style="max-width:520px;margin:0 auto 2.5rem;font-size:1.1rem;line-height:1.8;">Every extraordinary garment starts with a single conversation. Book your free consultation and let's begin building yours.</p>
-    
-    <div class="reveal reveal-delay-2" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap; margin-bottom: 3.5rem;">
-      <a href="consultation.html" class="btn btn--primary btn--lg"><i data-lucide="calendar"></i> Book Free Consultation</a>
-      <a href="https://wa.me/2348130024904" class="btn btn--ghost btn--lg" target="_blank"><i data-lucide="message-circle"></i> WhatsApp Us Directly</a>
+
+    <h2 class="reveal" style="font-size:clamp(2.5rem,6vw,5rem); margin-bottom:1.5rem; max-width:700px; margin-left:auto; margin-right:auto;">
+      Your Signature<br><span class="shimmer-text">Piece Awaits.</span>
+    </h2>
+
+    <p class="reveal reveal-delay-1" style="font-size:1.1rem; max-width:520px; margin:0 auto 2.5rem; line-height:1.8;">
+      Every extraordinary garment starts with a single conversation.
+      Book your free consultation and let's begin building yours.
+    </p>
+
+    <div class="reveal reveal-delay-2" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="consultation.html" class="btn btn--primary btn--lg" style="animation:pulse-glow 3s ease infinite;">
+        <i data-lucide="calendar"></i>
+        Book Free Consultation
+      </a>
+      <a href="https://wa.me/2348130024904?text=Hello%20ILLUME!%20I%27d%20like%20to%20discuss%20a%20project."
+         class="btn btn--ghost btn--lg" target="_blank" rel="noopener">
+        <i data-lucide="message-circle"></i>
+        WhatsApp Us Directly
+      </a>
     </div>
 
-    <!-- Trust Badges -->
-    <div style="display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;" class="reveal reveal-delay-3">
-      <div style="display:flex;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.82rem;">
-        <i data-lucide="shield-check" style="width:15px;height:15px;color:var(--gold);"></i><span>Free Consultation</span>
+    <!-- Trust badges -->
+    <div style="display:flex;justify-content:center;gap:2.5rem;margin-top:3rem;flex-wrap:wrap;" class="reveal reveal-delay-3">
+            <div style="display:flex;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.82rem;">
+        <i data-lucide="shield-check" style="width:15px;height:15px;color:var(--gold);"></i>
+        <span>Free Consultation</span>
       </div>
-      <div style="display:flex;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.82rem;">
-        <i data-lucide="clock" style="width:15px;height:15px;color:var(--gold);"></i><span>Response in 24hrs</span>
+            <div style="display:flex;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.82rem;">
+        <i data-lucide="clock" style="width:15px;height:15px;color:var(--gold);"></i>
+        <span>Response in 24hrs</span>
       </div>
-      <div style="display:flex;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.82rem;">
-        <i data-lucide="lock" style="width:15px;height:15px;color:var(--gold);"></i><span>Private & Confidential</span>
+            <div style="display:flex;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.82rem;">
+        <i data-lucide="lock" style="width:15px;height:15px;color:var(--gold);"></i>
+        <span>Private & Confidential</span>
       </div>
-      <div style="display:flex;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.82rem;">
-        <i data-lucide="award" style="width:15px;height:15px;color:var(--gold);"></i><span>Satisfaction Guaranteed</span>
+            <div style="display:flex;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.82rem;">
+        <i data-lucide="award" style="width:15px;height:15px;color:var(--gold);"></i>
+        <span>Satisfaction Guaranteed</span>
       </div>
-    </div>
+          </div>
   </div>
 </section>
 
+
 <!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
-<footer class="footer" id="contact">
+<footer class="footer">
   <div class="container">
+
     <div class="footer__grid">
       <!-- Brand -->
       <div>
         <span class="footer__logo">ILLUME</span>
-        <p class="footer__tagline">We don't just dress bodies — we architect identities.<br>Fashion is language. We make yours unforgettable.</p>
-        <div class="footer__social" style="display:flex; gap:1.25rem;">
-          <a href="#" class="footer__social-link"><i data-lucide="instagram"></i></a>
-          <a href="#" class="footer__social-link"><i data-lucide="facebook"></i></a>
-          <a href="https://wa.me/2348130024904" class="footer__social-link" target="_blank"><i data-lucide="message-circle"></i></a>
+        <p class="footer__tagline">
+          We don't just dress bodies — we architect identities.<br>
+          Fashion is language. We make yours unforgettable.
+        </p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="https://wa.me/2348130024904" class="footer__social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <i data-lucide="message-circle"></i>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Pinterest">
+            <i data-lucide="image"></i>
+          </a>
         </div>
       </div>
-      <!-- Explore -->
+
+      <!-- Navigation -->
       <div>
         <h6 class="footer__heading">Explore</h6>
         <nav class="footer__links">
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="about.html" class="footer__link">Our Story</a>
-          <a href="services.html" class="footer__link">Services</a>
-          <a href="portfolio.html" class="footer__link">Portfolio</a>
-          <a href="#contact" class="footer__link">Contact</a>
+          <a href="./"              class="footer__link">Home</a>
+          <a href="./about.html"     class="footer__link">Our Story</a>
+          <a href="./services.html"  class="footer__link">Services</a>
+          <a href="./portfolio.html" class="footer__link">Portfolio</a>
+          <a href="./contact.html"   class="footer__link">Contact</a>
         </nav>
       </div>
+
       <!-- Services -->
       <div>
         <h6 class="footer__heading">Services</h6>
         <nav class="footer__links">
-          <a href="services.html#bespoke" class="footer__link">Bespoke</a>
-          <a href="services.html#asoebi" class="footer__link">Asoebi</a>
-          <a href="services.html#african-wears" class="footer__link">African Wears</a>
-          <a href="services.html#beading" class="footer__link">Beading</a>
-          <a href="services.html#casuals" class="footer__link">Casuals</a>
-          <a href="services.html#dressmaking" class="footer__link">Custom Dressmaking</a>
-          <a href="services.html#consultancy" class="footer__link">Fashion Consultancy</a>
-          <a href="services.html#illustration" class="footer__link">Fashion Illustration</a>
+          <a href="./services.html#bespoke"            class="footer__link">Bespoke</a>
+          <a href="./services.html#asoebi"             class="footer__link">Asoebi</a>
+          <a href="./services.html#african-wears"      class="footer__link">African Wears</a>
+          <a href="./services.html#beading"            class="footer__link">Beading</a>
+          <a href="./services.html#casuals"            class="footer__link">Casuals</a>
+          <a href="./services.html#dressmaking"        class="footer__link">Custom Dressmaking</a>
+          <a href="./services.html#consultancy"        class="footer__link">Fashion Consultancy</a>
+          <a href="./services.html#illustration"       class="footer__link">Fashion Illustration</a>
         </nav>
       </div>
-      <!-- Connect -->
+
+      <!-- Contact -->
       <div>
         <h6 class="footer__heading">Connect</h6>
         <nav class="footer__links">
-          <a href="mailto:lightpeacelimited@gmail.com" class="footer__link">lightpeacelimited@gmail.com</a>
-          <a href="tel:+2348130024904" class="footer__link">+234 813 002 4904</a>
-          <a href="https://wa.me/2348130024904" class="footer__link" target="_blank">WhatsApp Us</a>
-          <a href="contact.html" class="footer__link">Book a Consultation</a>
+          <a href="mailto:lightpeacelimited@gmail.com" class="footer__link" style="display:flex;align-items:center;gap:0.4rem;">
+            <i data-lucide="mail" style="width:13px;height:13px;"></i> lightpeacelimited@gmail.com          </a>
+          <a href="tel:+2348130024904" class="footer__link" style="display:flex;align-items:center;gap:0.4rem;">
+            <i data-lucide="phone" style="width:13px;height:13px;"></i> +234 813 002 4904          </a>
+          <a href="https://wa.me/2348130024904?text=Hello%20ILLUME!" class="footer__link" style="display:flex;align-items:center;gap:0.4rem;" target="_blank" rel="noopener">
+            <i data-lucide="message-circle" style="width:13px;height:13px;"></i> WhatsApp Us
+          </a>
+          <a href="./consultation.html" class="footer__link" style="display:flex;align-items:center;gap:0.4rem;">
+            <i data-lucide="calendar" style="width:13px;height:13px;"></i> Book a Consultation
+          </a>
         </nav>
       </div>
     </div>
+
+    <!-- Bottom Bar -->
     <div class="footer__bottom">
       <span>&copy; 2026 ILLUME. All rights reserved.</span>
       <span>Crafted in Abuja &nbsp;·&nbsp; Worn Worldwide</span>
-      <span style="display:flex;gap:1.5rem;">
+      <span style="display:flex;gap:1rem;">
         <a href="#" class="footer__link" style="font-size:0.75rem;">Privacy Policy</a>
         <a href="#" class="footer__link" style="font-size:0.75rem;">Terms</a>
       </span>
     </div>
+
   </div>
 </footer>
 
-<!-- Lucide Init Fallback -->
-<script>
-  window.addEventListener('load', () => {
-    if (window.lucide) {
-      lucide.createIcons();
-    }
-  });
-</script>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<!-- Main JS -->
+<script src="./assets/js/main.js"></script>
 
 </body>
 </html>

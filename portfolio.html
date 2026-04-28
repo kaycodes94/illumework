@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore the ILLUME portfolio — a visual archive of bespoke couture, bridal masterpieces, and editorial fashion.">
   <meta name="theme-color" content="#020207">
+  <meta property="og:title"       content="Portfolio — ILLUME">
+  <meta property="og:description" content="Explore the ILLUME portfolio — a visual archive of bespoke couture, bridal masterpieces, and editorial fashion.">
+  <meta property="og:url"         content="./portfolio.html">
+  <meta property="og:type"        content="website">
   <title>Portfolio — ILLUME</title>
 
   <!-- Fonts -->
@@ -12,57 +16,74 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/main.css?v=1.5">
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+  
+  <!-- Three.js (hero particles) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+  <!-- Lenis smooth scroll -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-  <script src="assets/js/main.js?v=1.5" defer></script>
-  <style>
-    .shimmer-text {
-        background: linear-gradient(135deg, var(--gold), var(--gold-bright), var(--aura), var(--gold));
-        background-size: 300% 300%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: shimmer 5s ease infinite;
-    }
-    @keyframes shimmer {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-    html, body { scroll-behavior: auto !important; }
-  </style>
 </head>
 <body>
 
+<!-- Page Loader -->
 <div id="page-loader" class="page-loader">
   <div class="loader-logo">ILLUME</div>
   <div class="loader-bar"><div class="loader-bar-fill"></div></div>
 </div>
+
+<!-- Custom Cursor -->
 <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
+
+<!-- Scroll Progress -->
 <div class="scroll-progress"></div>
 
 <!-- ═══ NAVIGATION ═══════════════════════════════════════════ -->
 <nav class="nav" id="main-nav">
   <div class="nav__inner">
-    <a href="index.html" class="nav__logo">ILLUME</a>
+
+    <!-- Logo -->
+    <a href="./" class="nav__logo">ILLUME</a>
+
+    <!-- Desktop Links -->
     <div class="nav__links">
-      <a href="index.html" class="nav__link">Home</a>
-      <a href="about.html" class="nav__link">About</a>
-      <a href="services.html" class="nav__link">Services</a>
-      <a href="portfolio.html" class="nav__link active">Portfolio</a>
-      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="./"               class="nav__link ">Home</a>
+      <a href="./about.html"      class="nav__link ">About</a>
+      <a href="./services.html"   class="nav__link ">Services</a>
+      <a href="./portfolio.html"  class="nav__link active">Portfolio</a>
+      <a href="./contact.html"    class="nav__link ">Contact</a>
     </div>
+
+    <!-- Actions -->
     <div class="nav__actions">
-      <a href="login.html" class="btn btn--secondary btn--sm">Sign In</a>
-      <a href="contact.html" class="btn btn--primary btn--sm">Book Consultation</a>
+              <a href="./auth/login.php" class="btn btn--secondary btn--sm">Sign In</a>
+            <a href="./consultation.html" class="btn btn--primary btn--sm">Book Consultation</a>
+      <!-- Hamburger -->
       <button class="nav__hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
+
   </div>
 </nav>
+
+<!-- Mobile Nav -->
+<div class="nav__mobile">
+  <button class="mobile-close btn btn--icon btn--ghost" aria-label="Close menu">
+    <i data-lucide="x"></i>
+  </button>
+  <a href="./"               class="nav__link">Home</a>
+  <a href="./about.html"      class="nav__link">About</a>
+  <a href="./services.html"   class="nav__link">Services</a>
+  <a href="./portfolio.html"  class="nav__link">Portfolio</a>
+  <a href="./contact.html"    class="nav__link">Contact</a>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1rem;">
+          <a href="./auth/login.php" class="btn btn--secondary">Sign In</a>
+        <a href="./consultation.html" class="btn btn--primary">Book Consultation</a>
+  </div>
+</div>
+<!-- end header php -->
 
 <!-- ═══ HERO ═════════════════════════════════════════════════ -->
 <section style="padding:calc(var(--nav-h) + 3rem) 0 3rem;background:var(--space);border-bottom:1px solid var(--space-border);position:relative;overflow:hidden;">
@@ -73,87 +94,508 @@
       A Visual<br>Archive of<br><span class="shimmer-text">Excellence.</span>
     </h1>
     <p style="font-size:1.05rem;max-width:500px;line-height:1.8;color:var(--text-secondary);">
-      Every piece in this gallery represents a story, a conversation, and a life elevated through the power of exceptional fashion.
+      Every piece in this gallery represents a story, a conversation,
+      and a life elevated through the power of exceptional fashion.
     </p>
+  </div>
+</section>
+
+<!-- ═══ FILTERS ═══════════════════════════════════════════════ -->
+<section style="padding:2.5rem 0;border-bottom:1px solid var(--space-border);background:var(--space);">
+  <div class="container">
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
+            <button
+        data-filter="all"
+        class="btn btn--ghost btn--sm active"
+        style="border-color:var(--gold);color:var(--gold);background:var(--gold-faint);"
+        onclick="
+          document.querySelectorAll('[data-filter]').forEach(b=>{
+            b.style.borderColor='';b.style.color='';b.style.background='';
+          });
+          this.style.borderColor='var(--gold)';
+          this.style.color='var(--gold)';
+          this.style.background='var(--gold-faint)';
+        "
+      >Bespoke</button>
+            <button
+        data-filter="Asoebi"
+        class="btn btn--ghost btn--sm "
+        style=""
+        onclick="
+          document.querySelectorAll('[data-filter]').forEach(b=>{
+            b.style.borderColor='';b.style.color='';b.style.background='';
+          });
+          this.style.borderColor='var(--gold)';
+          this.style.color='var(--gold)';
+          this.style.background='var(--gold-faint)';
+        "
+      >Asoebi</button>
+            <button
+        data-filter="African Wears"
+        class="btn btn--ghost btn--sm "
+        style=""
+        onclick="
+          document.querySelectorAll('[data-filter]').forEach(b=>{
+            b.style.borderColor='';b.style.color='';b.style.background='';
+          });
+          this.style.borderColor='var(--gold)';
+          this.style.color='var(--gold)';
+          this.style.background='var(--gold-faint)';
+        "
+      >African Wears</button>
+            <button
+        data-filter="Casuals"
+        class="btn btn--ghost btn--sm "
+        style=""
+        onclick="
+          document.querySelectorAll('[data-filter]').forEach(b=>{
+            b.style.borderColor='';b.style.color='';b.style.background='';
+          });
+          this.style.borderColor='var(--gold)';
+          this.style.color='var(--gold)';
+          this.style.background='var(--gold-faint)';
+        "
+      >Casuals</button>
+            <button
+        data-filter="Custom Dressmaking"
+        class="btn btn--ghost btn--sm "
+        style=""
+        onclick="
+          document.querySelectorAll('[data-filter]').forEach(b=>{
+            b.style.borderColor='';b.style.color='';b.style.background='';
+          });
+          this.style.borderColor='var(--gold)';
+          this.style.color='var(--gold)';
+          this.style.background='var(--gold-faint)';
+        "
+      >Custom Dressmaking</button>
+            <button
+        data-filter="Beading"
+        class="btn btn--ghost btn--sm "
+        style=""
+        onclick="
+          document.querySelectorAll('[data-filter]').forEach(b=>{
+            b.style.borderColor='';b.style.color='';b.style.background='';
+          });
+          this.style.borderColor='var(--gold)';
+          this.style.color='var(--gold)';
+          this.style.background='var(--gold-faint)';
+        "
+      >Beading</button>
+            <button
+        data-filter="Fashion Consultancy"
+        class="btn btn--ghost btn--sm "
+        style=""
+        onclick="
+          document.querySelectorAll('[data-filter]').forEach(b=>{
+            b.style.borderColor='';b.style.color='';b.style.background='';
+          });
+          this.style.borderColor='var(--gold)';
+          this.style.color='var(--gold)';
+          this.style.background='var(--gold-faint)';
+        "
+      >Fashion Consultancy</button>
+            <button
+        data-filter="Fashion Illustration"
+        class="btn btn--ghost btn--sm "
+        style=""
+        onclick="
+          document.querySelectorAll('[data-filter]').forEach(b=>{
+            b.style.borderColor='';b.style.color='';b.style.background='';
+          });
+          this.style.borderColor='var(--gold)';
+          this.style.color='var(--gold)';
+          this.style.background='var(--gold-faint)';
+        "
+      >Fashion Illustration</button>
+          </div>
   </div>
 </section>
 
 <!-- ═══ GRID ══════════════════════════════════════════════════ -->
 <section class="section--lg">
   <div class="container">
-    <div style="columns:3;column-gap:1rem;">
-      <!-- Item 1 -->
-      <div class="portfolio-item reveal" style="margin-bottom:1.5rem;break-inside:avoid;display:block;">
-        <div style="background:var(--space-mid); border:1px solid var(--space-border); border-radius:var(--r-xl); position:relative;overflow:hidden;">
-          <img src="assets/img/svc_bespoke_1776779653752.png" alt="Executive Silk" style="width:100%; height:420px; object-fit:cover;">
-          <div style="background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,0.85));padding:2rem;">
-            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;">The Executive Silk</div>
+    <div style="columns:3;column-gap:1rem;" id="portfolio-grid">
+            <a
+        href="services.html#bespoke-couture"
+        class="portfolio-item reveal"
+        data-category="Bespoke"
+        style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;"
+      >
+        <div style="
+          background:var(--space-mid);
+          border:1px solid var(--space-border);
+          border-radius:var(--r-xl);
+          height:auto;
+          position:relative;overflow:hidden;
+          transition:all 0.5s var(--ease-out);
+          display:flex;flex-direction:column;justify-content:flex-end;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          cursor:pointer;
+        "
+        onmouseenter="this.querySelector('img').style.transform='scale(1.05)'; this.style.borderColor='var(--aura-glass)';"
+        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
+        >
+          <img src="./assets/img/svc_bespoke_1776779653752.png" alt="The Executive Silk"
+               style="width:100%; height:420px; object-fit:cover; transition: transform 0.8s var(--ease-out);">
+
+          <!-- Info overlay -->
+          <div class="portfolio-item__overlay" style="opacity:1;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,0.85));padding:2rem;">
+             <!-- Category badge -->
+            <div style="margin-bottom:0.75rem;">
+              <span class="badge" style="font-size:0.65rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Bespoke</span>
+            </div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">The Executive Silk</div>
             <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Artisanal Tailoring</div>
           </div>
         </div>
-      </div>
-      <!-- Item 2 -->
-      <div class="portfolio-item reveal" style="margin-bottom:1.5rem;break-inside:avoid;display:block;">
-        <div style="background:var(--space-mid); border:1px solid var(--space-border); border-radius:var(--r-xl); position:relative;overflow:hidden;">
-          <img src="assets/img/bridal.png" alt="Heritage Bloom" style="width:100%; height:300px; object-fit:cover;">
-          <div style="background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,0.85));padding:2rem;">
-            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;">Heritage Bloom</div>
+      </a>
+            <a
+        href="services.html#asoebi"
+        class="portfolio-item reveal"
+        data-category="Asoebi"
+        style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;"
+      >
+        <div style="
+          background:var(--space-mid);
+          border:1px solid var(--space-border);
+          border-radius:var(--r-xl);
+          height:auto;
+          position:relative;overflow:hidden;
+          transition:all 0.5s var(--ease-out);
+          display:flex;flex-direction:column;justify-content:flex-end;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          cursor:pointer;
+        "
+        onmouseenter="this.querySelector('img').style.transform='scale(1.05)'; this.style.borderColor='var(--aura-glass)';"
+        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
+        >
+          <img src="./assets/img/luxury.jpg" alt="Heritage Bloom"
+               style="width:100%; height:240px; object-fit:cover; transition: transform 0.8s var(--ease-out);">
+
+          <!-- Info overlay -->
+          <div class="portfolio-item__overlay" style="opacity:1;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,0.85));padding:2rem;">
+             <!-- Category badge -->
+            <div style="margin-bottom:0.75rem;">
+              <span class="badge" style="font-size:0.65rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Asoebi</span>
+            </div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">Heritage Bloom</div>
             <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Event Coordination</div>
           </div>
         </div>
-      </div>
-      <!-- Item 3 -->
-      <div class="portfolio-item reveal" style="margin-bottom:1.5rem;break-inside:avoid;display:block;">
-        <div style="background:var(--space-mid); border:1px solid var(--space-border); border-radius:var(--r-xl); position:relative;overflow:hidden;">
-          <img src="assets/img/couture.png" alt="Modern Heritage" style="width:100%; height:420px; object-fit:cover;">
-          <div style="background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,0.85));padding:2rem;">
-            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;">Modern Heritage</div>
+      </a>
+            <a
+        href="services.html#african-wears"
+        class="portfolio-item reveal"
+        data-category="African Wears"
+        style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;"
+      >
+        <div style="
+          background:var(--space-mid);
+          border:1px solid var(--space-border);
+          border-radius:var(--r-xl);
+          height:auto;
+          position:relative;overflow:hidden;
+          transition:all 0.5s var(--ease-out);
+          display:flex;flex-direction:column;justify-content:flex-end;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          cursor:pointer;
+        "
+        onmouseenter="this.querySelector('img').style.transform='scale(1.05)'; this.style.borderColor='var(--aura-glass)';"
+        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
+        >
+          <img src="./assets/img/couture.png" alt="Modern Heritage"
+               style="width:100%; height:420px; object-fit:cover; transition: transform 0.8s var(--ease-out);">
+
+          <!-- Info overlay -->
+          <div class="portfolio-item__overlay" style="opacity:1;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,0.85));padding:2rem;">
+             <!-- Category badge -->
+            <div style="margin-bottom:0.75rem;">
+              <span class="badge" style="font-size:0.65rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">African Wears</span>
+            </div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">Modern Heritage</div>
             <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Avant-Garde Prints</div>
           </div>
         </div>
-      </div>
-    </div>
+      </a>
+            <a
+        href="services.html#casuals"
+        class="portfolio-item reveal"
+        data-category="Casuals"
+        style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;"
+      >
+        <div style="
+          background:var(--space-mid);
+          border:1px solid var(--space-border);
+          border-radius:var(--r-xl);
+          height:auto;
+          position:relative;overflow:hidden;
+          transition:all 0.5s var(--ease-out);
+          display:flex;flex-direction:column;justify-content:flex-end;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          cursor:pointer;
+        "
+        onmouseenter="this.querySelector('img').style.transform='scale(1.05)'; this.style.borderColor='var(--aura-glass)';"
+        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
+        >
+          <img src="./assets/img/rtw.png" alt="Linen Resort"
+               style="width:100%; height:300px; object-fit:cover; transition: transform 0.8s var(--ease-out);">
+
+          <!-- Info overlay -->
+          <div class="portfolio-item__overlay" style="opacity:1;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,0.85));padding:2rem;">
+             <!-- Category badge -->
+            <div style="margin-bottom:0.75rem;">
+              <span class="badge" style="font-size:0.65rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Casuals</span>
+            </div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">Linen Resort</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Premium Leisure</div>
+          </div>
+        </div>
+      </a>
+            <a
+        href="services.html#dressmaking"
+        class="portfolio-item reveal"
+        data-category="Custom Dressmaking"
+        style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;"
+      >
+        <div style="
+          background:var(--space-mid);
+          border:1px solid var(--space-border);
+          border-radius:var(--r-xl);
+          height:auto;
+          position:relative;overflow:hidden;
+          transition:all 0.5s var(--ease-out);
+          display:flex;flex-direction:column;justify-content:flex-end;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          cursor:pointer;
+        "
+        onmouseenter="this.querySelector('img').style.transform='scale(1.05)'; this.style.borderColor='var(--aura-glass)';"
+        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
+        >
+          <img src="./assets/img/philosophy.png" alt="The Master Fit"
+               style="width:100%; height:300px; object-fit:cover; transition: transform 0.8s var(--ease-out);">
+
+          <!-- Info overlay -->
+          <div class="portfolio-item__overlay" style="opacity:1;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,0.85));padding:2rem;">
+             <!-- Category badge -->
+            <div style="margin-bottom:0.75rem;">
+              <span class="badge" style="font-size:0.65rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Custom Dressmaking</span>
+            </div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">The Master Fit</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Bespoke Construction</div>
+          </div>
+        </div>
+      </a>
+            <a
+        href="services.html#beading"
+        class="portfolio-item reveal"
+        data-category="Beading"
+        style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;"
+      >
+        <div style="
+          background:var(--space-mid);
+          border:1px solid var(--space-border);
+          border-radius:var(--r-xl);
+          height:auto;
+          position:relative;overflow:hidden;
+          transition:all 0.5s var(--ease-out);
+          display:flex;flex-direction:column;justify-content:flex-end;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          cursor:pointer;
+        "
+        onmouseenter="this.querySelector('img').style.transform='scale(1.05)'; this.style.borderColor='var(--aura-glass)';"
+        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
+        >
+          <img src="./assets/img/editorial.png" alt="Pearl &amp; Petal"
+               style="width:100%; height:420px; object-fit:cover; transition: transform 0.8s var(--ease-out);">
+
+          <!-- Info overlay -->
+          <div class="portfolio-item__overlay" style="opacity:1;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,0.85));padding:2rem;">
+             <!-- Category badge -->
+            <div style="margin-bottom:0.75rem;">
+              <span class="badge" style="font-size:0.65rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Beading</span>
+            </div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">Pearl &amp; Petal</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Hand Embroidery</div>
+          </div>
+        </div>
+      </a>
+            <a
+        href="services.html#consultancy"
+        class="portfolio-item reveal"
+        data-category="Fashion Consultancy"
+        style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;"
+      >
+        <div style="
+          background:var(--space-mid);
+          border:1px solid var(--space-border);
+          border-radius:var(--r-xl);
+          height:auto;
+          position:relative;overflow:hidden;
+          transition:all 0.5s var(--ease-out);
+          display:flex;flex-direction:column;justify-content:flex-end;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          cursor:pointer;
+        "
+        onmouseenter="this.querySelector('img').style.transform='scale(1.05)'; this.style.borderColor='var(--aura-glass)';"
+        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
+        >
+          <img src="./assets/img/philosophy.png" alt="Identity Audit"
+               style="width:100%; height:300px; object-fit:cover; transition: transform 0.8s var(--ease-out);">
+
+          <!-- Info overlay -->
+          <div class="portfolio-item__overlay" style="opacity:1;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,0.85));padding:2rem;">
+             <!-- Category badge -->
+            <div style="margin-bottom:0.75rem;">
+              <span class="badge" style="font-size:0.65rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Fashion Consultancy</span>
+            </div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">Identity Audit</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Style Strategy</div>
+          </div>
+        </div>
+      </a>
+            <a
+        href="services.html#illustration"
+        class="portfolio-item reveal"
+        data-category="Fashion Illustration"
+        style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;"
+      >
+        <div style="
+          background:var(--space-mid);
+          border:1px solid var(--space-border);
+          border-radius:var(--r-xl);
+          height:auto;
+          position:relative;overflow:hidden;
+          transition:all 0.5s var(--ease-out);
+          display:flex;flex-direction:column;justify-content:flex-end;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          cursor:pointer;
+        "
+        onmouseenter="this.querySelector('img').style.transform='scale(1.05)'; this.style.borderColor='var(--aura-glass)';"
+        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
+        >
+          <img src="./assets/img/philosophy.png" alt="Genesis Sketch"
+               style="width:100%; height:300px; object-fit:cover; transition: transform 0.8s var(--ease-out);">
+
+          <!-- Info overlay -->
+          <div class="portfolio-item__overlay" style="opacity:1;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,0.85));padding:2rem;">
+             <!-- Category badge -->
+            <div style="margin-bottom:0.75rem;">
+              <span class="badge" style="font-size:0.65rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Fashion Illustration</span>
+            </div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">Genesis Sketch</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Visual Rendering</div>
+          </div>
+        </div>
+      </a>
+          </div>
   </div>
 </section>
+
+<!-- ═══ CTA ════════════════════════════════════════════════════ -->
+<section class="section" style="background:var(--space);border-top:1px solid var(--space-border);text-align:center;">
+  <div class="container">
+    <h2 class="reveal" style="margin-bottom:1rem;">Your Story<br><span class="shimmer-text">Belongs Here.</span></h2>
+    <p class="reveal reveal-delay-1" style="max-width:440px;margin:0 auto 2rem;">
+      Commission a piece and let your garment take its place in the ILLUME archive.
+    </p>
+    <a href="consultation.html" class="btn btn--primary btn--lg reveal reveal-delay-2">
+      <i data-lucide="calendar"></i> Begin Your Journey
+    </a>
+  </div>
+</section>
+
 
 <!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
 <footer class="footer">
   <div class="container">
+
     <div class="footer__grid">
+      <!-- Brand -->
       <div>
         <span class="footer__logo">ILLUME</span>
-        <p class="footer__tagline">We architect identities. Fashion is language. We make yours unforgettable.</p>
-        <div class="footer__social" style="display:flex; gap:1.25rem;">
-          <a href="#" class="footer__social-link"><i data-lucide="instagram"></i></a>
-          <a href="https://wa.me/2348130024904" class="footer__social-link" target="_blank"><i data-lucide="message-circle"></i></a>
+        <p class="footer__tagline">
+          We don't just dress bodies — we architect identities.<br>
+          Fashion is language. We make yours unforgettable.
+        </p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="https://wa.me/2348130024904" class="footer__social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <i data-lucide="message-circle"></i>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Pinterest">
+            <i data-lucide="image"></i>
+          </a>
         </div>
       </div>
+
+      <!-- Navigation -->
       <div>
         <h6 class="footer__heading">Explore</h6>
         <nav class="footer__links">
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="about.html" class="footer__link">Our Story</a>
-          <a href="services.html" class="footer__link">Services</a>
-          <a href="portfolio.html" class="footer__link">Portfolio</a>
+          <a href="./"              class="footer__link">Home</a>
+          <a href="./about.html"     class="footer__link">Our Story</a>
+          <a href="./services.html"  class="footer__link">Services</a>
+          <a href="./portfolio.html" class="footer__link">Portfolio</a>
+          <a href="./contact.html"   class="footer__link">Contact</a>
         </nav>
       </div>
+
+      <!-- Services -->
+      <div>
+        <h6 class="footer__heading">Services</h6>
+        <nav class="footer__links">
+          <a href="./services.html#bespoke"            class="footer__link">Bespoke</a>
+          <a href="./services.html#asoebi"             class="footer__link">Asoebi</a>
+          <a href="./services.html#african-wears"      class="footer__link">African Wears</a>
+          <a href="./services.html#beading"            class="footer__link">Beading</a>
+          <a href="./services.html#casuals"            class="footer__link">Casuals</a>
+          <a href="./services.html#dressmaking"        class="footer__link">Custom Dressmaking</a>
+          <a href="./services.html#consultancy"        class="footer__link">Fashion Consultancy</a>
+          <a href="./services.html#illustration"       class="footer__link">Fashion Illustration</a>
+        </nav>
+      </div>
+
+      <!-- Contact -->
       <div>
         <h6 class="footer__heading">Connect</h6>
         <nav class="footer__links">
-          <a href="mailto:lightpeacelimited@gmail.com" class="footer__link">lightpeacelimited@gmail.com</a>
-          <a href="tel:+2348130024904" class="footer__link">+234 813 002 4904</a>
+          <a href="mailto:lightpeacelimited@gmail.com" class="footer__link" style="display:flex;align-items:center;gap:0.4rem;">
+            <i data-lucide="mail" style="width:13px;height:13px;"></i> lightpeacelimited@gmail.com          </a>
+          <a href="tel:+2348130024904" class="footer__link" style="display:flex;align-items:center;gap:0.4rem;">
+            <i data-lucide="phone" style="width:13px;height:13px;"></i> +234 813 002 4904          </a>
+          <a href="https://wa.me/2348130024904?text=Hello%20ILLUME!" class="footer__link" style="display:flex;align-items:center;gap:0.4rem;" target="_blank" rel="noopener">
+            <i data-lucide="message-circle" style="width:13px;height:13px;"></i> WhatsApp Us
+          </a>
+          <a href="./consultation.html" class="footer__link" style="display:flex;align-items:center;gap:0.4rem;">
+            <i data-lucide="calendar" style="width:13px;height:13px;"></i> Book a Consultation
+          </a>
         </nav>
       </div>
     </div>
+
+    <!-- Bottom Bar -->
     <div class="footer__bottom">
       <span>&copy; 2026 ILLUME. All rights reserved.</span>
       <span>Crafted in Abuja &nbsp;·&nbsp; Worn Worldwide</span>
+      <span style="display:flex;gap:1rem;">
+        <a href="#" class="footer__link" style="font-size:0.75rem;">Privacy Policy</a>
+        <a href="#" class="footer__link" style="font-size:0.75rem;">Terms</a>
+      </span>
     </div>
+
   </div>
 </footer>
 
-<script>
-  window.addEventListener('load', () => { if (window.lucide) lucide.createIcons(); });
-</script>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<!-- Main JS -->
+<script src="./assets/js/main.js"></script>
+
 </body>
 </html>
