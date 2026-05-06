@@ -78,26 +78,27 @@
   <div class="container--sm">
     <div style="margin-bottom:1rem;">
       <div class="form-step-indicator">
-        <span class="form-step-label active">Service</span>
-        <span class="form-step-label">Details</span>
-        <span class="form-step-label">Budget</span>
-        <span class="form-step-label">Your Info</span>
+        <span class="form-step-label active" id="step-label-0">Service</span>
+        <span class="form-step-label"         id="step-label-1">Details</span>
+        <span class="form-step-label"         id="step-label-2">Budget</span>
+        <span class="form-step-label"         id="step-label-3">Your Info</span>
       </div>
       <div class="form-steps">
-        <div class="form-step active"></div>
-        <div class="form-step"></div>
-        <div class="form-step"></div>
-        <div class="form-step"></div>
+        <div class="form-step active" id="step-bar-0"></div>
+        <div class="form-step"       id="step-bar-1"></div>
+        <div class="form-step"       id="step-bar-2"></div>
+        <div class="form-step"       id="step-bar-3"></div>
       </div>
     </div>
 
     <form id="consult-form" novalidate>
-      <div class="form-panel active" style="padding:2.5rem;border-radius:var(--r-lg); background: white; border: 1px solid var(--divider); box-shadow: var(--shadow-md);">
+      
+      <!-- STEP 1: Service -->
+      <div class="form-panel active" id="panel-0" style="padding: 2.5rem; border-radius: var(--r-lg); background: white; box-shadow: var(--shadow-md); border: 1px solid var(--divider);">
         <h3 style="margin-bottom:0.5rem; color: var(--black);">Which service interests you?</h3>
         <p style="font-size:0.9rem;margin-bottom:2rem; color: var(--warm-taupe);">Select the primary service. You can discuss scope during the consultation.</p>
 
         <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-bottom:2rem;">
-          <!-- Service Items -->
           <label style="cursor:pointer; position: relative;">
             <input type="radio" name="service_type" value="Bespoke Couture" style="display:none;" class="service-radio">
             <div class="service-radio-card" style="padding:1.25rem;border:2px solid var(--divider);border-radius:var(--r-lg);transition:all 0.4s cubic-bezier(0.16, 1, 0.3, 1);display:flex;align-items:center;gap:0.75rem; position: relative; background: white;">
@@ -157,9 +158,101 @@
         </div>
 
         <div style="display:flex;justify-content:flex-end;">
-          <button type="button" class="btn btn--primary">Next Step <i data-lucide="arrow-right"></i></button>
+          <button type="button" class="btn btn--primary next-btn" data-next="1">Next Step <i data-lucide="arrow-right"></i></button>
         </div>
       </div>
+
+      <!-- STEP 2: Details -->
+      <div class="form-panel" id="panel-1" style="display:none; padding: 2.5rem; border-radius: var(--r-lg); background: white; box-shadow: var(--shadow-md); border: 1px solid var(--divider);">
+        <h3 style="margin-bottom:0.5rem; color: var(--black);">Project Details</h3>
+        <p style="font-size:0.9rem;margin-bottom:2rem; color: var(--warm-taupe);">Help us understand the context of your request.</p>
+
+        <div class="form-group">
+          <label class="form-label">Specific Occasion or Project Title</label>
+          <input type="text" name="occasion" class="form-input" placeholder="e.g. Traditional Wedding, Wardrobe Overhaul, Brand Launch...">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Desired Completion Date (Optional)</label>
+          <input type="text" name="timeline" class="form-input" placeholder="e.g. Mid-August 2026">
+        </div>
+
+        <div style="display:flex;justify-content:space-between;">
+          <button type="button" class="btn btn--ghost prev-btn" data-prev="0"><i data-lucide="arrow-left"></i> Back</button>
+          <button type="button" class="btn btn--primary next-btn" data-next="2">Next Step <i data-lucide="arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Budget -->
+      <div class="form-panel" id="panel-2" style="display:none; padding: 2.5rem; border-radius: var(--r-lg); background: white; box-shadow: var(--shadow-md); border: 1px solid var(--divider);">
+        <h3 style="margin-bottom:0.5rem; color: var(--black);">Estimated Budget Range</h3>
+        <p style="font-size:0.9rem;margin-bottom:2rem; color: var(--warm-taupe);">This helps us recommend the best materials and complexity level.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(1,1fr);gap:0.75rem;margin-bottom:2rem;">
+          <label style="cursor:pointer;">
+            <input type="radio" name="budget_range" value="Under 100k" style="display:none;" class="budget-radio">
+            <div class="budget-card" style="padding:1rem 1.25rem;border:2px solid var(--divider);border-radius:var(--r-lg);text-align:center;font-size:0.9rem;transition:all 0.3s; color: var(--black);">Under 100k</div>
+          </label>
+          <label style="cursor:pointer;">
+            <input type="radio" name="budget_range" value="100k - 250k" style="display:none;" class="budget-radio">
+            <div class="budget-card" style="padding:1rem 1.25rem;border:2px solid var(--divider);border-radius:var(--r-lg);text-align:center;font-size:0.9rem;transition:all 0.3s; color: var(--black);">100k - 250k</div>
+          </label>
+          <label style="cursor:pointer;">
+            <input type="radio" name="budget_range" value="250k - 500k" style="display:none;" class="budget-radio">
+            <div class="budget-card" style="padding:1rem 1.25rem;border:2px solid var(--divider);border-radius:var(--r-lg);text-align:center;font-size:0.9rem;transition:all 0.3s; color: var(--black);">250k - 500k</div>
+          </label>
+          <label style="cursor:pointer;">
+            <input type="radio" name="budget_range" value="500k - 1M" style="display:none;" class="budget-radio">
+            <div class="budget-card" style="padding:1rem 1.25rem;border:2px solid var(--divider);border-radius:var(--r-lg);text-align:center;font-size:0.9rem;transition:all 0.3s; color: var(--black);">500k - 1M</div>
+          </label>
+          <label style="cursor:pointer;">
+            <input type="radio" name="budget_range" value="1M - 3M" style="display:none;" class="budget-radio">
+            <div class="budget-card" style="padding:1rem 1.25rem;border:2px solid var(--divider);border-radius:var(--r-lg);text-align:center;font-size:0.9rem;transition:all 0.3s; color: var(--black);">1M - 3M</div>
+          </label>
+          <label style="cursor:pointer;">
+            <input type="radio" name="budget_range" value="Luxury / Bespoke (3M+)" style="display:none;" class="budget-radio">
+            <div class="budget-card" style="padding:1rem 1.25rem;border:2px solid var(--divider);border-radius:var(--r-lg);text-align:center;font-size:0.9rem;transition:all 0.3s; color: var(--black);">Luxury / Bespoke (3M+)</div>
+          </label>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;">
+          <button type="button" class="btn btn--ghost prev-btn" data-prev="1"><i data-lucide="arrow-left"></i> Back</button>
+          <button type="button" class="btn btn--primary next-btn" data-next="3">Next Step <i data-lucide="arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Personal Info -->
+      <div class="form-panel" id="panel-3" style="display:none; padding: 2.5rem; border-radius: var(--r-lg); background: white; box-shadow: var(--shadow-md); border: 1px solid var(--divider);">
+        <h3 style="margin-bottom:0.5rem; color: var(--black);">Final Details</h3>
+        <p style="font-size:0.9rem;margin-bottom:2rem; color: var(--warm-taupe);">How should we contact you?</p>
+
+        <div class="form-group">
+          <label class="form-label">Full Name*</label>
+          <input type="text" name="name" class="form-input" placeholder="Enter your name" required>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="form-group">
+            <label class="form-label">Email Address*</label>
+            <input type="email" name="email" class="form-input" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" name="phone" class="form-input" placeholder="+234...">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Message / Special Requests</label>
+          <textarea name="message" class="form-input" rows="4" placeholder="Anything else we should know?"></textarea>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <button type="button" class="btn btn--ghost prev-btn" data-prev="2"><i data-lucide="arrow-left"></i> Back</button>
+          <button type="submit" class="btn btn--primary btn--lg" style="animation:pulse-glow 3s ease infinite;"><i data-lucide="send"></i> Submit Request</button>
+        </div>
+      </div>
+
     </form>
   </div>
 </section>
@@ -185,14 +278,15 @@
 </footer>
 
 <style>
-.service-radio-card {
+.service-radio-card, .budget-card {
   border: 2px solid var(--divider) !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative;
   overflow: hidden;
 }
 
-.service-radio:checked + .service-radio-card {
+.service-radio:checked + .service-radio-card,
+.service-radio-card.selected {
   border-color: #D5A84C !important;
   background: #D5A84C !important;
   color: white !important;
@@ -200,18 +294,31 @@
   box-shadow: 0 12px 24px rgba(213, 168, 76, 0.3);
 }
 
-.service-radio:checked + .service-radio-card .service-name {
+.service-radio:checked + .service-radio-card .service-name,
+.service-radio-card.selected .service-name {
   color: white !important;
 }
 
-.service-radio:checked + .service-radio-card i {
+.service-radio:checked + .service-radio-card i,
+.service-radio-card.selected i {
   color: white !important;
   transform: scale(1.1);
 }
 
-.service-radio:checked + .service-radio-card .icon-box {
+.service-radio:checked + .service-radio-card .icon-box,
+.service-radio-card.selected .icon-box {
   background: rgba(255, 255, 255, 0.2) !important;
   border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.budget-radio:checked + .budget-card,
+.budget-card.selected {
+  border-color: #D5A84C !important;
+  background: #D5A84C !important;
+  color: white !important;
+  font-weight: 700;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(213, 168, 76, 0.2);
 }
 
 .service-radio-card::after {
@@ -234,7 +341,8 @@
   z-index: 3;
 }
 
-.service-radio:checked + .service-radio-card::after {
+.service-radio:checked + .service-radio-card::after,
+.service-radio-card.selected::after {
   opacity: 1;
   transform: scale(1);
 }
@@ -243,7 +351,54 @@
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script src="./assets/js/main.js"></script>
 <script>
-  lucide.createIcons();
+// Multi-step logic for static HTML
+const nextBtns = document.querySelectorAll('.next-btn');
+const prevBtns = document.querySelectorAll('.prev-btn');
+const panels = document.querySelectorAll('.form-panel');
+const labels = document.querySelectorAll('.form-step-label');
+const bars = document.querySelectorAll('.form-step');
+
+nextBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const next = btn.dataset.next;
+    panels.forEach(p => p.style.display = 'none');
+    document.getElementById(`panel-${next}`).style.display = 'block';
+    
+    labels.forEach((l, i) => i <= next ? l.classList.add('active') : l.classList.remove('active'));
+    bars.forEach((b, i) => i <= next ? b.classList.add('active') : b.classList.remove('active'));
+  });
+});
+
+prevBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const prev = btn.dataset.prev;
+    panels.forEach(p => p.style.display = 'none');
+    document.getElementById(`panel-${prev}`).style.display = 'block';
+    
+    labels.forEach((l, i) => i > prev ? l.classList.remove('active') : null);
+    bars.forEach((b, i) => i > prev ? b.classList.remove('active') : null);
+  });
+});
+
+// Service radio styling
+document.querySelectorAll('.service-radio').forEach(radio => {
+  radio.addEventListener('change', () => {
+    document.querySelectorAll('.service-radio-card').forEach(c => c.classList.remove('selected'));
+    radio.nextElementSibling.classList.add('selected');
+  });
+  if (radio.checked) radio.nextElementSibling.classList.add('selected');
+});
+
+// Budget radio styling
+document.querySelectorAll('.budget-radio').forEach(radio => {
+  radio.addEventListener('change', () => {
+    document.querySelectorAll('.budget-card').forEach(c => c.classList.remove('selected'));
+    radio.nextElementSibling.classList.add('selected');
+  });
+  if (radio.checked) radio.nextElementSibling.classList.add('selected');
+});
+
+lucide.createIcons();
 </script>
 </body>
 </html>

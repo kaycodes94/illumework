@@ -104,31 +104,31 @@
       <p class="reveal reveal-delay-1">From bespoke couture to full brand styling, every service is engineered to make you unforgettable.</p>
     </div>
     <div class="grid-3" style="gap:1.5rem;">
-      <div class="service-card reveal reveal-delay-1">
+      <div class="service-card reveal reveal-delay-1" onclick="window.location.href='./services.html#bespoke'" style="cursor:pointer;">
         <div class="service-icon"><i data-lucide="scissors"></i></div>
         <div class="label-text" style="margin-bottom:.5rem;">Bespoke Couture</div>
         <h3 style="font-size:1.3rem;margin-bottom:.75rem;">Crafted for You Alone</h3>
         <p style="font-size:.88rem;line-height:1.7;margin-bottom:1.25rem;">From initial concept to final fitting, every stitch is a conversation between your vision and our craft.</p>
         <div style="display:flex;align-items:center;justify-content:flex-end;margin-top:auto;">
-          <a href="./consultation.html?service=bespoke-couture" class="btn btn--ghost btn--sm">Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
+          <a href="./consultation.html?service=bespoke" class="btn btn--ghost btn--sm" onclick="event.stopPropagation();">Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
         </div>
       </div>
-      <div class="service-card reveal reveal-delay-2">
+      <div class="service-card reveal reveal-delay-2" onclick="window.location.href='./services.html#bridal'" style="cursor:pointer;">
         <div class="service-icon"><i data-lucide="heart"></i></div>
         <div class="label-text" style="margin-bottom:.5rem;">Bridals &amp; Asoebi</div>
         <h3 style="font-size:1.3rem;margin-bottom:.75rem;">Moments Made Extraordinary</h3>
         <p style="font-size:.88rem;line-height:1.7;margin-bottom:1.25rem;">Your most significant moments deserve extraordinary garments imbued with meaning, structure, and beauty.</p>
         <div style="display:flex;align-items:center;justify-content:flex-end;margin-top:auto;">
-          <a href="./consultation.html?service=asoebi" class="btn btn--ghost btn--sm">Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
+          <a href="./consultation.html?service=bridal" class="btn btn--ghost btn--sm" onclick="event.stopPropagation();">Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
         </div>
       </div>
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-icon"><i data-lucide="shirt"></i></div>
+      <div class="service-card reveal reveal-delay-3" onclick="window.location.href='./services.html#african'" style="cursor:pointer;">
+        <div class="service-icon"><i data-lucide="palmtree"></i></div>
         <div class="label-text" style="margin-bottom:.5rem;">African Wears</div>
         <h3 style="font-size:1.3rem;margin-bottom:.75rem;">Heritage Elevated</h3>
         <p style="font-size:.88rem;line-height:1.7;margin-bottom:1.25rem;">Contemporary interpretations of African heritage — bold, intentional, and undeniably beautiful.</p>
         <div style="display:flex;align-items:center;justify-content:flex-end;margin-top:auto;">
-          <a href="./consultation.html?service=african-wears" class="btn btn--ghost btn--sm">Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
+          <a href="./consultation.html?service=african" class="btn btn--ghost btn--sm" onclick="event.stopPropagation();">Inquire <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
         </div>
       </div>
     </div>
@@ -278,7 +278,10 @@
 <footer class="section" style="border-top:1px solid var(--space-border);">
   <div class="container">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;">
-      <div class="nav__logo">ILLUME</div>
+      <a href="./" class="nav__logo" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+        <img src="./assets/img/logo.png" alt="Logo" class="logo-img" style="height: 32px; width: auto;">
+        <span style="font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--black);">ILLUME</span>
+      </a>
       <div style="display:flex;gap:24px;">
         <a href="./about.html" class="nav__link">Our Story</a>
         <a href="./services.html" class="nav__link">Services</a>
@@ -287,7 +290,7 @@
       </div>
     </div>
     <div style="margin-top:48px;display:flex;justify-content:space-between;font-size:13px;color:var(--text-muted);">
-      <span>&copy; 2026 ILLUME. All rights reserved.</span><span>Abuja, Nigeria</span>
+      <span>&copy; 2026 ILLUME. All rights reserved.</span><span>Abuja & Ebonyi, Nigeria</span>
     </div>
   </div>
 </footer>
