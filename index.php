@@ -13,73 +13,55 @@ include __DIR__ . '/includes/header.php';
 ?>
 
 <!-- ═══ HERO ═════════════════════════════════════════════════ -->
-<section class="hero" id="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero__overlay"></div>
+<section class="hero" id="hero" style="background: white; min-height: 85svh; display: flex; align-items: center; position: relative; overflow: hidden;">
+  <!-- Subtle Watermark -->
+  <img src="assets/img/logo.png" alt="" class="watermark">
+  
+  <div class="hero__content" style="max-width: 800px; padding: var(--s16) var(--s6);">
+    <div class="label-text" style="margin-bottom: var(--s3);">Abuja · Nigeria · Est. 2018</div>
 
-  <div class="hero__content">
-    <div class="hero__label">
-      <span>Abuja · Nigeria · Est. 2018</span>
-    </div>
-
-    <h1 class="hero__title">
-      <span class="word">Fashion</span><br>
-      <span class="word gold-word">ELEVATED.</span>
+    <h1 class="hero__title" style="font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: var(--s6);">
+      Fashion<br>
+      <span class="gold-text">Elevated.</span>
     </h1>
 
-    <p class="hero__subtitle">
-      What makes ILLUME unique? We don’t just design fashion—we illuminate identity. 
+    <p class="hero__subtitle" style="font-size: 1.15rem; line-height: 1.6; color: var(--warm-taupe); margin-bottom: var(--s8); max-width: 600px;">
+      We don’t just design fashion—we illuminate identity. 
       Every thread is intentional. Every silhouette, a statement.
-      Welcome to the future of Nigerian luxury fashion.
+      Welcome to the future of Nigerian luxury.
     </p>
 
-    <div class="hero__cta">
-      <a href="consultation.php" class="btn btn--primary btn--lg">
-        <i data-lucide="calendar"></i>
+    <div class="hero__cta" style="display: flex; gap: var(--s4); flex-wrap: wrap;">
+      <a href="consultation.php" class="btn btn--primary">
         Book a Consultation
       </a>
-      <a href="portfolio.php" class="btn btn--ghost btn--lg">
-        <i data-lucide="eye"></i>
+      <a href="portfolio.php" class="btn btn--ghost">
         View Portfolio
       </a>
     </div>
   </div>
-
-  <div class="hero__scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
 </section>
 
-<!-- ═══ STATS TICKER ══════════════════════════════════════════ -->
-<section style="padding: 4rem 0; border-top: 1px solid var(--space-border); border-bottom: 1px solid var(--space-border); background: var(--space);">
+<!-- ═══ STATS ══════════════════════════════════════════ -->
+<section style="padding: var(--s16) 0; border-bottom: 1px solid var(--divider); background: var(--soft-ivory);">
   <div class="container">
-    <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:2rem; text-align:center;">
-
+    <div class="stats-grid" style="gap: var(--s8); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
       <div class="reveal">
-        <div style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--gold),var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;"
-             data-counter data-target="7" data-suffix="+">0+</div>
-        <div class="label-text" style="margin-top:0.5rem;">Years of Craft</div>
+        <div class="kpi-value" data-counter data-target="7" data-suffix="+" style="font-size: 3rem; font-weight: 700; color: var(--black);">0+</div>
+        <div class="label-text">Years of Craft</div>
       </div>
-
       <div class="reveal reveal-delay-1">
-        <div style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--gold),var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;"
-             data-counter data-target="340" data-suffix="+">0+</div>
-        <div class="label-text" style="margin-top:0.5rem;">Clients Served</div>
+        <div class="kpi-value" data-counter data-target="340" data-suffix="+" style="font-size: 3rem; font-weight: 700; color: var(--black);">0+</div>
+        <div class="label-text">Clients Served</div>
       </div>
-
       <div class="reveal reveal-delay-2">
-        <div style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--gold),var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;"
-             data-counter data-target="1200" data-suffix="+">0+</div>
-        <div class="label-text" style="margin-top:0.5rem;">Pieces Created</div>
+        <div class="kpi-value" data-counter data-target="1200" data-suffix="+" style="font-size: 3rem; font-weight: 700; color: var(--black);">0+</div>
+        <div class="label-text">Pieces Created</div>
       </div>
-
       <div class="reveal reveal-delay-3">
-        <div style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--gold),var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;"
-             data-counter data-target="12" data-suffix="">0</div>
-        <div class="label-text" style="margin-top:0.5rem;">Countries Worn</div>
+        <div class="kpi-value" data-counter data-target="12" data-suffix="" style="font-size: 3rem; font-weight: 700; color: var(--black);">0</div>
+        <div class="label-text">Countries Worn</div>
       </div>
-
     </div>
   </div>
 </section>
@@ -91,7 +73,7 @@ include __DIR__ . '/includes/header.php';
       <div class="section-divider">
         <span class="label-text">What We Do</span>
       </div>
-      <h2 class="reveal">Services Built<br>for the <span class="shimmer-text">Extraordinary</span></h2>
+      <h2 class="reveal">Services Built<br>for the <span class="gold-text">Extraordinary</span></h2>
       <p class="reveal reveal-delay-1">
         From bespoke couture to full brand styling, every service
         is engineered to make you unforgettable.
@@ -118,7 +100,7 @@ include __DIR__ . '/includes/header.php';
     </div>
 
     <div class="text-center" style="margin-top:3rem;">
-      <a href="services.php" class="btn btn--secondary btn--lg">
+      <a href="services.php" class="btn btn--ghost btn--lg">
         View All Services <i data-lucide="arrow-right"></i>
       </a>
     </div>
@@ -126,9 +108,9 @@ include __DIR__ . '/includes/header.php';
 </section>
 
 <!-- ═══ PHILOSOPHY SECTION ════════════════════════════════════ -->
-<section class="section" style="background:var(--space); border-top:1px solid var(--space-border); border-bottom:1px solid var(--space-border);">
+<section class="section" style=" border-top:1px solid var(--divider); border-bottom:1px solid var(--divider);">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;">
+    <div class="philosophy-grid">
 
       <!-- Left: Visual -->
       <div class="reveal-left" style="position:relative;">
@@ -141,7 +123,7 @@ include __DIR__ . '/includes/header.php';
           <img src="<?= SITE_URL ?>/assets/img/philosophy.png" alt="ILLUME Bespoke Couture" style="width:100%; height:100%; object-fit:cover;">
           
           <!-- Decorative overlay -->
-          <div style="position:absolute; inset:0; background:linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.4) 100%);"></div>
+          <div style="position:absolute; inset:0; background: transparent;"></div>
           
           <div style="position:absolute; bottom:2rem; left:2rem; z-index:1;">
             <div style="
@@ -166,10 +148,10 @@ include __DIR__ . '/includes/header.php';
           padding:1.25rem 1.5rem;
           display:flex; align-items:center; gap:0.75rem;
         ">
-          <div style="width:10px;height:10px;border-radius:50%;background:var(--aura);box-shadow:0 0 12px var(--aura);flex-shrink:0;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--champagne);box-shadow:0 0 12px var(--divider);flex-shrink:0;"></div>
           <div>
-            <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);">Design Time</div>
-            <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);">2 – 6 Weeks</div>
+            <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--warm-taupe);">Design Time</div>
+            <div style="font-size:0.95rem;font-weight:600;color:var(--black);">2 – 6 Weeks</div>
           </div>
         </div>
       </div>
@@ -179,7 +161,7 @@ include __DIR__ . '/includes/header.php';
         <div class="label-text" style="margin-bottom:1rem;">Our Philosophy</div>
         <h2 style="margin-bottom:1.5rem;">
           Fashion That<br>
-          <span class="shimmer-text">Commands Space</span>
+          <span class="gold-text">Commands Space</span>
         </h2>
         <p style="margin-bottom:1.5rem; font-size:1.05rem; line-height:1.8; font-style: italic; color: var(--gold-bright);">
           Illume by Light Peace was born from a simple conviction—<br>
@@ -234,12 +216,12 @@ include __DIR__ . '/includes/header.php';
       <div class="section-divider">
         <span class="label-text">Portfolio</span>
       </div>
-      <h2 class="reveal">Work That<br><span class="shimmer-text">Speaks First</span></h2>
+      <h2 class="reveal">Work That<br><span class="gold-text">Speaks First</span></h2>
       <p class="reveal reveal-delay-1">A glimpse into the ILLUME universe. Each piece tells a story only you can finish.</p>
     </div>
 
     <!-- Portfolio Grid (CSS-based placeholder visual showcase) -->
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:auto; gap:1.5rem; margin-bottom:4rem;">
+    <div class="portfolio-preview-grid">
       <?php
       $portfolioItems = [
         ['label'=>'Bespoke',             'sub'=>'Artisanal Tailoring', 'img'=>'svc_bespoke_1776779653752.png', 'url'=>'services.php#bespoke-couture'],
@@ -252,35 +234,21 @@ include __DIR__ . '/includes/header.php';
         if ($idx === 0) $gridArea = 'grid-row: span 2;';
         if ($idx === 3) $gridArea = 'grid-column: span 2;';
       ?>
-      <a href="<?= e($item['url']) ?>" class="portfolio-item reveal reveal-delay-<?= ($idx % 3) + 1 ?>" style="<?= $gridArea ?> text-decoration:none;">
-        <div style="
-          background: var(--space-mid);
-          border: 1px solid var(--space-border);
-          border-radius: var(--r-xl);
-          height: <?= $idx === 0 ? '580px' : '280px' ?>;
-          display:flex; align-items:flex-end;
-          position:relative; overflow:hidden; cursor:pointer;
-          transition: all 0.5s var(--ease-out);
-        "
-        onmouseenter="this.querySelector('img').style.transform='scale(1.08)'; this.style.borderColor='var(--aura-glass)';"
-        onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';"
-        >
-          <img src="<?= SITE_URL ?>/assets/img/<?= $item['img'] ?>" alt="<?= e($item['label']) ?>" 
-               style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition: transform 0.8s var(--ease-out);">
-          
-          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);"></div>
-
-          <div style="position:relative; z-index:1; padding:2rem; width:100%;">
-            <div class="label-text" style="color:var(--gold-bright); margin-bottom:0.3rem;"><?= $item['label'] ?></div>
-            <div style="font-size:0.9rem; color:#FFF; font-weight:500;"><?= $item['sub'] ?></div>
-          </div>
+      <a href="<?= e($item['url']) ?>" 
+         class="portfolio-card <?= $idx === 0 ? 'portfolio-card--tall' : '' ?> reveal reveal-delay-<?= ($idx % 3) + 1 ?>" 
+         style="<?= $gridArea ?>">
+        <img src="<?= SITE_URL ?>/assets/img/<?= $item['img'] ?>" alt="<?= e($item['label']) ?>">
+        <div class="portfolio-card__overlay"></div>
+        <div class="portfolio-card__content">
+          <div class="label-text" style="color:var(--gold-bright); margin-bottom:0.3rem;"><?= $item['label'] ?></div>
+          <div style="font-size:0.9rem; color:#FFF; font-weight:500;"><?= $item['sub'] ?></div>
         </div>
       </a>
-      <?php endforeach; ?>
+<?php endforeach; ?>
     </div>
 
     <div class="text-center">
-      <a href="portfolio.php" class="btn btn--secondary btn--lg">
+      <a href="portfolio.php" class="btn btn--ghost btn--lg">
         Full Portfolio <i data-lucide="arrow-right"></i>
       </a>
     </div>
@@ -288,11 +256,11 @@ include __DIR__ . '/includes/header.php';
 </section>
 
 <!-- ═══ TESTIMONIALS ══════════════════════════════════════════ -->
-<section class="section" style="background:var(--space); border-top:1px solid var(--space-border); border-bottom:1px solid var(--space-border);">
+<section class="section" style=" border-top:1px solid var(--divider); border-bottom:1px solid var(--divider); background: var(--soft-ivory);">
   <div class="container">
     <div class="section-header">
       <div class="section-divider"><span class="label-text">Testimonials</span></div>
-      <h2 class="reveal">Worn. Adored.<br><span class="shimmer-text">Remembered.</span></h2>
+      <h2 class="reveal">Worn. Adored.<br><span class="gold-text">Remembered.</span></h2>
     </div>
 
     <div class="grid-3" style="gap:1.5rem;">
@@ -325,15 +293,15 @@ include __DIR__ . '/includes/header.php';
           <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);fill:var(--gold);"></i>
           <?php endfor; ?>
         </div>
-        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem; color:var(--text-secondary);">
+        <p style="font-size:0.95rem; line-height:1.75; font-style:italic; margin-bottom:1.5rem; color:var(--text-muted);">
           "<?= e($t['quote']) ?>"
         </p>
         <div style="display:flex;align-items:center;gap:0.75rem;margin-top:auto; border-top:1px solid var(--space-border); padding-top:1.25rem;">
           <div style="
             width:42px; height:42px; border-radius:50%;
-            background:linear-gradient(135deg,var(--gold),var(--gold-bright));
+            background: var(--sand-beige);
             display:flex; align-items:center; justify-content:center;
-            font-family:var(--font-display); font-weight:700; color:var(--void);
+            font-family:var(--font-display); font-weight:700; color:var(--black);
             flex-shrink:0;
           "><?= htmlspecialchars($t['initial']) ?></div>
           <div>
@@ -365,7 +333,7 @@ include __DIR__ . '/includes/header.php';
     </div>
 
     <h2 class="reveal" style="font-size:clamp(2.5rem,6vw,5rem); margin-bottom:1.5rem; max-width:700px; margin-left:auto; margin-right:auto;">
-      Your Signature<br><span class="shimmer-text">Piece Awaits.</span>
+      Your Signature<br><span class="gold-text">Piece Awaits.</span>
     </h2>
 
     <p class="reveal reveal-delay-1" style="font-size:1.1rem; max-width:520px; margin:0 auto 2.5rem; line-height:1.8;">
@@ -386,7 +354,7 @@ include __DIR__ . '/includes/header.php';
     </div>
 
     <!-- Trust badges -->
-    <div style="display:flex;justify-content:center;gap:2.5rem;margin-top:3rem;flex-wrap:wrap;" class="reveal reveal-delay-3">
+    <div class="trust-badges reveal reveal-delay-3">
       <?php
       $trust = [
         ['icon'=>'shield-check', 'text'=>'Free Consultation'],

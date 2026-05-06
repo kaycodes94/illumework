@@ -48,7 +48,7 @@ include __DIR__ . '/../includes/dash_header.php';
       <i data-lucide="calendar"></i> Consultations
       <?php if ($new_consults > 0): ?>
       <span style="
-        background:var(--aura);color:var(--void);
+        background:var(--champagne);color:white;
         font-size:0.65rem;font-weight:700;
         padding:1px 7px;border-radius:9999px;
       "><?= (int)$new_consults ?></span>
@@ -64,19 +64,19 @@ include __DIR__ . '/../includes/dash_header.php';
 <div class="kpi-grid">
   <?php
   $kpis = [
-    ['label'=>'Active Orders',      'value'=>$active_orders,                         'suffix'=>'',   'icon'=>'package',    'color'=>'var(--gold)',   'sub'=>'In production'],
-    ['label'=>'New Consultations',  'value'=>$new_consults,                          'suffix'=>'',   'icon'=>'calendar',   'color'=>'var(--aura)',   'sub'=>'Awaiting contact'],
-    ['label'=>'Pending Approvals',  'value'=>$pending_approvals,                     'suffix'=>'',   'icon'=>'eye',        'color'=>'var(--warning)','sub'=>'Design reviews'],
-    ['label'=>'Active Clients',     'value'=>$total_clients,                         'suffix'=>'',   'icon'=>'users',      'color'=>'var(--gold)',   'sub'=>'On the platform'],
-    ['label'=>'Revenue (Complete)', 'value'=>format_currency((float)$total_revenue), 'suffix'=>null, 'icon'=>'trending-up','color'=>'var(--success)','sub'=>'Completed orders'],
+    ['label'=>'Active Orders',      'value'=>$active_orders,                         'suffix'=>'',   'icon'=>'package',    'color'=>'var(--champagne)',   'sub'=>'In production'],
+    ['label'=>'New Consultations',  'value'=>$new_consults,                          'suffix'=>'',   'icon'=>'calendar',   'color'=>'var(--champagne)',   'sub'=>'Awaiting contact'],
+    ['label'=>'Pending Approvals',  'value'=>$pending_approvals,                     'suffix'=>'',   'icon'=>'eye',        'color'=>'var(--black)',       'sub'=>'Design reviews'],
+    ['label'=>'Active Clients',     'value'=>$total_clients,                         'suffix'=>'',   'icon'=>'users',      'color'=>'var(--black)',       'sub'=>'On the platform'],
+    ['label'=>'Revenue (Complete)', 'value'=>format_currency((float)$total_revenue), 'suffix'=>null, 'icon'=>'trending-up','color'=>'var(--deep-plum)',    'sub'=>'Completed orders'],
   ];
   foreach ($kpis as $kpi): ?>
   <div class="kpi-card">
     <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem;">
       <div class="kpi-label"><?= e($kpi['label']) ?></div>
       <div style="
-        width:36px;height:36px;border-radius:var(--r);
-        background:rgba(255,255,255,0.04);
+        width:36px;height:36px;border-radius:var(--r-sm);
+        background: var(--soft-ivory); border: 1px solid var(--divider);
         display:flex;align-items:center;justify-content:center;
         color:<?= $kpi['color'] ?>;
       ">
@@ -117,7 +117,7 @@ include __DIR__ . '/../includes/dash_header.php';
           <?php else: ?>
           <?php foreach ($recent_orders as $order): ?>
           <tr onclick="location.href='<?= SITE_URL ?>/founder/orders.php'" style="cursor:pointer;">
-            <td><span style="font-family:monospace;font-size:0.78rem;color:var(--gold);"><?= e($order['order_ref']) ?></span></td>
+            <td><span style="font-family:monospace;font-size:0.78rem;color:var(--champagne);"><?= e($order['order_ref']) ?></span></td>
             <td style="font-weight:500;"><?= e($order['client_name']) ?></td>
             <td style="font-size:0.82rem;max-width:140px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><?= e($order['service_type']) ?></td>
             <td><?= order_status_badge($order['status']) ?></td>
@@ -140,7 +140,7 @@ include __DIR__ . '/../includes/dash_header.php';
       <div class="activity-feed__header">
         <span>Incoming Requests</span>
         <?php if ($new_consults > 0): ?>
-        <span class="badge badge--aura"><?= (int)$new_consults ?> new</span>
+        <span class="badge" style="background: var(--champagne); color: white;"><?= (int)$new_consults ?> new</span>
         <?php endif; ?>
       </div>
       <?php if (empty($recent_consults)): ?>

@@ -74,9 +74,12 @@ $dash_title = $dash_title ?? 'Dashboard';
 
   <!-- ══ SIDEBAR ══════════════════════════════════════════════ -->
   <aside class="sidebar" id="sidebar">
-    <div class="sidebar__header">
-      <a href="<?= SITE_URL ?>/" class="sidebar__logo">ILLUME</a>
-      <div class="sidebar__role-badge"><?= ucfirst(e($role)) ?> Portal</div>
+    <div class="sidebar__header" style="padding: 32px 24px;">
+      <a href="<?= SITE_URL ?>/" class="sidebar__logo" style="position: relative; display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--black); width: 100%; height: 50px; margin-bottom: 0.5rem;">
+        <span style="font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; position: relative; z-index: 2;">ILLUME</span>
+        <img src="<?= SITE_URL ?>/assets/img/logo.png" alt="Logo" class="logo-img" style="height: 48px; position: absolute; opacity: 0.15; z-index: 1;">
+      </a>
+      <div class="sidebar__role-badge" style="text-align: center; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-taupe);"><?= ucfirst(e($role)) ?> Portal</div>
     </div>
 
     <nav class="sidebar__nav">

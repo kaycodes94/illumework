@@ -16,7 +16,7 @@ $page_url   = SITE_URL . $_SERVER['REQUEST_URI'];
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?= e($page_desc) ?>">
-  <meta name="theme-color" content="#020207">
+  <meta name="theme-color" content="#201710">
   <meta property="og:title"       content="<?= e($page_title) ?>">
   <meta property="og:description" content="<?= e($page_desc) ?>">
   <meta property="og:url"         content="<?= e($page_url) ?>">
@@ -26,14 +26,12 @@ $page_url   = SITE_URL . $_SERVER['REQUEST_URI'];
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/main.css">
   <?php if (isset($extra_css)) echo $extra_css; ?>
 
-  <!-- Three.js (hero particles) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
   <!-- Lenis smooth scroll -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
 </head>
@@ -41,7 +39,10 @@ $page_url   = SITE_URL . $_SERVER['REQUEST_URI'];
 
 <!-- Page Loader -->
 <div id="page-loader" class="page-loader">
-  <div class="loader-logo">ILLUME</div>
+  <div class="loader-logo" style="display: flex; align-items: center; gap: 1.5rem;">
+    <img src="<?= SITE_URL ?>/assets/img/logo.png" alt="Logo" class="logo-img" style="height: 80px; width: auto;">
+    <span style="font-weight: 800; font-size: 3rem; letter-spacing: -0.02em; color: var(--black);">ILLUME</span>
+  </div>
   <div class="loader-bar"><div class="loader-bar-fill"></div></div>
 </div>
 
@@ -52,12 +53,14 @@ $page_url   = SITE_URL . $_SERVER['REQUEST_URI'];
 <!-- Scroll Progress -->
 <div class="scroll-progress"></div>
 
-<!-- ═══ NAVIGATION ═══════════════════════════════════════════ -->
 <nav class="nav" id="main-nav">
   <div class="nav__inner">
 
     <!-- Logo -->
-    <a href="<?= SITE_URL ?>/" class="nav__logo">ILLUME</a>
+    <a href="<?= SITE_URL ?>/" class="nav__logo" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+      <img src="<?= SITE_URL ?>/assets/img/logo.png" alt="Logo" class="logo-img" style="height: 42px; width: auto;">
+      <span style="font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--black);">ILLUME</span>
+    </a>
 
     <!-- Desktop Links -->
     <div class="nav__links">
@@ -74,10 +77,11 @@ $page_url   = SITE_URL . $_SERVER['REQUEST_URI'];
         <?php $r = current_role();
           $dash = match($r) { 'founder'=>'/founder/dashboard.php','staff'=>'/staff/dashboard.php',default=>'/client/dashboard.php' }; ?>
         <a href="<?= SITE_URL . $dash ?>" class="btn btn--secondary btn--sm">Dashboard</a>
+        <a href="<?= SITE_URL ?>/auth/logout.php" class="btn btn--ghost btn--sm" style="opacity: 0.6; font-size: 0.75rem;">Sign Out</a>
       <?php else: ?>
-        <a href="<?= SITE_URL ?>/auth/login.php" class="btn btn--secondary btn--sm">Sign In</a>
+        <a href="<?= SITE_URL ?>/auth/login.php" class="btn btn--ghost btn--sm">Sign In</a>
       <?php endif; ?>
-      <a href="<?= SITE_URL ?>/consultation.php" class="btn btn--primary btn--sm">Book Consultation</a>
+      <a href="<?= SITE_URL ?>/consultation.php" class="btn btn--primary btn--sm">Consultation</a>
       <!-- Hamburger -->
       <button class="nav__hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -100,8 +104,9 @@ $page_url   = SITE_URL . $_SERVER['REQUEST_URI'];
   <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1rem;">
     <?php if (is_logged_in()): ?>
       <a href="<?= SITE_URL . $dash ?>" class="btn btn--secondary">Dashboard</a>
+      <a href="<?= SITE_URL ?>/auth/logout.php" class="btn btn--ghost">Sign Out</a>
     <?php else: ?>
-      <a href="<?= SITE_URL ?>/auth/login.php" class="btn btn--secondary">Sign In</a>
+      <a href="<?= SITE_URL ?>/auth/login.php" class="btn btn--ghost">Sign In</a>
     <?php endif; ?>
     <a href="<?= SITE_URL ?>/consultation.php" class="btn btn--primary">Book Consultation</a>
   </div>

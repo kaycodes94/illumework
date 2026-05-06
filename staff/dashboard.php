@@ -54,18 +54,18 @@ include __DIR__ . '/../includes/dash_header.php';
 <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:2rem;">
   <div class="kpi-card">
     <div class="kpi-label">Active Orders</div>
-    <div class="kpi-value" style="color:var(--gold);"><?= $active_count ?></div>
-    <div style="font-size:0.75rem;color:var(--text-muted);">Currently assigned</div>
+    <div class="kpi-value" style="color:var(--champagne);"><?= $active_count ?></div>
+    <div style="font-size:0.75rem;color:var(--warm-taupe);">Currently assigned</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">Awaiting Approval</div>
-    <div class="kpi-value" style="color:var(--warning);"><?= $pending_count ?></div>
-    <div style="font-size:0.75rem;color:var(--text-muted);">Client review pending</div>
+    <div class="kpi-value" style="color:var(--deep-plum);"><?= $pending_count ?></div>
+    <div style="font-size:0.75rem;color:var(--warm-taupe);">Client review pending</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">Total Orders</div>
-    <div class="kpi-value" style="color:var(--text-primary);"><?= count($my_orders) ?></div>
-    <div style="font-size:0.75rem;color:var(--text-muted);">All time</div>
+    <div class="kpi-value" style="color:var(--black);"><?= count($my_orders) ?></div>
+    <div style="font-size:0.75rem;color:var(--warm-taupe);">All time</div>
   </div>
 </div>
 
@@ -85,11 +85,11 @@ include __DIR__ . '/../includes/dash_header.php';
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.75rem;margin-bottom:0.75rem;">
           <div>
             <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;">
-              <span style="font-family:monospace;font-size:0.72rem;color:var(--gold);"><?= e($order['order_ref']) ?></span>
+              <span style="font-family:monospace;font-size:0.72rem;color:var(--champagne);"><?= e($order['order_ref']) ?></span>
               <?= order_status_badge($order['status']) ?>
             </div>
-            <div style="font-weight:600;font-size:0.9rem;"><?= e($order['title']) ?></div>
-            <div style="font-size:0.78rem;color:var(--text-muted);">Client: <?= e($order['client_name']) ?></div>
+            <div style="font-weight:600;font-size:0.9rem; color: var(--black);"><?= e($order['title']) ?></div>
+            <div style="font-size:0.78rem;color:var(--warm-taupe);">Client: <?= e($order['client_name']) ?></div>
           </div>
           <div style="display:flex;gap:0.35rem;flex-shrink:0;">
             <a href="order-details.php?id=<?= (int)$order['id'] ?>" class="btn btn--secondary btn--sm">
@@ -122,13 +122,13 @@ include __DIR__ . '/../includes/dash_header.php';
       <?php else: ?>
       <?php foreach ($my_uploads as $u): ?>
       <div class="activity-feed__item">
-        <div class="activity-feed__icon" style="background:var(--aura-dim);border-color:var(--aura-glass);color:var(--aura);">
+        <div class="activity-feed__icon" style="background:var(--soft-ivory);border-color:var(--divider);color:var(--champagne);">
           <i data-lucide="image"></i>
         </div>
         <div class="activity-feed__text">
-          <span style="font-weight:600;color:var(--text-primary);font-size:0.85rem;"><?= e($u['title'] ?: 'Design') ?></span>
+          <span style="font-weight:600;color:var(--black);font-size:0.85rem;"><?= e($u['title'] ?: 'Design') ?></span>
           <br>
-          <span style="font-size:0.78rem;"><?= e($u['order_title']) ?></span>
+          <span style="font-size:0.78rem; color: var(--warm-taupe);"><?= e($u['order_title']) ?></span>
           <br>
           <?php
           $as = $u['approval_status'];

@@ -54,7 +54,7 @@ include __DIR__ . '/../includes/dash_header.php';
   <i data-lucide="eye"></i>
   <span>
     You have <strong><?= count($pending) ?> design<?= count($pending) > 1 ? 's' : '' ?></strong> awaiting your review and approval.
-    <a href="#approvals" style="color:var(--aura);text-decoration:underline;margin-left:0.5rem;">Review now →</a>
+    <a href="#approvals" style="color:var(--champagne);text-decoration:underline;margin-left:0.5rem;">Review now →</a>
   </span>
 </div>
 <?php endif; ?>
@@ -74,19 +74,19 @@ include __DIR__ . '/../includes/dash_header.php';
   <?php else: ?>
   <div style="display:flex;flex-direction:column;gap:1rem;">
     <?php foreach ($orders as $order): ?>
-    <a href="order-details.php?id=<?= (int)$order['id'] ?>" class="glass" style="padding:1.5rem;border-radius:var(--r-xl);transition:all 0.3s;display:block;text-decoration:none;" onmouseenter="this.style.borderColor='var(--gold-glass)'" onmouseleave="this.style.borderColor=''">
+    <a href="order-details.php?id=<?= (int)$order['id'] ?>" class="glass" style="padding:1.5rem;border-radius:var(--r-lg);transition:all 0.3s;display:block;text-decoration:none;" onmouseenter="this.style.borderColor='var(--champagne)'" onmouseleave="this.style.borderColor=''">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;">
         <div>
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <span style="font-family:monospace;font-size:0.75rem;color:var(--gold);"><?= e($order['order_ref']) ?></span>
+            <span style="font-family:monospace;font-size:0.75rem;color:var(--champagne);"><?= e($order['order_ref']) ?></span>
             <?= order_status_badge($order['status']) ?>
           </div>
-          <h5 style="font-size:1rem;margin-bottom:0.25rem;color:var(--text-primary);"><?= e($order['title']) ?></h5>
-          <span style="font-size:0.82rem;color:var(--text-muted);"><?= e($order['service_type']) ?></span>
+          <h5 style="font-size:1rem;margin-bottom:0.25rem;color:var(--black);"><?= e($order['title']) ?></h5>
+          <span style="font-size:0.82rem;color:var(--warm-taupe);"><?= e($order['service_type']) ?></span>
         </div>
         <div style="text-align:right;">
           <?php if ($order['budget']): ?>
-          <div style="font-size:1.1rem;font-weight:700;color:var(--gold);"><?= format_currency((float)$order['budget'], $order['currency']) ?></div>
+          <div style="font-size:1.1rem;font-weight:700;color:var(--champagne);"><?= format_currency((float)$order['budget'], $order['currency']) ?></div>
           <?php endif; ?>
           <?php if ($order['deadline']): ?>
           <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.25rem;">
@@ -137,15 +137,15 @@ include __DIR__ . '/../includes/dash_header.php';
     <?php foreach ($pending as $d): ?>
     <div class="design-card">
       <div class="design-card__img" style="
-        background:linear-gradient(135deg,var(--space-mid),rgba(201,168,76,0.08));
+        background: var(--soft-ivory); border-bottom: 1px solid var(--divider);
         display:flex;align-items:center;justify-content:center;
       ">
-        <i data-lucide="image" style="width:40px;height:40px;color:var(--text-muted);"></i>
+        <i data-lucide="image" style="width:40px;height:40px;color:var(--warm-taupe);"></i>
       </div>
       <div class="design-card__body">
-        <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:0.25rem;"><?= e($d['order_title']) ?></div>
-        <div style="font-weight:600;font-size:0.9rem;margin-bottom:0.5rem;"><?= e($d['title'] ?: 'Design Submission') ?></div>
-        <p style="font-size:0.8rem;line-height:1.5;"><?= e($d['notes'] ?: 'No notes provided.') ?></p>
+        <div style="font-size:0.7rem;color:var(--warm-taupe);margin-bottom:0.25rem;"><?= e($d['order_title']) ?></div>
+        <div style="font-weight:600;font-size:0.9rem;margin-bottom:0.5rem; color: var(--black);"><?= e($d['title'] ?: 'Design Submission') ?></div>
+        <p style="font-size:0.8rem;line-height:1.5; color: var(--cocoa);"><?= e($d['notes'] ?: 'No notes provided.') ?></p>
       </div>
       <div class="design-card__actions">
         <form method="POST" action="<?= SITE_URL ?>/api/design.php" style="display:contents;">
@@ -171,17 +171,17 @@ include __DIR__ . '/../includes/dash_header.php';
 
 <!-- ── Quick Actions ─────────────────────────────────────── -->
 <div style="margin-top:2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
-  <a href="<?= SITE_URL ?>/consultation.php" class="glass" style="padding:1.25rem;text-align:center;border-radius:var(--r-xl);text-decoration:none;transition:all 0.3s;" onmouseenter="this.style.borderColor='var(--gold-glass)'" onmouseleave="this.style.borderColor=''">
-    <i data-lucide="calendar" style="width:24px;height:24px;color:var(--gold);display:block;margin:0 auto 0.5rem;"></i>
-    <div style="font-size:0.85rem;font-weight:600;">New Consultation</div>
+  <a href="<?= SITE_URL ?>/consultation.php" class="glass" style="padding:1.25rem;text-align:center;border-radius:var(--r-lg);text-decoration:none;transition:all 0.3s;" onmouseenter="this.style.borderColor='var(--champagne)'" onmouseleave="this.style.borderColor=''">
+    <i data-lucide="calendar" style="width:24px;height:24px;color:var(--champagne);display:block;margin:0 auto 0.5rem;"></i>
+    <div style="font-size:0.85rem;font-weight:600; color: var(--black);">New Consultation</div>
   </a>
-  <a href="https://wa.me/<?= WHATSAPP_NUMBER ?>" class="glass" style="padding:1.25rem;text-align:center;border-radius:var(--r-xl);text-decoration:none;transition:all 0.3s;" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='var(--aura-glass)'" onmouseleave="this.style.borderColor=''">
-    <i data-lucide="message-circle" style="width:24px;height:24px;color:var(--aura);display:block;margin:0 auto 0.5rem;"></i>
-    <div style="font-size:0.85rem;font-weight:600;">WhatsApp ILLUME</div>
+  <a href="https://wa.me/<?= WHATSAPP_NUMBER ?>" class="glass" style="padding:1.25rem;text-align:center;border-radius:var(--r-lg);text-decoration:none;transition:all 0.3s;" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='var(--deep-plum)'" onmouseleave="this.style.borderColor=''">
+    <i data-lucide="message-circle" style="width:24px;height:24px;color:var(--deep-plum);display:block;margin:0 auto 0.5rem;"></i>
+    <div style="font-size:0.85rem;font-weight:600; color: var(--black);">WhatsApp ILLUME</div>
   </a>
-  <a href="<?= SITE_URL ?>/client/profile.php" class="glass" style="padding:1.25rem;text-align:center;border-radius:var(--r-xl);text-decoration:none;transition:all 0.3s;" onmouseenter="this.style.borderColor='var(--gold-glass)'" onmouseleave="this.style.borderColor=''">
-    <i data-lucide="user" style="width:24px;height:24px;color:var(--gold);display:block;margin:0 auto 0.5rem;"></i>
-    <div style="font-size:0.85rem;font-weight:600;">My Profile</div>
+  <a href="<?= SITE_URL ?>/client/profile.php" class="glass" style="padding:1.25rem;text-align:center;border-radius:var(--r-lg);text-decoration:none;transition:all 0.3s;" onmouseenter="this.style.borderColor='var(--champagne)'" onmouseleave="this.style.borderColor=''">
+    <i data-lucide="user" style="width:24px;height:24px;color:var(--champagne);display:block;margin:0 auto 0.5rem;"></i>
+    <div style="font-size:0.85rem;font-weight:600; color: var(--black);">My Profile</div>
   </a>
 </div>
 

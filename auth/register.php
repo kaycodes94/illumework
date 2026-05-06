@@ -76,9 +76,7 @@ $page_title = 'Create Account';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Account — ILLUME</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/main.css">
   <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/auth.css">
 </head>
@@ -91,31 +89,34 @@ $page_title = 'Create Account';
 <div class="auth-page">
 
   <!-- Visual Panel -->
-  <div class="auth-visual">
+  <div class="auth-visual" style="flex: 1; position: relative; overflow: hidden; display: block;">
     <img src="<?= SITE_URL ?>/assets/img/philosophy.png" alt="ILLUME Couture" 
          style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-    <div class="auth-visual__overlay" style="background:linear-gradient(135deg, rgba(82,23,124,0.4) 0%, rgba(1,1,3,0.9) 100%);"></div>
-    <div class="auth-visual__content">
-      <span class="auth-visual__logo" style="background:linear-gradient(135deg, var(--gold), var(--gold-bright)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">ILLUME</span>
-      <p class="auth-visual__quote">
+    <div class="auth-visual__content" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 64px; z-index: 2; background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+      <p class="auth-visual__quote" style="font-size: 1.2rem; color: #FFF; font-style: italic; line-height: 1.6; max-width: 400px; opacity: 0.9;">
         "crafted in light, radiance you can wear"
-        <br><span style="font-size:0.85rem; color:rgba(255,255,255,0.7); font-style:normal; margin-top:0.5rem; display:block; font-family:var(--font-body);">— Olewuezi Ikedichukwu Peace</span>
+        <br><span style="font-size:0.85rem; color:rgba(255,255,255,0.7); font-style:normal; margin-top:0.5rem; display:block;">— Olewuezi Ikedichukwu Peace</span>
       </p>
     </div>
   </div>
 
   <!-- Form Panel -->
-  <div class="auth-form-panel">
-    <div class="auth-form-wrap" style="max-width: 440px;">
-      <a href="<?= SITE_URL ?>/" class="auth-logo">ILLUME</a>
-      <p class="auth-tagline">Join the Elite.</p>
+  <div class="auth-form" style="width: 100%; max-width: 500px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 64px 48px; background: #FFF;">
+    <div class="auth-form-inner" style="width: 100%; max-width: 440px;">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <a href="<?= SITE_URL ?>/" class="auth-logo" style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; color: #000;">
+          <span style="font-weight: 800; font-size: 1.8rem; letter-spacing: -0.02em;">ILLUME</span>
+          <img src="<?= SITE_URL ?>/assets/img/logo.png" alt="Logo" style="height: 48px; width: auto;">
+        </a>
+      </div>
+      <p class="auth-tagline" style="text-align: center; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 2rem; color: #666;">Join the Elite.</p>
 
-      <h1 class="auth-title">Create Account</h1>
-      <p class="auth-subtitle">Join the ILLUME universe and elevate your style.</p>
+      <h1 class="auth-title" style="font-size: 1.8rem; font-weight: 700; color: #000; margin-bottom: 0.5rem; text-align: center;">Create Account</h1>
+      <p class="auth-subtitle" style="font-size: 0.95rem; color: #666; margin-bottom: 2rem; text-align: center;">Join the ILLUME universe and elevate your style.</p>
 
       <?php if ($error): ?>
-      <div class="alert alert--error" style="margin-bottom: 1.5rem; background: rgba(220,38,38,0.05); color: #DC2626; padding: 0.75rem; border-radius: var(--r); font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem; border: 1px solid rgba(220,38,38,0.1);">
-        <i data-lucide="alert-circle" style="width:16px;height:16px;"></i>
+      <div class="alert alert--error">
+        <i data-lucide="alert-circle"></i>
         <span><?= e($error) ?></span>
       </div>
       <?php endif; ?>
@@ -133,27 +134,26 @@ $page_title = 'Create Account';
           <input type="email" name="email" class="form-input" value="<?= e($_POST['email'] ?? '') ?>" placeholder="chioma@example.com" required>
         </div>
 
-        <div class="role-selector">
-          <label class="role-option">
-            <input type="radio" name="role" value="client" <?= ($_POST['role'] ?? 'client') === 'client' ? 'checked' : '' ?>>
-            <div class="role-card">
-              <i data-lucide="user"></i>
+        <div class="role-selector" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+          <label class="role-option" style="flex: 1; cursor: pointer;">
+            <input type="radio" name="role" value="client" <?= ($_POST['role'] ?? 'client') === 'client' ? 'checked' : '' ?> style="display: none;">
+            <div class="role-card" style="padding: 1rem; border: 1px solid var(--divider); border-radius: var(--r); text-align: center; transition: all 0.3s;">
+              <i data-lucide="user" style="display: block; margin: 0 auto 0.5rem;"></i>
               <span>Client</span>
             </div>
           </label>
-          <label class="role-option">
-            <input type="radio" name="role" value="staff" <?= ($_POST['role'] ?? '') === 'staff' ? 'checked' : '' ?>>
-            <div class="role-card">
-              <i data-lucide="briefcase"></i>
+          <label class="role-option" style="flex: 1; cursor: pointer;">
+            <input type="radio" name="role" value="staff" <?= ($_POST['role'] ?? '') === 'staff' ? 'checked' : '' ?> style="display: none;">
+            <div class="role-card" style="padding: 1rem; border: 1px solid var(--divider); border-radius: var(--r); text-align: center; transition: all 0.3s;">
+              <i data-lucide="briefcase" style="display: block; margin: 0 auto 0.5rem;"></i>
               <span>Staff</span>
             </div>
           </label>
         </div>
 
-        <!-- Conditional Staff Invite Code -->
-        <div id="staff-code-group" class="form-group <?= ($_POST['role'] ?? '') === 'staff' ? 'fade-in' : 'hidden' ?>">
+        <div id="staff-code-group" class="form-group <?= ($_POST['role'] ?? '') === 'staff' ? '' : 'hidden' ?>">
           <label class="form-label">Staff Invite Code</label>
-          <input type="text" name="invite_code" class="form-input" placeholder="Enter Invite Code" style="border-color: var(--aura-glass);">
+          <input type="text" name="invite_code" class="form-input" placeholder="Enter Invite Code">
         </div>
 
         <div class="form-group">
@@ -177,8 +177,8 @@ $page_title = 'Create Account';
         </button>
       </form>
 
-      <a href="<?= SITE_URL ?>/auth/login.php" class="auth-back">
-        <i data-lucide="arrow-left"></i>
+      <a href="<?= SITE_URL ?>/auth/login.php" class="auth-back" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 2rem; text-decoration: none; color: #666; font-size: 0.85rem;">
+        <i data-lucide="arrow-left" style="width: 14px;"></i>
         Already have an account? Sign In
       </a>
 
@@ -198,10 +198,8 @@ $page_title = 'Create Account';
     radio.addEventListener('change', (e) => {
       if (e.target.value === 'staff') {
         staffGroup.classList.remove('hidden');
-        staffGroup.classList.add('fade-in');
       } else {
         staffGroup.classList.add('hidden');
-        staffGroup.classList.remove('fade-in');
       }
     });
   });
