@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard — ILLUME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body style="cursor:auto;">
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<div class="dash-layout">
+
+  <!-- ══ SIDEBAR ══════════════════════════════════════════════ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__header" style="padding: 32px 24px;">
+      <a href="../" class="sidebar__logo" style="position: relative; display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--black); width: 100%; height: 50px; margin-bottom: 0.5rem;">
+        <span style="font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; position: relative; z-index: 2;">ILLUME</span>
+        <img src="../assets/img/logo.png" alt="Logo" class="logo-img" style="height: 48px; position: absolute; opacity: 0.15; z-index: 1;">
+      </a>
+      <div class="sidebar__role-badge">Client Portal</div>
+    </div>
+
+    <nav class="sidebar__nav">
+      <div class="sidebar__section-label">Overview</div>
+      <a href="./dashboard.html" class="sidebar__link active">
+        <i data-lucide="layout-dashboard"></i>
+        <span>My Dashboard</span>
+      </a>
+      
+      <div class="sidebar__section-label">My Account</div>
+      <a href="./orders.html" class="sidebar__link">
+        <i data-lucide="package"></i>
+        <span>My Orders</span>
+      </a>
+      <a href="./profile.html" class="sidebar__link">
+        <i data-lucide="user"></i>
+        <span>Profile</span>
+      </a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <div class="sidebar__user">
+        <div class="sidebar__avatar">JD</div>
+        <div style="min-width:0;">
+          <div class="sidebar__user-name">Jane Doe</div>
+          <div class="sidebar__user-email">jane@example.com</div>
+        </div>
+      </div>
+      <a href="../auth/login.html" class="btn btn--ghost btn--sm btn--w-full">
+        <i data-lucide="log-out"></i> Sign Out
+      </a>
+    </div>
+  </aside>
+
+  <!-- Mobile overlay -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ══ MAIN ═════════════════════════════════════════════════ -->
+  <main class="dash-main">
+
+    <!-- Topbar -->
+    <header class="dash-topbar">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle menu">
+          <i data-lucide="menu"></i>
+        </button>
+        <h1 class="dash-topbar__title">My Dashboard</h1>
+      </div>
+      <div class="dash-topbar__actions">
+        <a href="../" class="topbar-icon-btn" title="Public Site">
+          <i data-lucide="external-link"></i>
+        </a>
+        <a href="https://wa.me/2348130024904" class="topbar-icon-btn" title="WhatsApp" target="_blank" rel="noopener">
+          <i data-lucide="message-circle"></i>
+        </a>
+        <div class="sidebar__avatar" style="width:36px;height:36px;font-size:0.8rem;">JD</div>
+      </div>
+    </header>
+
+    <div class="dash-content">
+      
+      <!-- Page Header -->
+      <div class="dash-page-header" style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h2 class="dash-page-header__title" style="font-size: 1.5rem; font-weight: 700; color: var(--black);">Welcome back, Jane ✦</h2>
+          <p class="dash-page-header__subtitle" style="font-size: 0.88rem; color: var(--warm-taupe);">Wednesday, May 6, 2026 · Your ILLUME journey</p>
+        </div>
+        <a href="../consultation.html" class="btn btn--primary btn--sm">
+          <i data-lucide="plus"></i> New Consultation
+        </a>
+      </div>
+
+      <!-- Pending Approval Alert -->
+      <div class="alert alert--info" style="margin-bottom:2rem; background: var(--aura-dim); border: 1px solid var(--aura-glass); color: var(--aura); padding: 1rem; border-radius: var(--r); display: flex; align-items: center; gap: 0.75rem;">
+        <i data-lucide="eye" style="width: 20px; height: 20px;"></i>
+        <span style="font-size: 0.9rem;">
+          You have <strong>1 design</strong> awaiting your review and approval.
+          <a href="#approvals" style="color:var(--champagne); text-decoration:underline; margin-left:0.5rem; font-weight: 600;">Review now →</a>
+        </span>
+      </div>
+
+      <!-- My Orders -->
+      <div style="margin-bottom:3rem;">
+        <h4 style="margin-bottom:1.5rem; font-size: 1.1rem; font-weight: 700;">My Active Orders</h4>
+        
+        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+          <!-- Order Card -->
+          <div class="glass" style="padding:1.5rem; border-radius:var(--r-lg); border: 1px solid var(--divider); background: white; transition:all 0.3s; display:block; text-decoration:none;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+              <div>
+                <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+                  <span style="font-family:monospace;font-size:0.75rem;color:var(--champagne); font-weight: 600;">#ILM-2026-001</span>
+                  <span class="badge badge--warning" style="background: #FFF8E1; color: #F57C00; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;">Approval Pending</span>
+                </div>
+                <h5 style="font-size:1.1rem; margin-bottom:0.25rem; color:var(--black);">Bespoke Silk Gala Gown</h5>
+                <span style="font-size:0.85rem; color:var(--warm-taupe);">Bespoke Couture</span>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.25rem; font-weight:700; color:var(--champagne);">₦450,000</div>
+                <div style="font-size:0.78rem; color:var(--text-muted); margin-top:0.25rem;">Due: June 15, 2026</div>
+              </div>
+            </div>
+
+            <!-- Order status track -->
+            <div class="order-status-track">
+              <div class="status-step done">
+                <div class="status-dot"><i data-lucide="check" style="width:12px;height:12px;"></i></div>
+                <span class="status-step-label">Intake</span>
+              </div>
+              <div class="status-step done">
+                <div class="status-dot"><i data-lucide="check" style="width:12px;height:12px;"></i></div>
+                <span class="status-step-label">Design</span>
+              </div>
+              <div class="status-step current">
+                <div class="status-dot"></div>
+                <span class="status-step-label">Approval</span>
+              </div>
+              <div class="status-step">
+                <div class="status-dot"></div>
+                <span class="status-step-label">Production</span>
+              </div>
+              <div class="status-step">
+                <div class="status-dot"></div>
+                <span class="status-step-label">Delivery</span>
+              </div>
+              <div class="status-step">
+                <div class="status-dot"></div>
+                <span class="status-step-label">Complete</span>
+              </div>
+            </div>
+
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-top:1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="user" style="width:14px;height:14px;"></i>
+              Assigned to: Peace Olewuezi
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Design Approvals -->
+      <div id="approvals" style="margin-bottom: 3rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+          <h4 style="font-size: 1.1rem; font-weight: 700;">Designs Awaiting Approval</h4>
+          <span class="badge badge--warning" style="background: var(--aura-dim); color: var(--aura); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">1 Pending</span>
+        </div>
+        <div class="design-cards">
+          <div class="design-card">
+            <div class="design-card__img" style="background: var(--soft-ivory); border-bottom: 1px solid var(--divider); display:flex; align-items:center; justify-content:center; overflow: hidden;">
+              <img src="../assets/img/editorial.png" alt="Design Sketch" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+            </div>
+            <div class="design-card__body">
+              <div style="font-size:0.75rem; color:var(--warm-taupe); margin-bottom:0.25rem; text-transform: uppercase; letter-spacing: 0.05em;">#ILM-2026-001</div>
+              <div style="font-weight:700; font-size:1rem; margin-bottom:0.5rem; color: var(--black);">Initial Sketch V1</div>
+              <p style="font-size:0.85rem; line-height:1.6; color: var(--warm-taupe);">Detailed lace patterns on the bodice with a flowing silk train as discussed in our last call.</p>
+            </div>
+            <div class="design-card__actions" style="padding: 1.25rem; border-top: 1px solid var(--divider); display: flex; gap: 0.75rem;">
+              <button class="btn btn--primary btn--sm" style="flex: 1;" onclick="alert('Design Approved!')">
+                <i data-lucide="check-circle"></i> Approve
+              </button>
+              <button class="btn btn--ghost btn--sm" style="flex: 1;" onclick="alert('Revision Requested')">
+                <i data-lucide="edit-3"></i> Revision
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:1.25rem;">
+        <a href="../consultation.html" class="glass" style="padding:1.5rem; text-align:center; border-radius:var(--r-lg); border: 1px solid var(--divider); background: white; text-decoration:none; transition:all 0.3s; display: block;">
+          <i data-lucide="calendar" style="width:28px;height:28px;color:var(--champagne);display:block;margin:0 auto 0.75rem;"></i>
+          <div style="font-size:0.95rem; font-weight:700; color: var(--black);">New Consultation</div>
+        </a>
+        <a href="https://wa.me/2348130024904" class="glass" style="padding:1.5rem; text-align:center; border-radius:var(--r-lg); border: 1px solid var(--divider); background: white; text-decoration:none; transition:all 0.3s; display: block;" target="_blank">
+          <i data-lucide="message-circle" style="width:28px;height:28px;color:#25D366;display:block;margin:0 auto 0.75rem;"></i>
+          <div style="font-size:0.95rem; font-weight:700; color: var(--black);">WhatsApp Help</div>
+        </a>
+        <a href="./profile.html" class="glass" style="padding:1.5rem; text-align:center; border-radius:var(--r-lg); border: 1px solid var(--divider); background: white; text-decoration:none; transition:all 0.3s; display: block;">
+          <i data-lucide="user" style="width:28px;height:28px;color:var(--champagne);display:block;margin:0 auto 0.75rem;"></i>
+          <div style="font-size:0.95rem; font-weight:700; color: var(--black);">My Profile</div>
+        </a>
+      </div>
+
+    </div><!-- /.dash-content -->
+  </main><!-- /.dash-main -->
+</div><!-- /.dash-layout -->
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+  lucide.createIcons();
+  
+  // Sidebar Toggle
+  const toggleBtn = document.getElementById('sidebar-toggle');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  
+  if (toggleBtn && sidebar && overlay) {
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.add('open');
+      overlay.classList.add('open');
+    });
+    
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+    });
+  }
+</script>
+</body>
+</html>
