@@ -78,15 +78,15 @@
 <section style="padding:2.5rem 0;border-bottom:1px solid var(--divider);">
   <div class="container">
     <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
-      <button class="btn btn--ghost btn--sm active" style="border-color:var(--champagne);color:var(--black);background:var(--soft-ivory);">All</button>
-      <button class="btn btn--ghost btn--sm">Bespoke Couture</button>
-      <button class="btn btn--ghost btn--sm">Bridals & Asoebi</button>
-      <button class="btn btn--ghost btn--sm">African Wears</button>
-      <button class="btn btn--ghost btn--sm">Casuals</button>
-      <button class="btn btn--ghost btn--sm">Custom Dressmaking</button>
-      <button class="btn btn--ghost btn--sm">Beading</button>
-      <button class="btn btn--ghost btn--sm">Fashion Consultancy</button>
-      <button class="btn btn--ghost btn--sm">Fashion Illustration</button>
+      <button data-filter="all" class="btn btn--ghost btn--sm active" style="border-color:var(--champagne);color:var(--champagne);background:rgba(213, 168, 76, 0.05);">All</button>
+      <button data-filter="Bespoke" class="btn btn--ghost btn--sm">Bespoke Couture</button>
+      <button data-filter="Asoebi" class="btn btn--ghost btn--sm">Bridals & Asoebi</button>
+      <button data-filter="African Wears" class="btn btn--ghost btn--sm">African Wears</button>
+      <button data-filter="Casuals" class="btn btn--ghost btn--sm">Casuals</button>
+      <button data-filter="Custom Dressmaking" class="btn btn--ghost btn--sm">Custom Dressmaking</button>
+      <button data-filter="Beading" class="btn btn--ghost btn--sm">Beading</button>
+      <button data-filter="Fashion Consultancy" class="btn btn--ghost btn--sm">Fashion Consultancy</button>
+      <button data-filter="Fashion Illustration" class="btn btn--ghost btn--sm">Fashion Illustration</button>
     </div>
   </div>
 </section>
@@ -96,35 +96,106 @@
   <div class="container">
     <div style="columns:3;column-gap:1rem;" id="portfolio-grid">
       
-      <a href="./services.html#bespoke" class="portfolio-item reveal" style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;">
-        <div style="background:var(--space-mid);border:1px solid var(--space-border);border-radius:var(--r-lg);height:auto;position:relative;overflow:hidden;transition:all 0.5s var(--ease-out);display:flex;flex-direction:column;justify-content:flex-end;box-shadow: var(--shadow-sm);cursor:pointer;" onmouseenter="this.querySelector('img').style.transform='scale(1.05)'; this.style.boxShadow='var(--shadow-lg)';" onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.boxShadow='var(--shadow-sm)';">
-          <img src="./assets/img/svc_bespoke_1776779653752.png" alt="The Executive Silk" style="width:100%; height:420px; object-fit:cover; transition: transform 0.8s var(--ease-out);">
-          <div class="portfolio-item__overlay" style="opacity:1;background: transparent;padding:2rem;">
-            <div style="margin-bottom:0.75rem;"><span class="badge" style="font-size:0.65rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Bespoke</span></div>
+      <!-- 01 Bespoke -->
+      <a href="./services.html#bespoke" class="portfolio-item reveal" data-category="Bespoke" style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;">
+        <div class="portfolio-card" style="height:auto;">
+          <img src="./assets/img/svc_bespoke_1776779653752.png" alt="The Executive Silk" style="width:100%; height:420px; object-fit:cover;">
+          <div class="portfolio-card__overlay"></div>
+          <div class="portfolio-card__content" style="padding: 1.5rem;">
+            <div style="margin-bottom:0.5rem;"><span class="badge" style="font-size:0.6rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Bespoke</span></div>
             <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">The Executive Silk</div>
             <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Artisanal Tailoring</div>
           </div>
         </div>
       </a>
 
-      <a href="./services.html#asoebi" class="portfolio-item reveal" style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;">
-        <div style="background:var(--space-mid);border:1px solid var(--space-border);border-radius:var(--r-lg);height:auto;position:relative;overflow:hidden;transition:all 0.5s var(--ease-out);display:flex;flex-direction:column;justify-content:flex-end;box-shadow: var(--shadow-sm);cursor:pointer;" onmouseenter="this.querySelector('img').style.transform='scale(1.05)'; this.style.boxShadow='var(--shadow-lg)';" onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.boxShadow='var(--shadow-sm)';">
-          <img src="./assets/img/bridal.png" alt="Heritage Bloom" style="width:100%; height:240px; object-fit:cover; transition: transform 0.8s var(--ease-out);">
-          <div class="portfolio-item__overlay" style="opacity:1;background: transparent;padding:2rem;">
-            <div style="margin-bottom:0.75rem;"><span class="badge" style="font-size:0.65rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Asoebi</span></div>
+      <!-- 02 Asoebi -->
+      <a href="./services.html#bridal" class="portfolio-item reveal" data-category="Asoebi" style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;">
+        <div class="portfolio-card" style="height:auto;">
+          <img src="./assets/img/bridal.png" alt="Heritage Bloom" style="width:100%; height:240px; object-fit:cover;">
+          <div class="portfolio-card__overlay"></div>
+          <div class="portfolio-card__content" style="padding: 1.5rem;">
+            <div style="margin-bottom:0.5rem;"><span class="badge" style="font-size:0.6rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Asoebi</span></div>
             <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">Heritage Bloom</div>
             <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Event Coordination</div>
           </div>
         </div>
       </a>
 
-      <a href="./services.html#african-wears" class="portfolio-item reveal" style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;">
-        <div style="background:var(--space-mid);border:1px solid var(--space-border);border-radius:var(--r-xl);height:auto;position:relative;overflow:hidden;transition:all 0.5s var(--ease-out);display:flex;flex-direction:column;justify-content:flex-end;box-shadow: 0 10px 30px rgba(0,0,0,0.05);cursor:pointer;" onmouseenter="this.querySelector('img').style.transform='scale(1.05)'; this.style.borderColor='var(--aura-glass)';" onmouseleave="this.querySelector('img').style.transform='scale(1)'; this.style.borderColor='var(--space-border)';">
-          <img src="./assets/img/couture.png" alt="Modern Heritage" style="width:100%; height:420px; object-fit:cover; transition: transform 0.8s var(--ease-out);">
-          <div class="portfolio-item__overlay" style="opacity:1;background: transparent;padding:2rem;">
-            <div style="margin-bottom:0.75rem;"><span class="badge" style="font-size:0.65rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">African Wears</span></div>
+      <!-- 03 African Wears -->
+      <a href="./services.html#african" class="portfolio-item reveal" data-category="African Wears" style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;">
+        <div class="portfolio-card" style="height:auto;">
+          <img src="./assets/img/couture.png" alt="Modern Heritage" style="width:100%; height:420px; object-fit:cover;">
+          <div class="portfolio-card__overlay"></div>
+          <div class="portfolio-card__content" style="padding: 1.5rem;">
+            <div style="margin-bottom:0.5rem;"><span class="badge" style="font-size:0.6rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">African Wears</span></div>
             <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">Modern Heritage</div>
             <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Avant-Garde Prints</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 04 Casuals -->
+      <a href="./services.html#casual" class="portfolio-item reveal" data-category="Casuals" style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;">
+        <div class="portfolio-card" style="height:auto;">
+          <img src="./assets/img/rtw.png" alt="Linen Resort" style="width:100%; height:300px; object-fit:cover;">
+          <div class="portfolio-card__overlay"></div>
+          <div class="portfolio-card__content" style="padding: 1.5rem;">
+            <div style="margin-bottom:0.5rem;"><span class="badge" style="font-size:0.6rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Casuals</span></div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">Linen Resort</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Premium Leisure</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 05 Custom Dressmaking -->
+      <a href="./services.html#dress" class="portfolio-item reveal" data-category="Custom Dressmaking" style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;">
+        <div class="portfolio-card" style="height:auto;">
+          <img src="./assets/img/philosophy.png" alt="The Master Fit" style="width:100%; height:300px; object-fit:cover;">
+          <div class="portfolio-card__overlay"></div>
+          <div class="portfolio-card__content" style="padding: 1.5rem;">
+            <div style="margin-bottom:0.5rem;"><span class="badge" style="font-size:0.6rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Custom Dressmaking</span></div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">The Master Fit</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Bespoke Construction</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 06 Beading -->
+      <a href="./services.html#beading" class="portfolio-item reveal" data-category="Beading" style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;">
+        <div class="portfolio-card" style="height:auto;">
+          <img src="./assets/img/editorial.png" alt="Pearl & Petal" style="width:100%; height:420px; object-fit:cover;">
+          <div class="portfolio-card__overlay"></div>
+          <div class="portfolio-card__content" style="padding: 1.5rem;">
+            <div style="margin-bottom:0.5rem;"><span class="badge" style="font-size:0.6rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Beading</span></div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">Pearl & Petal</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Hand Embroidery</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 07 Fashion Consultancy -->
+      <a href="./services.html#consult" class="portfolio-item reveal" data-category="Fashion Consultancy" style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;">
+        <div class="portfolio-card" style="height:auto;">
+          <img src="./assets/img/philosophy.png" alt="Identity Audit" style="width:100%; height:300px; object-fit:cover;">
+          <div class="portfolio-card__overlay"></div>
+          <div class="portfolio-card__content" style="padding: 1.5rem;">
+            <div style="margin-bottom:0.5rem;"><span class="badge" style="font-size:0.6rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Fashion Consultancy</span></div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">Identity Audit</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Style Strategy</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 08 Fashion Illustration -->
+      <a href="./services.html#illustrate" class="portfolio-item reveal" data-category="Fashion Illustration" style="margin-bottom:1.5rem;break-inside:avoid;display:block;text-decoration:none;">
+        <div class="portfolio-card" style="height:auto;">
+          <img src="./assets/img/philosophy.png" alt="Genesis Sketch" style="width:100%; height:300px; object-fit:cover;">
+          <div class="portfolio-card__overlay"></div>
+          <div class="portfolio-card__content" style="padding: 1.5rem;">
+            <div style="margin-bottom:0.5rem;"><span class="badge" style="font-size:0.6rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(4px); color:var(--gold-bright); border:1px solid rgba(255,255,255,0.1);">Fashion Illustration</span></div>
+            <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.3rem;font-family:var(--font-display);">Genesis Sketch</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);">Visual Rendering</div>
           </div>
         </div>
       </a>
@@ -134,7 +205,7 @@
 </section>
 
 <!-- CTA -->
-<section class="section" style="border-top:1px solid var(--space-border);text-align:center;">
+<section class="section" style="border-top:1px solid var(--divider);text-align:center;">
   <div class="container">
     <h2 class="reveal" style="margin-bottom:1rem;">Your Story<br><span class="gold-text">Belongs Here.</span></h2>
     <p class="reveal reveal-delay-1" style="max-width:440px;margin:0 auto 2rem;">
@@ -165,7 +236,43 @@
     </div>
   </div>
 </footer>
+
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script src="./assets/js/main.js"></script>
+<script>
+// Filter Logic
+const filterBtns = document.querySelectorAll('[data-filter]');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Reset styles
+    filterBtns.forEach(b => {
+      b.classList.remove('active');
+      b.style.borderColor = '';
+      b.style.color = '';
+      b.style.background = '';
+    });
+    
+    // Set active styles
+    btn.classList.add('active');
+    btn.style.borderColor = 'var(--champagne)';
+    btn.style.color = 'var(--champagne)';
+    btn.style.background = 'rgba(213, 168, 76, 0.05)';
+    
+    const filter = btn.dataset.filter;
+    
+    portfolioItems.forEach(item => {
+      if (filter === 'all' || item.dataset.category === filter) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+
+lucide.createIcons();
+</script>
 </body>
 </html>
